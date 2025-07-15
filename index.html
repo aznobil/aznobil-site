@@ -76,6 +76,15 @@
     .contact-btn:hover {
       background-color: #005599;
     }
+    .slider {
+      max-width: 100%;
+      margin: 20px auto;
+      text-align: center;
+    }
+    .slider img {
+      max-width: 100%;
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -90,10 +99,18 @@
 
   <div id="typewriter">INDUSTRIAL MECHANICAL CONSULTING & DESIGN</div>
 
+  <!-- Image Slider -->
+  <div class="slider">
+    <img class="slide" src="img1.jpg.jpg" alt="Project 1">
+    <img class="slide" src="img2.jpg.jpg" alt="Project 2">
+    <img class="slide" src="img3.jpg.jpg" alt="Project 3">
+    <img class="slide" src="img4.jpg.jpg" alt="Project 4">
+  </div>
+
   <main>
     <section id="about">
       <h2>About Us</h2>
-      <p>Aznobil is a Canadian engineering consulting firm specializing in industrial equipment design and mechanical systems.</p>
+      <p>Aznobil is a Canadian engineering consulting firm located in Thornhill, Ontario, specializing in industrial equipment design and mechanical systems.</p>
       <ul>
         <li>Piping system design using tools like AutoCAD Plant 3D</li>
         <li>Mixing tank design for the food industry using SolidWorks</li>
@@ -110,10 +127,9 @@
       <h2>Contact</h2>
       <p>
         📞 +1 (647) 326 0282<br>
-        ✉️ <a href="mailto: Info@aznobil.ca"> Info@aznobil.ca</a>
-         📍 <a href="https://www.google.com/maps/place/Thornhill,+ON" target="_blank" class="address-link">Thornhill, Ontario</a>
+        ✉️ <a href="mailto:info@aznobil.ca">info@aznobil.ca</a>
       </p>
-      <button class="contact-btn" onclick="location.href='mailto:az@aznobil.ca'">
+      <button class="contact-btn" onclick="location.href='mailto:info@aznobil.ca'">
         Contact Us
       </button>
     </section>
@@ -122,5 +138,24 @@
   <footer>
     <p>&copy; 2025 Aznobil Inc. All rights reserved.</p>
   </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.display = (i === index) ? 'block' : 'none';
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    showSlide(currentSlide);
+    setInterval(nextSlide, 1000);
+  </script>
 </body>
 </html>
