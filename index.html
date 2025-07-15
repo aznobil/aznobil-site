@@ -29,8 +29,8 @@
 
     .slider-container {
       position: relative;
-      max-width: 100%;
-      height: 550px;
+      width: 100vw;
+      height: 100vh;
       overflow: hidden;
     }
 
@@ -41,7 +41,7 @@
       height: 100%;
       object-fit: cover;
       opacity: 0;
-      transition: opacity 1s ease-in-out;
+      transition: opacity 2s ease-in-out;
     }
 
     .slide.active {
@@ -58,6 +58,7 @@
       transform: translateY(-50%);
       padding: 0 20px;
       box-sizing: border-box;
+      z-index: 2;
     }
 
     .slider-controls span {
@@ -75,6 +76,7 @@
       position: absolute;
       bottom: 15px;
       width: 100%;
+      z-index: 2;
     }
 
     .dot {
@@ -89,6 +91,33 @@
 
     .dot.active {
       background-color: #002244;
+    }
+
+    .slide-caption {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      text-align: center;
+      font-size: 2rem;
+      color: white;
+      z-index: 2;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      animation: typewriter 4s steps(30, end) 1s 1 normal both, blink-caret 0.75s step-end infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid white;
+    }
+
+    @keyframes typewriter {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: white; }
     }
 
     footer {
@@ -109,12 +138,13 @@
   </nav>
 </header>
 
-<!-- اسلایدر تصاویر پروژه -->
 <div class="slider-container">
   <img class="slide active" src="img1.jpg" alt="Project View 1">
   <img class="slide" src="img2.jpg" alt="Project View 2">
   <img class="slide" src="img3.jpg" alt="Project View 3">
   <img class="slide" src="img4.jpg" alt="Project View 4">
+
+  <div class="slide-caption" id="slide-caption">Industrial Equipment Design</div>
 
   <div class="slider-controls">
     <span onclick="prevSlide()">&#10094;</span>
@@ -129,7 +159,6 @@
   </div>
 </div>
 
-<!-- سایر بخش‌ها -->
 <section id="projects" style="padding: 2rem; text-align: center;">
   <h2>Our Projects</h2>
   <p>Engineering design, modeling, and performance analysis for power generation and industrial systems.</p>
@@ -152,7 +181,16 @@
   let slideIndex = 0;
   const slides = document.querySelectorAll('.slide');
   const dots = document.querySelectorAll('.dot');
-  let timer = setInterval(nextSlide, 3000);
+  const captions = [
+    "Industrial Equipment Design",
+    "Piping System Engineering",
+    "Mixing Tank Fabrication",
+    "Heat Exchanger Analysis"
+  ];
+
+  const captionEl = document.getElementById("slide-caption");
+
+  let timer = setInterval(nextSlide, 10000); // 10s delay
 
   function showSlide(index) {
     slides.forEach((slide, i) => {
@@ -161,7 +199,10 @@
     });
     slides[index].classList.add('active');
     dots[index].classList.add('active');
-    slideIndex = index;
+    captionEl.style.animation = 'none';
+    captionEl.offsetHeight; // force reflow
+    captionEl.innerText = captions[index];
+    captionEl.style.animation = null;
   }
 
   function nextSlide() {
@@ -177,7 +218,7 @@
   function currentSlide(index) {
     clearInterval(timer);
     showSlide(index);
-    timer = setInterval(nextSlide, 3000);
+    timer = setInterval(nextSlide, 10000);
   }
 </script>
 
