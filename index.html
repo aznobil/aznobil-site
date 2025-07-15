@@ -27,90 +27,55 @@
       font-weight: bold;
     }
 
-    .slider-container {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .slide {
-      display: none;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 2s ease-in-out;
-    }
-
-    .slide.active {
-      display: block;
-      opacity: 1;
-    }
-
-    .slider-controls {
-      position: absolute;
-      width: 100%;
-      top: 50%;
+    .main-container {
       display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      padding: 0 20px;
-      box-sizing: border-box;
-      z-index: 2;
+      height: 100vh;
     }
 
-    .slider-controls span {
-      font-size: 2rem;
-      color: white;
-      cursor: pointer;
-      user-select: none;
-      background-color: rgba(0, 0, 0, 0.3);
-      padding: 8px 12px;
-      border-radius: 4px;
+    .main-image {
+      flex: 1;
+      background: url('img1.jpg') center/cover no-repeat;
+      position: relative;
     }
 
-    .dots {
-      text-align: center;
+    .thumbnail-container {
+      flex: 1;
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .thumbnail-container img {
+      width: 80%;
+      border: 3px solid white;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .thumbnail-container img:hover {
+      transform: scale(1.05);
+    }
+
+    .typewriter-box {
       position: absolute;
-      bottom: 15px;
-      width: 100%;
-      z-index: 2;
-    }
-
-    .dot {
-      height: 12px;
-      width: 12px;
-      margin: 0 5px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      cursor: pointer;
-    }
-
-    .dot.active {
-      background-color: #002244;
-    }
-
-    .slide-caption {
-      position: absolute;
-      bottom: 30px;
-      width: 100%;
-      text-align: center;
-      font-size: 2rem;
-      color: white;
-      z-index: 2;
-      font-weight: bold;
+      top: 20%;
+      right: 5%;
+      width: 40%;
       background: rgba(0, 0, 0, 0.5);
-      padding: 1rem;
-      animation: typewriter 4s steps(30, end) 1s 1 normal both, blink-caret 0.75s step-end infinite;
+      color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      font-size: 1.5rem;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 2px solid white;
+      border-right: 3px solid white;
+      animation: typing 6s steps(40, end), blink-caret 0.75s step-end infinite;
     }
 
-    @keyframes typewriter {
+    @keyframes typing {
       from { width: 0; }
       to { width: 100%; }
     }
@@ -138,24 +103,14 @@
   </nav>
 </header>
 
-<div class="slider-container">
-  <img class="slide active" src="img1.jpg" alt="Project View 1">
-  <img class="slide" src="img2.jpg" alt="Project View 2">
-  <img class="slide" src="img3.jpg" alt="Project View 3">
-  <img class="slide" src="img4.jpg" alt="Project View 4">
-
-  <div class="slide-caption" id="slide-caption">Industrial Equipment Design</div>
-
-  <div class="slider-controls">
-    <span onclick="prevSlide()">&#10094;</span>
-    <span onclick="nextSlide()">&#10095;</span>
+<div class="main-container">
+  <div class="main-image">
+    <div class="typewriter-box" id="typewriter"></div>
   </div>
-
-  <div class="dots">
-    <span class="dot active" onclick="currentSlide(0)"></span>
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
+  <div class="thumbnail-container">
+    <img src="img2.jpg" alt="View 2">
+    <img src="img3.jpg" alt="View 3">
+    <img src="img4.jpg" alt="View 4">
   </div>
 </div>
 
@@ -177,49 +132,24 @@
   <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
 </footer>
 
+<audio id="typeSound" src="https://www.soundjay.com/keyboard/sounds/keyboard-1.mp3" preload="auto"></audio>
+
 <script>
-  let slideIndex = 0;
-  const slides = document.querySelectorAll('.slide');
-  const dots = document.querySelectorAll('.dot');
-  const captions = [
-    "Industrial Equipment Design",
-    "Piping System Engineering",
-    "Mixing Tank Fabrication",
-    "Heat Exchanger Analysis"
-  ];
+  const text = "We design and build smart energy systems with precision engineering.";
+  const box = document.getElementById("typewriter");
+  const audio = document.getElementById("typeSound");
 
-  const captionEl = document.getElementById("slide-caption");
-
-  let timer = setInterval(nextSlide, 10000); // 10s delay
-
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove('active');
-      dots[i].classList.remove('active');
-    });
-    slides[index].classList.add('active');
-    dots[index].classList.add('active');
-    captionEl.style.animation = 'none';
-    captionEl.offsetHeight; // force reflow
-    captionEl.innerText = captions[index];
-    captionEl.style.animation = null;
+  let i = 0;
+  function typeLetter() {
+    if (i < text.length) {
+      box.innerHTML += text.charAt(i);
+      audio.currentTime = 0;
+      audio.play();
+      i++;
+      setTimeout(typeLetter, 100);
+    }
   }
-
-  function nextSlide() {
-    slideIndex = (slideIndex + 1) % slides.length;
-    showSlide(slideIndex);
-  }
-
-  function prevSlide() {
-    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-    showSlide(slideIndex);
-  }
-
-  function currentSlide(index) {
-    clearInterval(timer);
-    showSlide(index);
-    timer = setInterval(nextSlide, 10000);
-  }
+  window.onload = () => typeLetter();
 </script>
 
 </body>
