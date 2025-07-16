@@ -30,8 +30,8 @@
 
     .hero {
       display: flex;
-      height: 100vh;
-      background-color: #004488;
+      height: 70vh;
+      background-color: #40e0d0; /* turquoise */
       color: white;
     }
 
@@ -52,14 +52,14 @@
     }
 
     .hero-right img {
-      width: 90%;
-      max-width: 500px;
+      width: 100%;
+      height: auto;
       border-radius: 8px;
       box-shadow: 0 0 20px rgba(0,0,0,0.4);
     }
 
     .hero-text {
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: yellow;
       border-right: 3px solid yellow;
       white-space: nowrap;
@@ -148,15 +148,15 @@
   <h2 style="text-align:center">Our Projects</h2>
   <div class="project-grid">
     <div class="project-item">
-      <img src="img2.jpg" alt="Project 2">
+      <img src="img2.jpg.jpg" alt="Project 2">
       <p>Complete piping and equipment layout for a 24MW CHP power plant using 3D modeling and stress analysis.</p>
     </div>
     <div class="project-item">
-      <img src="img3.jpg" alt="Project 3">
+      <img src="img3.jpg.jpg" alt="Project 3">
       <p>High-efficiency piping and energy distribution system for industrial cooling, designed with SolidWorks and AutoCAD.</p>
     </div>
     <div class="project-item">
-      <img src="img4.jpg" alt="Project 4">
+      <img src="img4.jpg.jpg" alt="Project 4">
       <p>Mechanical installation and integration of multi-engine power generation system including maintenance access layout.</p>
     </div>
   </div>
@@ -184,16 +184,4 @@
 
   let i = 0;
   function typeLetter() {
-    if (i < text.length) {
-      box.innerHTML += text.charAt(i);
-      audio.currentTime = 0;
-      audio.play();
-      i++;
-      setTimeout(typeLetter, 100);
-    }
-  }
-  window.onload = () => typeLetter();
-</script>
-
-</body>
-</html>
+    if (i < te
