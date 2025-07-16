@@ -29,9 +29,13 @@
 
     .slider-container {
       position: relative;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      max-width: 1000px;
+      height: 80vh;
+      margin: 40px auto;
       overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     }
 
     .slide {
@@ -41,12 +45,16 @@
       height: 100%;
       object-fit: cover;
       opacity: 0;
-      transition: opacity 2s ease-in-out;
+      transition: transform 1.5s ease, opacity 2s ease-in-out;
     }
 
     .slide.active {
       display: block;
       opacity: 1;
+    }
+
+    .slide.active:hover {
+      transform: scale(1.03);
     }
 
     .slider-controls {
@@ -224,12 +232,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
