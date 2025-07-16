@@ -56,18 +56,54 @@
 
     .logo-animation {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 200px;
-      z-index: 3;
-      animation: grow-move 4s ease forwards;
+      top: 20px;
+      left: 20px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+      padding: 10px;
+      animation: fade-move-left 3s ease forwards;
+      z-index: 4;
     }
 
-    @keyframes grow-move {
-      0% { transform: translate(-50%, -50%) scale(0.2); opacity: 0; }
-      50% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
-      100% { transform: translate(-30%, -50%) scale(1); }
+    .logo-animation img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+
+    @keyframes fade-move-left {
+      0% { transform: translateX(100px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    .intro-text {
+      position: absolute;
+      top: 140px;
+      left: 30px;
+      font-size: 1.5rem;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 10px 20px;
+      border-left: 3px solid #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #fff;
+      animation: typewriter 4s steps(40, end) 1s 1 normal both, blink-caret 0.75s step-end infinite;
+      z-index: 4;
+    }
+
+    @keyframes typewriter {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: white; }
     }
 
     .slider-controls {
@@ -131,16 +167,6 @@
       border-right: 2px solid white;
     }
 
-    @keyframes typewriter {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: white; }
-    }
-
     footer {
       text-align: center;
       padding: 1rem;
@@ -160,7 +186,11 @@
 </header>
 
 <div class="slider-container">
-  <img src="logo.png" alt="Logo" class="logo-animation">
+  <div class="logo-animation">
+    <img src="logo.png" alt="Logo">
+  </div>
+
+  <div class="intro-text">Expert Mechanical Design & Consulting</div>
 
   <img class="slide active" src="img1.jpg" alt="Project View 1">
   <img class="slide" src="img2.jpg" alt="Project View 2">
@@ -213,7 +243,7 @@
 
   const captionEl = document.getElementById("slide-caption");
 
-  let timer = setInterval(nextSlide, 10000); // 10s delay
+  let timer = setInterval(nextSlide, 10000);
 
   function showSlide(index) {
     slides.forEach((slide, i) => {
@@ -223,7 +253,7 @@
     slides[index].classList.add('active');
     dots[index].classList.add('active');
     captionEl.style.animation = 'none';
-    captionEl.offsetHeight; // force reflow
+    captionEl.offsetHeight;
     captionEl.innerText = captions[index];
     captionEl.style.animation = null;
   }
