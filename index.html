@@ -3,185 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aznobil Inc. - Welcome</title>
+  <title>Aznobil Inc. - Mechanical Design</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
+      background: #f5f5f5;
       color: #333;
-    }
-
-    header {
-      background-color: #002244;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav a {
-      color: white;
-      margin-left: 1rem;
-      text-decoration: none;
-      font-weight: bold;
     }
 
     .hero {
       display: flex;
-      height: 70vh;
-      background-color: #40e0d0; /* turquoise */
-      color: white;
-    }
-
-    .hero-left {
-      flex: 1;
-      display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      position: relative;
-    }
-
-    .hero-right {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero-right img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      background: #40e0d0; /* turquoise */
+      padding: 40px;
+      max-width: 1000px;
+      margin: 40px auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
 
     .hero-text {
-      font-size: 3rem;
-      color: yellow;
-      border-right: 3px solid yellow;
+      flex: 1;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #FFD700; /* yellow */
+      position: relative;
+      min-height: 3rem;
+      border-right: 3px solid #FFD700;
       white-space: nowrap;
       overflow: hidden;
-      animation: typing 6s steps(50, end), blink-caret 0.75s step-end infinite;
     }
 
-    .phone-number {
+    .hero-text::after {
+      content: '';
       position: absolute;
-      bottom: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 5px;
-      font-size: 1.3rem;
-      font-weight: bold;
+      right: 0;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: #FFD700;
+      animation: blink 0.75s step-end infinite;
     }
 
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
+    @keyframes blink {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
     }
 
-    @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: yellow; }
-    }
-
-    .projects {
-      padding: 2rem;
-      background-color: #fff;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .project-item {
+    .hero-img {
+      flex: 1;
       display: flex;
-      align-items: flex-start;
-      gap: 1rem;
+      justify-content: center;
     }
 
-    .project-item img {
-      width: 200px;
-      height: auto;
-      border: 3px solid #ccc;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    .hero-img img {
+      max-width: 90%;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .contact-info {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      color: #222;
     }
 
     footer {
+      background: #002244;
+      color: white;
       text-align: center;
       padding: 1rem;
-      background-color: #002244;
-      color: white;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Aznobil Inc.</h1>
-  <nav>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<div class="hero">
-  <div class="hero-left">
+  <div class="hero">
     <div class="hero-text" id="typewriter"></div>
-    <div class="phone-number">📞 +1 (647) 326 0282</div>
+    <div class="hero-img">
+      <img src="your-banner.jpg" alt="Aznobil Banner" />
+    </div>
   </div>
-  <div class="hero-right">
-    <img src="img1.jpg" alt="Hero Project">
-  </div>
-</div>
 
-<section id="projects" class="projects">
-  <h2 style="text-align:center">Our Projects</h2>
-  <div class="project-grid">
-    <div class="project-item">
-      <img src="img2.jpg.jpg" alt="Project 2">
-      <p>Complete piping and equipment layout for a 24MW CHP power plant using 3D modeling and stress analysis.</p>
-    </div>
-    <div class="project-item">
-      <img src="img3.jpg.jpg" alt="Project 3">
-      <p>High-efficiency piping and energy distribution system for industrial cooling, designed with SolidWorks and AutoCAD.</p>
-    </div>
-    <div class="project-item">
-      <img src="img4.jpg.jpg" alt="Project 4">
-      <p>Mechanical installation and integration of multi-engine power generation system including maintenance access layout.</p>
-    </div>
-  </div>
-</section>
-
-<section id="contact" style="padding: 2rem; text-align: center;">
-  <h2>Contact Us</h2>
-  <p>
+  <div class="contact-info">
     📞 +1 (647) 326 0282<br>
-    ✉️ <a href="mailto:info@aznobil.ca">info@aznobil.ca</a><br>
+    ✉️ info@aznobil.ca<br>
     📍 Thornhill, Ontario
-  </p>
-</section>
+  </div>
 
-<footer>
-  <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
-</footer>
+  <footer>
+    &copy; 2025 Aznobil Inc. - All rights reserved.
+  </footer>
 
-<audio id="typeSound" src="https://www.soundjay.com/keyboard/sounds/keyboard-1.mp3" preload="auto"></audio>
+  <audio id="typeSound" src="https://www.soundjay.com/keyboard/sounds/keyboard-1.mp3" preload="auto"></audio>
 
-<script>
-  const text = "We design and build smart energy systems with precision engineering.";
-  const box = document.getElementById("typewriter");
-  const audio = document.getElementById("typeSound");
+  <script>
+    const text = "Aznobil Industrial Mechanical Consulting & Design";
+    const el = document.getElementById("typewriter");
+    const audio = document.getElementById("typeSound");
+    let i = 0;
 
-  let i = 0;
-  function typeLetter() {
-    if (i < te
+    function typeLetter() {
+      if (i < text.length) {
+        el.textContent += text.charAt(i);
+        audio.currentTime = 0;
+        audio.play();
+        i++;
+        setTimeout(typeLetter, 100);
+      } else {
+        setTimeout(() => {
+          el.textContent = '';
+          i = 0;
+          typeLetter();
+        }, 3000);
+      }
+    }
+
+    window.onload = () => typeLetter();
+  </script>
+
+</body>
+</html>
