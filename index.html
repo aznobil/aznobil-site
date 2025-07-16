@@ -56,15 +56,16 @@
 
     .logo-animation {
       position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 130px;
-      height: 130px;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       background: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(5px);
       padding: 10px;
-      animation: fade-move-left 3s ease forwards;
+      animation: fade-in 2s ease forwards;
       z-index: 4;
     }
 
@@ -75,36 +76,36 @@
       object-fit: contain;
     }
 
-    @keyframes fade-move-left {
-      0% { transform: translateX(100px); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
+    @keyframes fade-in {
+      from { opacity: 0; transform: translate(-50%, -50px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
     }
 
     .intro-text {
       position: absolute;
-      top: 170px;
-      left: 30px;
-      font-size: 2rem;
+      top: 210px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.5rem;
       font-family: 'Times New Roman', Times, serif;
       color: #40e0d0;
       background-color: rgba(0, 0, 0, 0.6);
       padding: 10px 20px;
-      border-left: 3px solid #40e0d0;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #40e0d0;
-      animation: typewriter 4s steps(40, end) 1s 1 normal both, blink-caret 0.75s step-end infinite;
+      border-radius: 5px;
       z-index: 4;
+      display: flex;
     }
 
-    @keyframes typewriter {
-      from { width: 0; }
-      to { width: 100%; }
+    .intro-char {
+      opacity: 0;
+      animation: appear 3s linear infinite;
     }
 
-    @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: #40e0d0; }
+    @keyframes appear {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
     }
 
     .slider-controls {
@@ -162,10 +163,6 @@
       font-weight: bold;
       background: rgba(0, 0, 0, 0.5);
       padding: 1rem;
-      animation: typewriter 4s steps(30, end) 1s 1 normal both, blink-caret 0.75s step-end infinite;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid white;
     }
 
     footer {
@@ -191,7 +188,7 @@
     <img src="logo.png" alt="Logo">
   </div>
 
-  <div class="intro-text">Expert Mechanical Design & Consulting</div>
+  <div class="intro-text" id="intro-text"></div>
 
   <img class="slide active" src="img1.jpg" alt="Project View 1">
   <img class="slide" src="img2.jpg" alt="Project View 2">
@@ -241,9 +238,7 @@
     "Mixing Tank Fabrication",
     "Heat Exchanger Analysis"
   ];
-
   const captionEl = document.getElementById("slide-caption");
-
   let timer = setInterval(nextSlide, 10000);
 
   function showSlide(index) {
@@ -253,10 +248,7 @@
     });
     slides[index].classList.add('active');
     dots[index].classList.add('active');
-    captionEl.style.animation = 'none';
-    captionEl.offsetHeight;
     captionEl.innerText = captions[index];
-    captionEl.style.animation = null;
   }
 
   function nextSlide() {
@@ -274,6 +266,25 @@
     showSlide(index);
     timer = setInterval(nextSlide, 10000);
   }
+
+  // Dynamic animated text loop
+  const text = "Expert Mechanical Design & Consulting";
+  const container = document.getElementById("intro-text");
+  let index = 0;
+
+  function animateText() {
+    container.innerHTML = "";
+    [...text].forEach((char, i) => {
+      const span = document.createElement("span");
+      span.textContent = char;
+      span.className = "intro-char";
+      span.style.animationDelay = `${i * 0.1}s`;
+      container.appendChild(span);
+    });
+  }
+
+  animateText();
+  setInterval(animateText, 6000);
 </script>
 
 </body>
