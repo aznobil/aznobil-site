@@ -3,128 +3,233 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aznobil Inc. - Mechanical Design</title>
+  <title>Aznobil Inc. - Project Gallery</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #333;
+      background-color: #f5f5f5;
     }
 
-    .hero {
+    header {
+      background-color: #002244;
+      color: white;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #40e0d0; /* turquoise */
-      padding: 40px;
-      max-width: 1000px;
-      margin: 40px auto;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
 
-    .hero-text {
-      flex: 1;
-      font-size: 2rem;
+    nav a {
+      color: white;
+      margin-left: 1rem;
+      text-decoration: none;
       font-weight: bold;
-      color: #FFD700; /* yellow */
+    }
+
+    .slider-container {
       position: relative;
-      min-height: 3rem;
-      border-right: 3px solid #FFD700;
-      white-space: nowrap;
+      width: 100vw;
+      height: 100vh;
       overflow: hidden;
     }
 
-    .hero-text::after {
-      content: '';
+    .slide {
+      display: none;
       position: absolute;
-      right: 0;
-      top: 0;
-      width: 3px;
+      width: 100%;
       height: 100%;
-      background: #FFD700;
-      animation: blink 0.75s step-end infinite;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
     }
 
-    @keyframes blink {
-      0%, 100% { opacity: 0; }
-      50% { opacity: 1; }
+    .slide.active {
+      display: block;
+      opacity: 1;
     }
 
-    .hero-img {
-      flex: 1;
+    .slider-controls {
+      position: absolute;
+      width: 100%;
+      top: 50%;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 20px;
+      box-sizing: border-box;
+      z-index: 2;
     }
 
-    .hero-img img {
-      max-width: 90%;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    .slider-controls span {
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 8px 12px;
+      border-radius: 4px;
     }
 
-    .contact-info {
+    .dots {
       text-align: center;
-      font-size: 1.2rem;
-      margin-top: 20px;
-      color: #222;
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background-color: #002244;
+    }
+
+    .slide-caption {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      text-align: center;
+      font-size: 2rem;
+      color: white;
+      z-index: 2;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      animation: typewriter 4s steps(30, end) 1s 1 normal both, blink-caret 0.75s step-end infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid white;
+    }
+
+    @keyframes typewriter {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: white; }
     }
 
     footer {
-      background: #002244;
-      color: white;
       text-align: center;
       padding: 1rem;
-      margin-top: 40px;
+      background-color: #002244;
+      color: white;
     }
   </style>
 </head>
 <body>
 
-  <div class="hero">
-    <div class="hero-text" id="typewriter"></div>
-    <div class="hero-img">
-      <img src="your-banner.jpg" alt="Aznobil Banner" />
-    </div>
+<header>
+  <h1>Aznobil Inc.</h1>
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="slider-container">
+  <img class="slide active" src="img1.jpg" alt="Project View 1">
+  <img class="slide" src="img2.jpg" alt="Project View 2">
+  <img class="slide" src="img3.jpg" alt="Project View 3">
+  <img class="slide" src="img4.jpg" alt="Project View 4">
+
+  <div class="slide-caption" id="slide-caption">Industrial Equipment Design</div>
+
+  <div class="slider-controls">
+    <span onclick="prevSlide()">&#10094;</span>
+    <span onclick="nextSlide()">&#10095;</span>
   </div>
 
-  <div class="contact-info">
+  <div class="dots">
+    <span class="dot active" onclick="currentSlide(0)"></span>
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+</div>
+
+<section id="projects" style="padding: 2rem; text-align: center;">
+  <h2>Our Projects</h2>
+  <p>Engineering design, modeling, and performance analysis for power generation and industrial systems.</p>
+</section>
+
+<section id="contact" style="padding: 2rem; text-align: center;">
+  <h2>Contact Us</h2>
+  <p>
     📞 +1 (647) 326 0282<br>
-    ✉️ info@aznobil.ca<br>
+    ✉️ <a href="mailto:info@aznobil.ca">info@aznobil.ca</a><br>
     📍 Thornhill, Ontario
-  </div>
+  </p>
+</section>
 
-  <footer>
-    &copy; 2025 Aznobil Inc. - All rights reserved.
-  </footer>
+<footer>
+  <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
+</footer>
 
-  <audio id="typeSound" src="https://www.soundjay.com/keyboard/sounds/keyboard-1.mp3" preload="auto"></audio>
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  const captions = [
+    "Industrial Equipment Design",
+    "Piping System Engineering",
+    "Mixing Tank Fabrication",
+    "Heat Exchanger Analysis"
+  ];
 
-  <script>
-    const text = "Aznobil Industrial Mechanical Consulting & Design";
-    const el = document.getElementById("typewriter");
-    const audio = document.getElementById("typeSound");
-    let i = 0;
+  const captionEl = document.getElementById("slide-caption");
 
-    function typeLetter() {
-      if (i < text.length) {
-        el.textContent += text.charAt(i);
-        audio.currentTime = 0;
-        audio.play();
-        i++;
-        setTimeout(typeLetter, 100);
-      } else {
-        setTimeout(() => {
-          el.textContent = '';
-          i = 0;
-          typeLetter();
-        }, 3000);
-      }
-    }
+  let timer = setInterval(nextSlide, 10000); // 10s delay
 
-    window.onload = () => typeLetter();
-  </script>
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      dots[i].classList.remove('active');
+    });
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+    captionEl.style.animation = 'none';
+    captionEl.offsetHeight; // force reflow
+    captionEl.innerText = captions[index];
+    captionEl.style.animation = null;
+  }
+
+  function nextSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  function prevSlide() {
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  function currentSlide(index) {
+    clearInterval(timer);
+    showSlide(index);
+    timer = setInterval(nextSlide, 10000);
+  }
+</script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
