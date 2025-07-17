@@ -21,10 +21,9 @@
     }
 
     header img {
-      width: 80px;
-      height: 80px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.3);
     }
 
     nav {
@@ -54,17 +53,11 @@
       height: 100%;
       object-fit: cover;
       opacity: 0;
-      animation: fadeSlide 10s infinite;
+      transition: opacity 2s ease-in-out;
     }
 
     .slide.active {
       opacity: 1;
-    }
-
-    @keyframes fadeSlide {
-      0% { opacity: 1; }
-      40% { opacity: 0; }
-      100% { opacity: 0; }
     }
 
     .slide-caption {
@@ -81,25 +74,29 @@
     #intro-text {
       text-align: center;
       font-family: 'Times New Roman', Times, serif;
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       color: #00ced1;
-      padding: 1rem;
-      margin-top: 1rem;
+      margin-top: 2rem;
       overflow: hidden;
+      min-height: 3rem;
+    }
+
+    .intro-line {
+      display: block;
       white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #00ced1;
+      animation: typing 3s steps(40, end), blink .75s step-end infinite;
     }
 
-    .intro-char {
-      display: inline-block;
-      opacity: 0;
-      animation: fade-in-out 3s forwards;
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
     }
 
-    @keyframes fade-in-out {
-      0% { opacity: 0; transform: translateY(20px); }
-      10% { opacity: 1; transform: translateY(0); }
-      90% { opacity: 1; transform: translateY(0); }
-      100% { opacity: 0; transform: translateY(-20px); }
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: #00ced1; }
     }
 
     .blue-strip {
@@ -141,18 +138,14 @@
 
 <div class="slider-container">
   <img class="slide active" src="img1.jpg" alt="Project View">
-  <div class="slide-caption">
-    <div id="intro-text"></div>
-  </div>
+  <div class="slide-caption" id="intro-text"></div>
 </div>
 
 <div class="blue-strip"></div>
 
 <div class="white-box" id="about">
   <h2>About Aznobil</h2>
-  <p>
-    Aznobil Inc. is a Canadian mechanical consulting firm specializing in piping systems, industrial design, and engineering solutions for various industries including power generation, manufacturing, and food processing.
-  </p>
+  <p id="description-text"></p>
 </div>
 
 <footer>
@@ -160,32 +153,44 @@
 </footer>
 
 <script>
-  const captions = [
+  const intro = document.getElementById("intro-text");
+  const desc = document.getElementById("description-text");
+
+  const lines = [
     "Expert Mechanical Design & Consulting",
-    "We can see, solve, troubleshoot and deliver faster"
+    "MC Machinery offers wire and sinker EDMs that are accurate, cost effective and provide the best overall speed and performance.",
+    "Our wire EDMs feature user-friendly controls and internal designs that minimize downtime and reduce wear and tear for lower maintenance costs."
   ];
 
-  const container = document.getElementById("intro-text");
-  let captionIndex = 0;
+  let i = 0;
 
-  function animateText(text) {
-    container.innerHTML = "";
-    [...text].forEach((char, i) => {
-      const span = document.createElement("span");
-      span.textContent = char;
-      span.className = "intro-char";
-      span.style.animationDelay = `${i * 0.2}s`;
-      container.appendChild(span);
-    });
+  function typeLine(line, el, callback) {
+    el.innerHTML = '';
+    const span = document.createElement('span');
+    span.className = 'intro-line';
+    el.appendChild(span);
+    let index = 0;
+    const interval = setInterval(() => {
+      span.textContent += line[index];
+      index++;
+      if (index >= line.length) {
+        clearInterval(interval);
+        if (callback) setTimeout(callback, 2000);
+      }
+    }, 50);
   }
 
-  function loopText() {
-    animateText(captions[captionIndex]);
-    captionIndex = (captionIndex + 1) % captions.length;
-    setTimeout(loopText, 6000);
+  function loopLines() {
+    if (i < lines.length) {
+      const el = i === 0 ? intro : desc;
+      typeLine(lines[i], el, () => {
+        i++;
+        loopLines();
+      });
+    }
   }
 
-  loopText();
+  loopLines();
 </script>
 
 </body>
