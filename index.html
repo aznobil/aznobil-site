@@ -78,24 +78,29 @@
     }
 
     #intro-text {
-      text-align: center;
+      text-align: left;
       font-family: 'Times New Roman', Times, serif;
       font-size: 2.8rem;
       color: #00ced1;
       background-color: rgba(0, 0, 0, 0.7);
       padding: 1rem;
       margin-top: 1rem;
+      max-width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
     }
 
     .intro-char {
       display: inline-block;
       opacity: 0;
-      animation: fade-in 0.5s forwards;
+      animation: fade-in-out 3s forwards;
     }
 
-    @keyframes fade-in {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes fade-in-out {
+      0% { opacity: 0; transform: translateY(20px); }
+      10% { opacity: 1; transform: translateY(0); }
+      90% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-20px); }
     }
 
     .blue-strip {
@@ -170,7 +175,7 @@
       const span = document.createElement("span");
       span.textContent = char;
       span.className = "intro-char";
-      span.style.animationDelay = `${i * 0.1}s`;
+      span.style.animationDelay = `${i * 0.2}s`;
       container.appendChild(span);
     });
   }
