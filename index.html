@@ -168,8 +168,28 @@
       span.style.animationDelay = `${i * 0.1}s`;
       container.appendChild(span);
     });
-  }
+    }
   animateText();
+</script>
+
+</body>
+</html>";
+  const container = document.getElementById("intro-text");
+  let index = 0;
+
+  function animateText() {
+    container.innerHTML = "";
+    [...text].forEach((char, i) => {
+      const span = document.createElement("span");
+      span.textContent = char;
+      span.className = "intro-char";
+      span.style.animationDelay = `${i * 0.1}s`;
+      container.appendChild(span);
+    });
+  }
+
+  animateText();
+  setInterval(animateText, 6000);
 </script>
 
 </body>
