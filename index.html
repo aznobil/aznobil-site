@@ -111,10 +111,19 @@
       max-width: 1000px;
       margin: auto;
       text-align: center;
-      color: #ffa07a;
+      color: #ff4500;
       font-size: 2.2rem;
       line-height: 3.2rem;
       display: none;
+      min-height: 6rem;
+    }
+
+    #description-text {
+      font-size: 2.5rem;
+      color: #ff4500;
+      font-weight: bold;
+      line-height: 3.5rem;
+      white-space: pre-line;
     }
 
     footer {
@@ -144,7 +153,6 @@
 </div>
 
 <div class="white-box" id="about">
-  <h2 style="color:#ff7f50; font-size: 3rem;">About Aznobil</h2>
   <p id="description-text"></p>
 </div>
 
@@ -157,10 +165,7 @@
 <script>
   const lines = [
     "Expert Mechanical Design & Consulting",
-    "About Aznobil",
-    "We specialize in customized mechanical design solutions.",
-    "From concept to implementation, we ensure quality and efficiency.",
-    "Trusted by leading industries for over 14 years."
+    "About Aznobil\nWe specialize in customized mechanical design solutions.\nFrom concept to implementation, we ensure quality and efficiency.\nTrusted by leading industries for over 14 years."
   ];
 
   let textEl = document.getElementById("intro-text");
@@ -169,26 +174,26 @@
   function typeTextLoop(lines, textEl, descEl, i = 0) {
     if (i >= lines.length) i = 0;
     let line = lines[i];
-    const isAbout = i >= 1;
+    const isAbout = i === 1;
+
     document.querySelector('.slider-container').style.opacity = isAbout ? '0.05' : '1';
     document.querySelector('.white-box').style.display = isAbout ? 'block' : 'none';
 
     if (isAbout) {
-      descEl.textContent = "";
-      descEl.style.display = 'block';
+      textEl.innerHTML = '';
+      descEl.textContent = '';
       descEl.className = 'intro-line';
       let idx = 0;
-      const aboutLine = line;
       const interval = setInterval(() => {
-        descEl.textContent += aboutLine[idx];
+        descEl.textContent += line[idx];
         idx++;
-        if (idx === aboutLine.length) {
+        if (idx === line.length) {
           clearInterval(interval);
-          setTimeout(() => typeTextLoop(lines, textEl, descEl, i + 1), 4000);
+          setTimeout(() => typeTextLoop(lines, textEl, descEl, i + 1), 6000);
         }
-      }, 50);
+      }, 40);
     } else {
-      descEl.style.display = 'none';
+      descEl.textContent = '';
       textEl.innerHTML = '';
       let span = document.createElement('span');
       span.className = 'intro-line';
@@ -200,7 +205,7 @@
         idx++;
         if (idx === line.length) {
           clearInterval(interval);
-          setTimeout(() => typeTextLoop(lines, textEl, descEl, i + 1), 4000);
+          setTimeout(() => typeTextLoop(lines, textEl, descEl, i + 1), 6000);
         }
       }, 50);
     }
