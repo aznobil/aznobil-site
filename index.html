@@ -148,48 +148,52 @@
   <p id="description-text"></p>
 </div>
 
+<div class="slider-container">
+  <img class="slide active" src="img1.jpg" alt="Project View Again">
+  <div class="slide-caption" id="intro-text2"></div>
+</div>
+
+<div class="blue-strip"></div>
+
+<div class="white-box">
+  <h2>About Aznobil</h2>
+  <p id="description-text2"></p>
+</div>
+
 <footer>
   <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
 </footer>
 
 <script>
-  const intro = document.getElementById("intro-text");
-  const desc = document.getElementById("description-text");
-
-  const lines = [
+  const lines1 = [
+    "Expert Mechanical Design & Consulting",
     "that are accurate, cost effective and provide the best overall speed and performance.",
     "Our wire EDMs feature user-friendly controls and internal designs that minimize downtime and reduce wear and tear for lower maintenance costs."
   ];
 
-  let i = 0;
+  const lines2 = [...lines1]; // reuse same text loop for the second section
 
-  function typeLine(line, el, callback) {
-    el.innerHTML = '';
+  function typeLines(lines, textEl, descEl, index = 0) {
+    if (index >= lines.length) return;
     const span = document.createElement('span');
     span.className = 'intro-line';
-    el.appendChild(span);
-    let index = 0;
+    span.textContent = '';
+    textEl.innerHTML = '';
+    textEl.appendChild(span);
+
+    let charIdx = 0;
     const interval = setInterval(() => {
-      span.textContent += line[index];
-      index++;
-      if (index >= line.length) {
+      span.textContent += lines[index][charIdx];
+      charIdx++;
+      if (charIdx >= lines[index].length) {
         clearInterval(interval);
-        if (callback) setTimeout(callback, 2000);
+        setTimeout(() => typeLines(lines, textEl, descEl, index + 1), 2000);
       }
     }, 50);
   }
 
-  function loopLines() {
-    if (i < lines.length) {
-      const el = i === 0 ? intro : desc;
-      typeLine(lines[i], el, () => {
-        i++;
-        loopLines();
-      });
-    }
-  }
-
-  loopLines();
+  typeLines(lines1, document.getElementById("intro-text"), document.getElementById("description-text"));
+  typeLines(lines2, document.getElementById("intro-text2"), document.getElementById("description-text2"));
 </script>
 
 </body>
