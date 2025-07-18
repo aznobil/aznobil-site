@@ -85,7 +85,6 @@
       display: block;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 2px solid #00ced1;
       animation: typing 3s steps(40, end), blink .75s step-end infinite;
     }
 
@@ -106,13 +105,14 @@
     }
 
     .white-box {
-      background-color: white;
-      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 3rem;
       max-width: 900px;
       margin: auto;
       text-align: center;
-      color: #333;
-      font-size: 1.2rem;
+      color: #ffcc99;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
     }
 
     footer {
@@ -165,6 +165,14 @@
   function typeTextLoop(lines, textEl, descEl, i = 0) {
     if (i >= lines.length) i = 0;
     let line = lines[i];
+    if (i === 1 || i === 2 || i === 3) {
+      document.querySelector('.slider-container').style.opacity = '0.2';
+      document.querySelector('.white-box').style.display = 'block';
+    } else {
+      document.querySelector('.slider-container').style.opacity = '1';
+      document.querySelector('.white-box').style.display = 'none';
+    }
+
     textEl.innerHTML = '';
     let span = document.createElement('span');
     span.className = 'intro-line';
@@ -175,7 +183,7 @@
       idx++;
       if (idx === line.length) {
         clearInterval(interval);
-        setTimeout(() => typeTextLoop(lines, textEl, descEl, i + 1), 3000);
+        setTimeout(() => typeTextLoop(lines, textEl, descEl, i + 1), 4000);
       }
     }, 50);
   }
