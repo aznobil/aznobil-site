@@ -66,7 +66,7 @@
       bottom: 30px;
       width: 100%;
       text-align: center;
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: bold;
       font-family: 'Times New Roman', Times, serif;
       color: #00ced1;
@@ -75,7 +75,7 @@
     #intro-text {
       text-align: center;
       font-family: 'Times New Roman', Times, serif;
-      font-size: 3rem;
+      font-size: 3.2rem;
       color: #00ced1;
       margin-top: 2rem;
       overflow: hidden;
@@ -106,27 +106,24 @@
     }
 
     .white-box {
-      background-color: transparent;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.5);
       padding: 4rem;
       max-width: 1000px;
-      width: 90%;
+      margin: auto;
       text-align: center;
-      color: #ff4500;
-      font-size: 2.2rem;
-      line-height: 3.2rem;
+      color: #ff8c00;
+      font-size: 2.8rem;
+      line-height: 3.5rem;
       display: none;
-      min-height: 6rem;
+      min-height: 10rem;
     }
 
     #description-text {
-      font-size: 2.5rem;
-      color: #ff4500;
+      font-size: 2.8rem;
+      color: #ff8c00;
+      font-family: 'Times New Roman', Times, serif;
       font-weight: bold;
-      line-height: 3.5rem;
+      line-height: 4rem;
       white-space: pre-line;
     }
 
@@ -135,11 +132,6 @@
       padding: 1rem;
       background-color: #002244;
       color: white;
-    }
-
-    footer a {
-      color: white;
-      text-decoration: underline;
     }
   </style>
 </head>
@@ -168,7 +160,7 @@
 <footer>
   <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
   <p>📞 +1 (647) 326 0282<br>
-     ✉️ <a href="mailto:info@aznobil.ca">info@aznobil.ca</a></p>
+     ✉️ <a href="mailto:info@aznobil.ca" style="color: white; text-decoration: underline;">info@aznobil.ca</a></p>
 </footer>
 
 <script>
@@ -182,37 +174,51 @@
 
   function typeTextLoop(lines, textEl, descEl, i = 0) {
     if (i >= lines.length) i = 0;
-    let line = lines[i];
+    let fullText = lines[i];
     const isAbout = i === 1;
 
     document.querySelector('.slider-container').style.opacity = isAbout ? '0.05' : '1';
     document.querySelector('.white-box').style.display = isAbout ? 'block' : 'none';
 
     if (isAbout) {
-      textEl.innerHTML = '';
       descEl.textContent = '';
       descEl.className = 'intro-line';
-      let idx = 0;
-      const interval = setInterval(() => {
-        descEl.textContent += line[idx];
-        idx++;
-        if (idx === line.length) {
-          clearInterval(interval);
-          setTimeout(() => typeTextLoop(lines, textEl, descEl, i + 1), 6000);
+      const parts = fullText.split('\n');
+      let currentLine = 0;
+      let charIndex = 0;
+
+      function typeLine() {
+        if (currentLine >= parts.length) {
+          setTimeout(() => typeTextLoop(lines, textEl, descEl, i + 1), 7000);
+          return;
         }
-      }, 40);
+        descEl.textContent = '';
+        let line = parts[currentLine];
+        let typeInterval = setInterval(() => {
+          descEl.textContent += line[charIndex];
+          charIndex++;
+          if (charIndex >= line.length) {
+            clearInterval(typeInterval);
+            setTimeout(() => {
+              descEl.textContent += '\n';
+              currentLine++;
+              charIndex = 0;
+              typeLine();
+            }, 1000);
+          }
+        }, 40);
+      }
+      typeLine();
     } else {
-      descEl.textContent = '';
       textEl.innerHTML = '';
       let span = document.createElement('span');
       span.className = 'intro-line';
       textEl.appendChild(span);
-
       let idx = 0;
       const interval = setInterval(() => {
-        span.textContent += line[idx];
+        span.textContent += fullText[idx];
         idx++;
-        if (idx === line.length) {
+        if (idx === fullText.length) {
           clearInterval(interval);
           setTimeout(() => typeTextLoop(lines, textEl, descEl, i + 1), 6000);
         }
