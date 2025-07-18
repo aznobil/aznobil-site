@@ -45,6 +45,7 @@
       height: 65vh;
       margin: 0 auto;
       overflow: hidden;
+      transition: opacity 1s ease-in-out;
     }
 
     .slide {
@@ -74,11 +75,11 @@
     #intro-text {
       text-align: center;
       font-family: 'Times New Roman', Times, serif;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       color: #00ced1;
       margin-top: 2rem;
       overflow: hidden;
-      min-height: 3rem;
+      min-height: 3.5rem;
     }
 
     .intro-line {
@@ -105,14 +106,16 @@
     }
 
     .white-box {
-      background-color: rgba(0, 0, 0, 0.85);
-      padding: 3rem;
-      max-width: 900px;
+      background-color: transparent;
+      padding: 4rem;
+      max-width: 1000px;
       margin: auto;
       text-align: center;
       color: #ffcc99;
-      font-size: 1.6rem;
-      line-height: 2.4rem;
+      font-size: 2rem;
+      line-height: 3rem;
+      display: none;
+      border-radius: 8px;
     }
 
     footer {
@@ -142,50 +145,66 @@
 </div>
 
 <div class="white-box" id="about">
-  <h2>About Aznobil</h2>
+  <h2 style="color:#ffa07a; font-size: 2.5rem;">About Aznobil</h2>
   <p id="description-text"></p>
 </div>
 
 <footer>
   <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
+  <p>📞 +1 (647) 326 0282<br>
+     ✉️ <a href="mailto:info@aznobil.ca" style="color: white; text-decoration: underline;">info@aznobil.ca</a></p>
 </footer>
 
 <script>
   const lines = [
     "Expert Mechanical Design & Consulting",
     "About Aznobil",
-    "That are accurate, cost effective and provide the best overall speed and performance.",
-    "Our wire EDMs feature user-friendly controls and internal designs that minimize downtime and reduce wear and tear for lower maintenance costs."
+    "We specialize in customized mechanical design solutions.",
+    "From concept to implementation, we ensure quality and efficiency.",
+    "Trusted by leading industries for over 14 years."
   ];
 
-  let slide = document.querySelector('.slide');
   let textEl = document.getElementById("intro-text");
   let descEl = document.getElementById("description-text");
 
   function typeTextLoop(lines, textEl, descEl, i = 0) {
     if (i >= lines.length) i = 0;
     let line = lines[i];
-    if (i === 1 || i === 2 || i === 3) {
-      document.querySelector('.slider-container').style.opacity = '0.2';
-      document.querySelector('.white-box').style.display = 'block';
-    } else {
-      document.querySelector('.slider-container').style.opacity = '1';
-      document.querySelector('.white-box').style.display = 'none';
-    }
+    const isAbout = i >= 1;
+    document.querySelector('.slider-container').style.opacity = isAbout ? '0.05' : '1';
+    document.querySelector('.white-box').style.display = isAbout ? 'block' : 'none';
 
-    textEl.innerHTML = '';
-    let span = document.createElement('span');
-    span.className = 'intro-line';
-    textEl.appendChild(span);
-    let idx = 0;
-    let interval = setInterval(() => {
-      span.textContent += line[idx];
-      idx++;
-      if (idx === line.length) {
-        clearInterval(interval);
-        setTimeout(() => typeTextLoop(lines, textEl, descEl, i + 1), 4000);
-      }
-    }, 50);
+    if (isAbout) {
+      descEl.textContent = "";
+      descEl.style.display = 'block';
+      descEl.className = 'intro-line';
+      let idx = 0;
+      const aboutLine = line;
+      const interval = setInterval(() => {
+        descEl.textContent += aboutLine[idx];
+        idx++;
+        if (idx === aboutLine.length) {
+          clearInterval(interval);
+          setTimeout(() => typeTextLoop(lines, textEl, descEl, i + 1), 4000);
+        }
+      }, 50);
+    } else {
+      descEl.style.display = 'none';
+      textEl.innerHTML = '';
+      let span = document.createElement('span');
+      span.className = 'intro-line';
+      textEl.appendChild(span);
+
+      let idx = 0;
+      const interval = setInterval(() => {
+        span.textContent += line[idx];
+        idx++;
+        if (idx === line.length) {
+          clearInterval(interval);
+          setTimeout(() => typeTextLoop(lines, textEl, descEl, i + 1), 4000);
+        }
+      }, 50);
+    }
   }
 
   typeTextLoop(lines, textEl, descEl);
