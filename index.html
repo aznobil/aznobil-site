@@ -46,6 +46,9 @@
       margin: 0 auto;
       overflow: hidden;
       transition: opacity 1s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .slide {
@@ -63,10 +66,8 @@
 
     .slide-caption {
       position: absolute;
-      bottom: 30px;
-      width: 100%;
       text-align: center;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       font-weight: bold;
       font-family: 'Times New Roman', Times, serif;
       color: #00ced1;
@@ -77,26 +78,24 @@
       font-family: 'Times New Roman', Times, serif;
       font-size: 3rem;
       color: #00ced1;
-      margin-top: 2rem;
-      overflow: hidden;
       min-height: 3.5rem;
     }
 
     .intro-line {
-      display: block;
-      white-space: nowrap;
+      display: inline-block;
       overflow: hidden;
-      animation: typing 3s steps(40, end), blink .75s step-end infinite;
+      white-space: nowrap;
+      animation: typing 3s steps(40, end), blink 1s step-end infinite;
+      border-right: 2px solid orange;
     }
 
     @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
+      from { width: 0 }
+      to { width: 100% }
     }
 
     @keyframes blink {
-      from, to { border-color: transparent; }
-      50% { border-color: #00ced1; }
+      50% { border-color: transparent; }
     }
 
     .blue-strip {
@@ -112,15 +111,15 @@
       margin: auto;
       text-align: center;
       color: #ff4500;
-      font-size: 2.2rem;
-      line-height: 3.2rem;
+      font-size: 2.4rem;
+      line-height: 3.5rem;
       display: none;
-      min-height: 6rem;
+      min-height: 12rem;
     }
 
     #description-text {
-      font-size: 2.5rem;
-      color: #ff4500;
+      font-size: 2.4rem;
+      color: #ff6600;
       font-weight: bold;
       line-height: 3.5rem;
       white-space: pre-line;
@@ -173,37 +172,48 @@
 
   function typeTextLoop(lines, textEl, descEl, i = 0) {
     if (i >= lines.length) i = 0;
-    let line = lines[i];
     const isAbout = i === 1;
 
     document.querySelector('.slider-container').style.opacity = isAbout ? '0.05' : '1';
     document.querySelector('.white-box').style.display = isAbout ? 'block' : 'none';
 
+    textEl.innerHTML = '';
+    descEl.textContent = '';
+
     if (isAbout) {
-      textEl.innerHTML = '';
-      descEl.textContent = '';
-      descEl.className = 'intro-line';
-      let idx = 0;
-      const interval = setInterval(() => {
-        descEl.textContent += line[idx];
-        idx++;
-        if (idx === line.length) {
-          clearInterval(interval);
+      const paragraphs = lines[i].split('\n');
+      let currentLine = 0;
+      function typeLine() {
+        if (currentLine >= paragraphs.length) {
           setTimeout(() => typeTextLoop(lines, textEl, descEl, i + 1), 6000);
+          return;
         }
-      }, 40);
+        let line = paragraphs[currentLine];
+        let span = document.createElement('span');
+        span.className = 'intro-line';
+        descEl.appendChild(span);
+        let idx = 0;
+        let interval = setInterval(() => {
+          span.textContent += line[idx];
+          idx++;
+          if (idx === line.length) {
+            clearInterval(interval);
+            descEl.appendChild(document.createElement("br"));
+            currentLine++;
+            setTimeout(typeLine, 600);
+          }
+        }, 40);
+      }
+      typeLine();
     } else {
-      descEl.textContent = '';
-      textEl.innerHTML = '';
       let span = document.createElement('span');
       span.className = 'intro-line';
       textEl.appendChild(span);
-
       let idx = 0;
-      const interval = setInterval(() => {
-        span.textContent += line[idx];
+      let interval = setInterval(() => {
+        span.textContent += lines[i][idx];
         idx++;
-        if (idx === line.length) {
+        if (idx === lines[i].length) {
           clearInterval(interval);
           setTimeout(() => typeTextLoop(lines, textEl, descEl, i + 1), 6000);
         }
