@@ -74,11 +74,11 @@
     #intro-text {
       text-align: center;
       font-family: 'Times New Roman', Times, serif;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       color: #00ced1;
       margin-top: 2rem;
       overflow: hidden;
-      min-height: 3rem;
+      min-height: 3.5rem;
     }
 
     .intro-line {
@@ -105,14 +105,17 @@
     }
 
     .white-box {
-      background-color: rgba(0, 0, 0, 0.85);
-      padding: 3rem;
-      max-width: 900px;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 4rem;
+      max-width: 1000px;
       margin: auto;
+      margin-top: -40vh;
       text-align: center;
       color: #ffcc99;
-      font-size: 1.6rem;
-      line-height: 2.4rem;
+      font-size: 2rem;
+      line-height: 3rem;
+      display: none;
+      border-radius: 8px;
     }
 
     footer {
@@ -142,7 +145,7 @@
 </div>
 
 <div class="white-box" id="about">
-  <h2>About Aznobil</h2>
+  <h2 style="color:#ffcc99;">About Aznobil</h2>
   <p id="description-text"></p>
 </div>
 
@@ -154,29 +157,26 @@
   const lines = [
     "Expert Mechanical Design & Consulting",
     "About Aznobil",
-    "That are accurate, cost effective and provide the best overall speed and performance.",
-    "Our wire EDMs feature user-friendly controls and internal designs that minimize downtime and reduce wear and tear for lower maintenance costs."
+    "We specialize in customized mechanical design solutions.",
+    "From concept to implementation, we ensure quality and efficiency.",
+    "Trusted by leading industries for over 14 years."
   ];
 
-  let slide = document.querySelector('.slide');
   let textEl = document.getElementById("intro-text");
   let descEl = document.getElementById("description-text");
 
   function typeTextLoop(lines, textEl, descEl, i = 0) {
     if (i >= lines.length) i = 0;
     let line = lines[i];
-    if (i === 1 || i === 2 || i === 3) {
-      document.querySelector('.slider-container').style.opacity = '0.2';
-      document.querySelector('.white-box').style.display = 'block';
-    } else {
-      document.querySelector('.slider-container').style.opacity = '1';
-      document.querySelector('.white-box').style.display = 'none';
-    }
+    const isAbout = i >= 1;
+    document.querySelector('.slider-container').style.opacity = isAbout ? '0.1' : '1';
+    document.querySelector('.white-box').style.display = isAbout ? 'block' : 'none';
 
     textEl.innerHTML = '';
     let span = document.createElement('span');
     span.className = 'intro-line';
     textEl.appendChild(span);
+
     let idx = 0;
     let interval = setInterval(() => {
       span.textContent += line[idx];
