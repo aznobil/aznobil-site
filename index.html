@@ -136,28 +136,14 @@
   <a href="#contact">Contact</a>
 </nav>
 
-<div class="slider-container">
+<div class="slider-container" id="slider-area">
   <img class="slide active" src="img1.jpg" alt="Project View">
   <div class="slide-caption" id="intro-text"></div>
 </div>
 
-<div class="blue-strip"></div>
-
 <div class="white-box" id="about">
   <h2>About Aznobil</h2>
   <p id="description-text"></p>
-</div>
-
-<div class="slider-container">
-  <img class="slide active" src="img1.jpg" alt="Project View Again">
-  <div class="slide-caption" id="intro-text2"></div>
-</div>
-
-<div class="blue-strip"></div>
-
-<div class="white-box">
-  <h2>About Aznobil</h2>
-  <p id="description-text2"></p>
 </div>
 
 <footer>
@@ -165,35 +151,36 @@
 </footer>
 
 <script>
-  const lines1 = [
+  const lines = [
     "Expert Mechanical Design & Consulting",
-    "that are accurate, cost effective and provide the best overall speed and performance.",
+    "About Aznobil",
+    "That are accurate, cost effective and provide the best overall speed and performance.",
     "Our wire EDMs feature user-friendly controls and internal designs that minimize downtime and reduce wear and tear for lower maintenance costs."
   ];
 
-  const lines2 = [...lines1]; // reuse same text loop for the second section
+  let slide = document.querySelector('.slide');
+  let textEl = document.getElementById("intro-text");
+  let descEl = document.getElementById("description-text");
 
-  function typeLines(lines, textEl, descEl, index = 0) {
-    if (index >= lines.length) return;
-    const span = document.createElement('span');
-    span.className = 'intro-line';
-    span.textContent = '';
+  function typeTextLoop(lines, textEl, descEl, i = 0) {
+    if (i >= lines.length) i = 0;
+    let line = lines[i];
     textEl.innerHTML = '';
+    let span = document.createElement('span');
+    span.className = 'intro-line';
     textEl.appendChild(span);
-
-    let charIdx = 0;
-    const interval = setInterval(() => {
-      span.textContent += lines[index][charIdx];
-      charIdx++;
-      if (charIdx >= lines[index].length) {
+    let idx = 0;
+    let interval = setInterval(() => {
+      span.textContent += line[idx];
+      idx++;
+      if (idx === line.length) {
         clearInterval(interval);
-        setTimeout(() => typeLines(lines, textEl, descEl, index + 1), 2000);
+        setTimeout(() => typeTextLoop(lines, textEl, descEl, i + 1), 3000);
       }
     }, 50);
   }
 
-  typeLines(lines1, document.getElementById("intro-text"), document.getElementById("description-text"));
-  typeLines(lines2, document.getElementById("intro-text2"), document.getElementById("description-text2"));
+  typeTextLoop(lines, textEl, descEl);
 </script>
 
 </body>
