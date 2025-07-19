@@ -165,10 +165,12 @@
     }
 
     @keyframes fadeImg {
-      0% { opacity: 1; }
-      49% { opacity: 1; }
-      50% { opacity: 0; }
-      100% { opacity: 1; }
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    .project img:hover {
+      animation: none;
     }
 
     .project-description {
@@ -212,11 +214,11 @@
 
   <div class="project-gallery" id="gallery">
     <div class="project">
+      <img src="img11.jpg" alt="Project 1" onmouseover="this.src='img12.jpg'" onmouseout="this.src='img11.jpg'">
       <div class="project-description">
         <h3>Project One</h3>
         <p>Design and installation of industrial piping system with advanced flow analysis.</p>
       </div>
-      <img src="img11.jpg" alt="Project 1" onmouseover="this.src='img12.jpg'" onmouseout="this.src='img11.jpg'">
     </div>
 
     <div class="project">
@@ -228,20 +230,18 @@
     </div>
 
     <div class="project">
+      <img src="img31.jpg" alt="Project 3" onmouseover="this.src='img32.jpg'" onmouseout="this.src='img31.jpg'">
       <div class="project-description">
         <h3>Project Three</h3>
         <p>Heat exchanger and storage tank integration for food-grade systems.</p>
       </div>
-      <img src="img31.jpg" alt="Project 3" onmouseover="this.src='img32.jpg'" onmouseout="this.src='img31.jpg'">
-    </div>
-
-    <div class="project">
-      <img src="img41.jpg" alt="Project 4" onmouseover="this.src='img42.jpg'" onmouseout="this.src='img41.jpg'">
-      <div class="project-description">
-        <h3>Project Four</h3>
-        <p>Welded piping layout and support analysis with code-compliant drawings.</p>
-      </div>
     </div>
   </div>
+
+  <footer id="contact">
+    <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
+    <p>📞 +1 (647) 326 0282<br>
+       ✉️ <a href="mailto:info@aznobil.ca" style="color:white">info@aznobil.ca</a></p>
+  </footer>
 </body>
 </html>
