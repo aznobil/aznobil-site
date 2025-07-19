@@ -30,17 +30,26 @@
       padding: 5px;
     }
 
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      flex-grow: 1;
+    }
+
     nav a {
-      margin: 0 1rem;
+      margin: 0 0.7rem;
       text-decoration: none;
       color: #002244;
       font-weight: bold;
       font-size: 1rem;
+      white-space: nowrap;
     }
 
     .white-strip {
-      height: 6px;
+      height: 12px;
       background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .hero {
