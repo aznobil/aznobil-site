@@ -200,39 +200,6 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
-  <div class="white-strip"></div>
-
-<section class="hero">
-  <div>
-    <h1>Industrial Mechanical Design | Analysis | Consulting</h1>
-    <p>From concept to commissioning, we deliver efficient, cost-effective mechanical design solutions.</p>
-  </div>
-</section>
-
-<div class="black-strip"></div>
-
-<div class="flex-container">
-  <div class="about" id="about">
-    <h2>About Aznobil</h2>
-    <p>
-      Our company specializes in the design of industrial piping systems and related equipment.
-      <span class="dots">...</span>
-      <span class="more-text">
-        We handle piping design for power plants, industrial, and commercial systems using Plant 3D, SolidWorks, and comply with Canadian codes. Our services include equipment design, stress analysis (Caesar II, ANSYS), and 3D deliverables.
-      </span>
-    </p>
-    <span class="show-more" onclick="toggleMore()">Read More</span>
-  </div>
-
-  <div class="services" id="services">
-    <h2>Our Services</h2>
-    <p>• Mechanical design and layout using Autodesk Plant 3D and SolidWorks<br>
-       • Stress analysis with Caesar II and ANSYS<br>
-       • Equipment sizing (pumps, tanks, exchangers)<br>
-       • Full project documentation and support</p>
-  </div>
-</div>
-
 
   <div class="white-strip"></div>
 
@@ -245,11 +212,78 @@
 
   <div class="black-strip"></div>
 
+  <div class="flex-container">
+    <div class="about" id="about">
+      <h2>About Aznobil</h2>
+      <p>
+        Our company specializes in the design of industrial piping systems and related equipment.
+        <span class="dots">...</span>
+        <span class="more-text">
+          We handle piping design for power plants, industrial, and commercial systems using Plant 3D, SolidWorks, and comply with Canadian codes. Our services include equipment design, stress analysis (Caesar II, ANSYS), and 3D deliverables.
+        </span>
+      </p>
+      <span class="show-more" onclick="toggleMore()">Read More</span>
+    </div>
+
+    <div class="services" id="services">
+      <h2>Our Services</h2>
+      <p>
+        • Mechanical design and layout using Autodesk Plant 3D and SolidWorks<br>
+        • Stress analysis with Caesar II and ANSYS<br>
+        • Equipment sizing (pumps, tanks, exchangers)<br>
+        • Full project documentation and support
+      </p>
+    </div>
+  </div>
+
+  <div class="project-gallery" id="gallery">
+    <div class="project">
+      <img src="img11.jpg" alt="Project 1" onmouseover="this.src='img12.jpg'" onmouseout="this.src='img11.jpg'">
+      <div class="project-description">
+        <h3>Project One</h3>
+        <p>Design and installation of industrial piping system with advanced flow analysis.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="img21.jpg" alt="Project 2" onmouseover="this.src='img22.jpg'" onmouseout="this.src='img21.jpg'">
+      <div class="project-description">
+        <h3>Project Two</h3>
+        <p>3D modeling of power plant piping systems using Plant 3D and SolidWorks.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="img31.jpg" alt="Project 3" onmouseover="this.src='img32.jpg'" onmouseout="this.src='img31.jpg'">
+      <div class="project-description">
+        <h3>Project Three</h3>
+        <p>Heat exchanger and storage tank integration for food-grade systems.</p>
+      </div>
+    </div>
+  </div>
 
   <footer id="contact">
     <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
     <p>📞 +1 (647) 326 0282<br>
        ✉️ <a href="mailto:info@aznobil.ca" style="color:white">info@aznobil.ca</a></p>
   </footer>
+
+  <script>
+    function toggleMore() {
+      const dots = document.querySelector('.dots');
+      const moreText = document.querySelector('.more-text');
+      const btn = document.querySelector('.show-more');
+
+      if (dots.style.display === 'none') {
+        dots.style.display = 'inline';
+        moreText.style.display = 'none';
+        btn.textContent = 'Read More';
+      } else {
+        dots.style.display = 'none';
+        moreText.style.display = 'inline';
+        btn.textContent = 'Read Less';
+      }
+    }
+  </script>
 </body>
 </html>
