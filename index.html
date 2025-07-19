@@ -39,7 +39,7 @@
     }
 
     nav a {
-      margin: 0 1.5rem;
+      margin: 0 1.2rem;
       text-decoration: none;
       color: #002244;
       font-weight: bold;
@@ -159,21 +159,51 @@
       font-weight: bold;
     }
 
+    .project-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      padding: 4rem 2rem;
+      background-color: #ffffff;
+    }
+
+    .project {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .project:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .project img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      animation: fadeImages 6s infinite;
+    }
+
+    .project-description {
+      flex: 1;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    @keyframes fadeImages {
+      0% { opacity: 1; content: url('image11.jpg'); }
+      50% { opacity: 0; }
+      51% { opacity: 0; content: url('image12.jpg'); }
+      100% { opacity: 1; content: url('image12.jpg'); }
+    }
+
     footer {
       background-color: #002244;
       color: white;
       text-align: center;
       padding: 1.5rem;
       font-size: 0.9rem;
-      position: relative;
-    }
-
-    .visitor-counter {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      font-size: 0.75rem;
-      color: #ccc;
     }
 
     footer a {
@@ -207,51 +237,39 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Aznobil Inc. Logo">
-    <nav>
-      <a href="#">Home</a>
-      <a href="#about">About us</a>
-      <a href="#services">Services</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <!-- existing content above -->
 
-  <div class="white-strip"></div>
-
-  <section class="hero">
-    <div>
-      <h1>We bring precision and performance into your engineering projects</h1>
-      <p>From concept to commissioning, we deliver efficient, cost-effective mechanical design solutions.</p>
-    </div>
-  </section>
-
-  <div class="black-strip"></div>
-
-  <div class="flex-container">
-    <div class="about" id="about">
-      <h2>About Aznobil</h2>
-      <p>
-        Our company specializes in the design of industrial piping systems and related equipment.
-        <span class="dots">...</span>
-        <span class="more-text">
-          This includes piping design for industrial, power plant, and building systems, carried out using Autodesk Plant 3D software. All designs are developed in compliance with Canadian and international standards, resulting in deliverables such as isometric drawings, bill of materials (BOM), material take-off (MTO), and pipe support details.
-          In addition to piping systems, we also design equipment using SolidWorks software. Notable examples include mixer tanks for the food and sanitary industries. All designed equipment complies with applicable standards in terms of functionality, stress analysis, material selection, and welding specifications. Standardized reports are issued for all design outputs.
-          Our expertise extends beyond design to include advanced stress analysis. We simulate fluid flow in various environments based on client requirements and address any resulting issues. For simulation and stress analysis, we use Caesar II and ANSYS software.
-          We also have substantial experience in the design and analysis of heat exchangers.
-          As described above, we possess extensive experience in mechanical design both within and outside of Canada. We would be honored to collaborate with you to achieve shared goals and are committed to delivering satisfaction throughout the course of your projects.
-        </span>
-      </p>
-      <span class="show-more" onclick="toggleMore()">Read More</span>
+  <div class="project-gallery">
+    <div class="project">
+      <div class="project-description">
+        <h3>Project One</h3>
+        <p>Design and installation of industrial piping system with advanced flow analysis.</p>
+      </div>
+      <img src="image11.jpg" alt="Project 1">
     </div>
 
-    <div class="services" id="services">
-      <h2>Our Services</h2>
-      <p>• Mechanical design and layout using Autodesk Plant 3D and SolidWorks<br>
-         • Stress analysis with Caesar II and ANSYS<br>
-         • Equipment sizing (pumps, tanks, exchangers)<br>
-         • Full project documentation and support</p>
+    <div class="project">
+      <img src="image21.jpg" alt="Project 2">
+      <div class="project-description">
+        <h3>Project Two</h3>
+        <p>3D modeling of power plant piping systems using Plant 3D and SolidWorks.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-description">
+        <h3>Project Three</h3>
+        <p>Heat exchanger and storage tank integration for food-grade systems.</p>
+      </div>
+      <img src="image31.jpg" alt="Project 3">
+    </div>
+
+    <div class="project">
+      <img src="image41.jpg" alt="Project 4">
+      <div class="project-description">
+        <h3>Project Four</h3>
+        <p>Welded piping layout and support analysis with code-compliant drawings.</p>
+      </div>
     </div>
   </div>
 
@@ -259,7 +277,6 @@
     <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
     <p>📞 +1 (647) 326 0282<br>
        ✉️ <a href="mailto:info@aznobil.ca">info@aznobil.ca</a></p>
-    <div class="visitor-counter">Visitors: 1</div>
   </footer>
 
   <script>
