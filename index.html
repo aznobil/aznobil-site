@@ -21,8 +21,8 @@
 
     header img {
       height: 50px;
-      border-radius: 50%; /* Makes the logo round */
-      background: rgba(255, 255, 255, 0.6); /* Optional glass effect */
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.6);
       padding: 5px;
     }
 
@@ -97,22 +97,23 @@
     }
 
     .section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
       padding: 4rem 2rem;
       background-color: #f5f5f5;
       text-align: center;
     }
 
-    .section > div {
-      flex: 1 1 250px;
-      margin: 1rem;
+    .section h2 {
+      font-size: 2rem;
+      color: #002244;
+      margin-bottom: 1.5rem;
     }
 
-    .section h2 {
-      font-size: 1.8rem;
-      color: #002244;
+    .section p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #444;
     }
 
     footer {
@@ -147,12 +148,6 @@
         font-size: 0.9rem;
       }
     }
-
-    @media (min-width: 1200px) {
-      .hero h1 {
-        font-size: 3rem;
-      }
-    }
   </style>
 </head>
 <body>
@@ -171,6 +166,25 @@
       <h1>We bring precision and performance into your engineering projects</h1>
       <p>From concept to commissioning, we deliver efficient, cost-effective mechanical design solutions.</p>
     </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Aznobil</h2>
+    <p>
+      Our company specializes in the design of industrial piping systems and related equipment. This includes piping design for industrial, power plant, and building systems, carried out using Autodesk Plant 3D software. All designs are developed in compliance with Canadian and international standards, resulting in deliverables such as isometric drawings, bill of materials (BOM), material take-off (MTO), and pipe support details.
+    </p>
+    <p>
+      In addition to piping systems, we also design equipment using SolidWorks software. Notable examples include mixer tanks for the food and sanitary industries. All designed equipment complies with applicable standards in terms of functionality, stress analysis, material selection, and welding specifications. Standardized reports are issued for all design outputs.
+    </p>
+    <p>
+      Our expertise extends beyond design to include advanced stress analysis. We simulate fluid flow in various environments based on client requirements and address any resulting issues. For simulation and stress analysis, we use Caesar II and ANSYS software.
+    </p>
+    <p>
+      We also have substantial experience in the design and analysis of heat exchangers.
+    </p>
+    <p>
+      As described above, we possess extensive experience in mechanical design both within and outside of Canada. We would be honored to collaborate with you to achieve shared goals and are committed to delivering satisfaction throughout the course of your projects.
+    </p>
   </section>
 
   <section class="section" id="services">
