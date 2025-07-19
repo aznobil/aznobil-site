@@ -3,239 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aznobil Inc. - Project Gallery</title>
+  <title>Aznobil Inc.</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
     }
 
     header {
       background-color: #87ceeb;
-      color: white;
       padding: 1rem 2rem;
       display: flex;
       align-items: center;
-      gap: 1rem;
+      justify-content: space-between;
     }
 
     header img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-    }
-
-    nav {
-      background-color: white;
-      padding: 1rem;
-      text-align: center;
+      height: 50px;
     }
 
     nav a {
-      color: #002244;
       margin: 0 1rem;
       text-decoration: none;
+      color: #002244;
       font-weight: bold;
+      font-size: 1rem;
     }
 
-    .slider-container {
+    .hero {
       position: relative;
-      width: 100%;
-      height: 65vh;
-      margin: 0 auto;
-      overflow: hidden;
-      transition: opacity 1s ease-in-out;
+      background: url('img1.jpg') center/cover no-repeat;
+      height: 90vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+      padding: 0 3rem;
     }
 
-    .slide {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 2s ease-in-out;
+    .hero h1 {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      font-weight: 900;
+      max-width: 800px;
     }
 
-    .slide.active {
-      opacity: 1;
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 700px;
+      margin-top: 1rem;
     }
 
-    .slide-caption {
-      position: absolute;
-      bottom: 30px;
-      width: 100%;
-      text-align: center;
-      font-size: 3rem;
-      font-weight: bold;
-      font-family: 'Times New Roman', Times, serif;
-      color: #00ced1;
-    }
-
-    #intro-text {
-      text-align: center;
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 3.2rem;
-      color: #00ced1;
-      margin-top: 2rem;
-      overflow: hidden;
-      min-height: 3.5rem;
-    }
-
-    .intro-line {
-      display: block;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: typing 3s steps(40, end), blink .75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    @keyframes blink {
-      from, to { border-color: transparent; }
-      50% { border-color: #00ced1; }
-    }
-
-    .blue-strip {
-      background-color: #87ceeb;
-      padding: 2rem;
+    .section {
+      display: flex;
+      justify-content: space-around;
+      padding: 4rem 2rem;
+      background-color: #f5f5f5;
       text-align: center;
     }
 
-    .white-box {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.2);
-      padding: 2rem;
-      width: 90%;
-      max-width: 1000px;
-      text-align: center;
-      color: #ff8c00;
-      font-size: 3.6rem;
-      line-height: 5rem;
-      display: none;
-      font-family: 'Times New Roman', Times, serif;
-      font-weight: bold;
-      z-index: 10;
-    }
-
-    #description-text {
-      font-size: 3.6rem;
-      color: #ff8c00;
-      font-family: 'Times New Roman', Times, serif;
-      font-weight: bold;
-      line-height: 5rem;
-      white-space: pre-line;
+    .section h2 {
+      font-size: 1.8rem;
+      color: #002244;
     }
 
     footer {
-      text-align: center;
-      padding: 1rem;
       background-color: #002244;
       color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+  <header>
+    <img src="logo.png" alt="Aznobil Inc. Logo">
+    <nav>
+      <a href="#">Home</a>
+      <a href="#about">About us</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<header>
-  <img src="logo.png" alt="Logo">
-  <h1>Aznobil Inc.</h1>
-</header>
+  <section class="hero">
+    <div>
+      <h1>We bring precision and performance into your engineering projects</h1>
+      <p>From concept to commissioning, we deliver efficient, cost-effective mechanical design solutions.</p>
+    </div>
+  </section>
 
-<nav>
-  <a href="#about">About Us</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <section class="section" id="services">
+    <div>
+      <h2>Mechanical Design</h2>
+      <p>Customized designs based on industrial standards and client needs.</p>
+    </div>
+    <div>
+      <h2>Equipment Sizing</h2>
+      <p>Expert calculation and selection of pumps, heat exchangers, and more.</p>
+    </div>
+    <div>
+      <h2>Project Support</h2>
+      <p>Full lifecycle support for engineering documentation and supervision.</p>
+    </div>
+  </section>
 
-<div class="slider-container" id="slider-area">
-  <img class="slide active" src="img1.jpg" alt="Project View">
-  <div class="slide-caption" id="intro-text"></div>
-</div>
-
-<div class="white-box" id="about">
-  <p id="description-text"></p>
-</div>
-
-<footer>
-  <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
-  <p>📞 +1 (647) 326 0282<br>
-     ✉️ <a href="mailto:info@aznobil.ca" style="color: white; text-decoration: underline;">info@aznobil.ca</a></p>
-</footer>
-
-<script>
-  const lines = [
-    "Expert Mechanical Design & Consulting",
-    "About Aznobil\nWe specialize in customized mechanical design solutions.\nFrom concept to implementation, we ensure quality and efficiency.\nTrusted by leading industries for over 14 years."
-  ];
-
-  let textEl = document.getElementById("intro-text");
-  let descEl = document.getElementById("description-text");
-
-  function typeTextLoop(lines, textEl, descEl, i = 0) {
-    if (i >= lines.length) i = 0;
-    let fullText = lines[i];
-    const isAbout = i === 1;
-
-    document.querySelector('.slider-container').style.opacity = isAbout ? '0.05' : '1';
-    document.querySelector('.white-box').style.display = isAbout ? 'flex' : 'none';
-
-    if (isAbout) {
-      descEl.innerHTML = '';
-      const parts = fullText.split('\n');
-      let currentLine = 0;
-      let charIndex = 0;
-
-      function typeLine() {
-        if (currentLine >= parts.length) {
-          setTimeout(() => typeTextLoop(lines, textEl, descEl, i + 1), 7000);
-          return;
-        }
-        let line = parts[currentLine];
-        let temp = '';
-        descEl.innerHTML += "<div id='line-" + currentLine + "'></div>";
-        const lineEl = document.getElementById('line-' + currentLine);
-
-        let typeInterval = setInterval(() => {
-          temp += line[charIndex];
-          lineEl.textContent = temp;
-          charIndex++;
-          if (charIndex >= line.length) {
-            clearInterval(typeInterval);
-            setTimeout(() => {
-              currentLine++;
-              charIndex = 0;
-              typeLine();
-            }, 1000);
-          }
-        }, 40);
-      }
-      typeLine();
-    } else {
-      textEl.innerHTML = '';
-      let span = document.createElement('span');
-      span.className = 'intro-line';
-      textEl.appendChild(span);
-      let idx = 0;
-      const interval = setInterval(() => {
-        span.textContent += fullText[idx];
-        idx++;
-        if (idx === fullText.length) {
-          clearInterval(interval);
-          setTimeout(() => typeTextLoop(lines, textEl, descEl, i + 1), 6000);
-        }
-      }, 50);
-    }
-  }
-
-  typeTextLoop(lines, textEl, descEl);
-</script>
-
+  <footer>
+    <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
+    <p>📞 +1 (647) 326 0282<br>
+       ✉️ <a href="mailto:info@aznobil.ca">info@aznobil.ca</a></p>
+  </footer>
 </body>
 </html>
