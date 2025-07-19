@@ -182,20 +182,12 @@
       width: 100%;
       max-width: 400px;
       border-radius: 8px;
-      animation: fadeImages 6s infinite;
     }
 
     .project-description {
       flex: 1;
       font-size: 1rem;
       color: #333;
-    }
-
-    @keyframes fadeImages {
-      0% { opacity: 1; content: url('image11.jpg'); }
-      50% { opacity: 0; }
-      51% { opacity: 0; content: url('image12.jpg'); }
-      100% { opacity: 1; content: url('image12.jpg'); }
     }
 
     footer {
@@ -277,6 +269,7 @@
     <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
     <p>📞 +1 (647) 326 0282<br>
        ✉️ <a href="mailto:info@aznobil.ca">info@aznobil.ca</a></p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">👥 Active visitors: <span id="visitor-count">3</span></p>
   </footer>
 
   <script>
