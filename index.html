@@ -116,6 +116,18 @@
       color: #444;
     }
 
+    .more-text {
+      display: none;
+    }
+
+    .show-more {
+      display: block;
+      color: #0077cc;
+      margin-top: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
     footer {
       background-color: #002244;
       color: white;
@@ -171,20 +183,17 @@
   <section class="section" id="about">
     <h2>About Aznobil</h2>
     <p>
-      Our company specializes in the design of industrial piping systems and related equipment. This includes piping design for industrial, power plant, and building systems, carried out using Autodesk Plant 3D software. All designs are developed in compliance with Canadian and international standards, resulting in deliverables such as isometric drawings, bill of materials (BOM), material take-off (MTO), and pipe support details.
+      Our company specializes in the design of industrial piping systems and related equipment.
+      <span class="dots">...</span>
+      <span class="more-text">
+        This includes piping design for industrial, power plant, and building systems, carried out using Autodesk Plant 3D software. All designs are developed in compliance with Canadian and international standards, resulting in deliverables such as isometric drawings, bill of materials (BOM), material take-off (MTO), and pipe support details.
+        In addition to piping systems, we also design equipment using SolidWorks software. Notable examples include mixer tanks for the food and sanitary industries. All designed equipment complies with applicable standards in terms of functionality, stress analysis, material selection, and welding specifications. Standardized reports are issued for all design outputs.
+        Our expertise extends beyond design to include advanced stress analysis. We simulate fluid flow in various environments based on client requirements and address any resulting issues. For simulation and stress analysis, we use Caesar II and ANSYS software.
+        We also have substantial experience in the design and analysis of heat exchangers.
+        As described above, we possess extensive experience in mechanical design both within and outside of Canada. We would be honored to collaborate with you to achieve shared goals and are committed to delivering satisfaction throughout the course of your projects.
+      </span>
     </p>
-    <p>
-      In addition to piping systems, we also design equipment using SolidWorks software. Notable examples include mixer tanks for the food and sanitary industries. All designed equipment complies with applicable standards in terms of functionality, stress analysis, material selection, and welding specifications. Standardized reports are issued for all design outputs.
-    </p>
-    <p>
-      Our expertise extends beyond design to include advanced stress analysis. We simulate fluid flow in various environments based on client requirements and address any resulting issues. For simulation and stress analysis, we use Caesar II and ANSYS software.
-    </p>
-    <p>
-      We also have substantial experience in the design and analysis of heat exchangers.
-    </p>
-    <p>
-      As described above, we possess extensive experience in mechanical design both within and outside of Canada. We would be honored to collaborate with you to achieve shared goals and are committed to delivering satisfaction throughout the course of your projects.
-    </p>
+    <span class="show-more" onclick="toggleMore()">Read More</span>
   </section>
 
   <section class="section" id="services">
@@ -207,5 +216,22 @@
     <p>📞 +1 (647) 326 0282<br>
        ✉️ <a href="mailto:info@aznobil.ca">info@aznobil.ca</a></p>
   </footer>
+
+  <script>
+    function toggleMore() {
+      const moreText = document.querySelector(".more-text");
+      const dots = document.querySelector(".dots");
+      const btn = document.querySelector(".show-more");
+      if (moreText.style.display === "inline") {
+        moreText.style.display = "none";
+        dots.style.display = "inline";
+        btn.innerText = "Read More";
+      } else {
+        moreText.style.display = "inline";
+        dots.style.display = "none";
+        btn.innerText = "Show Less";
+      }
+    }
+  </script>
 </body>
 </html>
