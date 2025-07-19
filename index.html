@@ -96,21 +96,27 @@
       to { opacity: 1 }
     }
 
-    .section {
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
       padding: 4rem 2rem;
       background-color: #f5f5f5;
-      text-align: center;
     }
 
-    .section h2 {
+    .about, .services {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about h2, .services h2 {
       font-size: 2rem;
       color: #002244;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
-    .section p {
-      max-width: 800px;
-      margin: 0 auto;
+    .about p, .services p {
       font-size: 1.1rem;
       line-height: 1.8;
       color: #444;
@@ -159,6 +165,10 @@
         margin: 0 0.5rem;
         font-size: 0.9rem;
       }
+
+      .flex-container {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -180,36 +190,31 @@
     </div>
   </section>
 
-  <section class="section" id="about">
-    <h2>About Aznobil</h2>
-    <p>
-      Our company specializes in the design of industrial piping systems and related equipment.
-      <span class="dots">...</span>
-      <span class="more-text">
-        This includes piping design for industrial, power plant, and building systems, carried out using Autodesk Plant 3D software. All designs are developed in compliance with Canadian and international standards, resulting in deliverables such as isometric drawings, bill of materials (BOM), material take-off (MTO), and pipe support details.
-        In addition to piping systems, we also design equipment using SolidWorks software. Notable examples include mixer tanks for the food and sanitary industries. All designed equipment complies with applicable standards in terms of functionality, stress analysis, material selection, and welding specifications. Standardized reports are issued for all design outputs.
-        Our expertise extends beyond design to include advanced stress analysis. We simulate fluid flow in various environments based on client requirements and address any resulting issues. For simulation and stress analysis, we use Caesar II and ANSYS software.
-        We also have substantial experience in the design and analysis of heat exchangers.
-        As described above, we possess extensive experience in mechanical design both within and outside of Canada. We would be honored to collaborate with you to achieve shared goals and are committed to delivering satisfaction throughout the course of your projects.
-      </span>
-    </p>
-    <span class="show-more" onclick="toggleMore()">Read More</span>
-  </section>
+  <div class="flex-container">
+    <div class="about" id="about">
+      <h2>About Aznobil</h2>
+      <p>
+        Our company specializes in the design of industrial piping systems and related equipment.
+        <span class="dots">...</span>
+        <span class="more-text">
+          This includes piping design for industrial, power plant, and building systems, carried out using Autodesk Plant 3D software. All designs are developed in compliance with Canadian and international standards, resulting in deliverables such as isometric drawings, bill of materials (BOM), material take-off (MTO), and pipe support details.
+          In addition to piping systems, we also design equipment using SolidWorks software. Notable examples include mixer tanks for the food and sanitary industries. All designed equipment complies with applicable standards in terms of functionality, stress analysis, material selection, and welding specifications. Standardized reports are issued for all design outputs.
+          Our expertise extends beyond design to include advanced stress analysis. We simulate fluid flow in various environments based on client requirements and address any resulting issues. For simulation and stress analysis, we use Caesar II and ANSYS software.
+          We also have substantial experience in the design and analysis of heat exchangers.
+          As described above, we possess extensive experience in mechanical design both within and outside of Canada. We would be honored to collaborate with you to achieve shared goals and are committed to delivering satisfaction throughout the course of your projects.
+        </span>
+      </p>
+      <span class="show-more" onclick="toggleMore()">Read More</span>
+    </div>
 
-  <section class="section" id="services">
-    <div>
-      <h2>Mechanical Design</h2>
-      <p>Customized designs based on industrial standards and client needs.</p>
+    <div class="services" id="services">
+      <h2>Our Services</h2>
+      <p>• Mechanical design and layout using Autodesk Plant 3D and SolidWorks<br>
+         • Stress analysis with Caesar II and ANSYS<br>
+         • Equipment sizing (pumps, tanks, exchangers)<br>
+         • Full project documentation and support</p>
     </div>
-    <div>
-      <h2>Equipment Sizing</h2>
-      <p>Expert calculation and selection of pumps, heat exchangers, and more.</p>
-    </div>
-    <div>
-      <h2>Project Support</h2>
-      <p>Full lifecycle support for engineering documentation and supervision.</p>
-    </div>
-  </section>
+  </div>
 
   <footer>
     <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
