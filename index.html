@@ -118,6 +118,30 @@
       color: #F1C40F;
       animation: fadeIn 4s ease-in-out;
     }
+    .slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 6px;
+  border: 3px solid black;
+  overflow: hidden;
+}
+
+.slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slideshow img.active {
+  opacity: 1;
+  position: relative;
+}
+
         @media (max-width: 768px) {
       .hero {
         padding: 1rem;
@@ -386,8 +410,12 @@
   <div class="project-gallery" id="gallery">
     <div class="project">
       <div class="image-box">
-  <img src="img11.jpg" alt="Project 1" onmouseover="this.src='img12.jpg'" onmouseout="this.src='img11.jpg'">
+ <div class="slideshow">
+  <img src="img11.jpg" alt="Project 1">
+  <img src="img12.jpg" alt="Project 1">
+  <img src="img13.jpg" alt="Project 1">
 </div>
+
 
       <div class="project-description">
         <h3>Project One</h3>
@@ -396,9 +424,12 @@
     </div>
 
     <div class="project">
-     <div class="image-box">
-  <img src="img21.jpg" alt="Project 1" onmouseover="this.src='img12.jpg'" onmouseout="this.src='img21.jpg'">
+   <div class="slideshow">
+  <img src="img21.jpg" alt="Project 1">
+  <img src="img22.jpg" alt="Project 1">
+  <img src="img23.jpg" alt="Project 1">
 </div>
+
 
       <div class="project-description">
         <h3>Project Two</h3>
@@ -407,9 +438,12 @@
     </div>
 
     <div class="project">
-     <div class="image-box">
-  <img src="img31.jpg" alt="Project 1" onmouseover="this.src='img12.jpg'" onmouseout="this.src='img31.jpg'">
+    <div class="slideshow">
+  <img src="img31.jpg" alt="Project 1">
+  <img src="img32.jpg" alt="Project 1">
+  <img src="img33.jpg" alt="Project 1">
 </div>
+
 
       <div class="project-description">
         <h3>Project Three</h3>
@@ -440,6 +474,20 @@
         btn.textContent = 'Read Less';
       }
     }
-  </script>
+  <script>
+  document.querySelectorAll('.slideshow').forEach(slideshow => {
+    const images = slideshow.querySelectorAll('img');
+    let index = 0;
+
+    images[index].classList.add('active');
+
+    setInterval(() => {
+      images[index].classList.remove('active');
+      index = (index + 1) % images.length;
+      images[index].classList.add('active');
+    }, 2000);
+  });
+</script>
+
 </body>
 </html>
