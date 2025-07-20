@@ -221,67 +221,6 @@ nav a {
      1px  1px 0 orange;
 }
 
-.map-container {
-  position: relative;
-  display: inline-block;
-}
-
-.map-container img {
-  max-width: 800px;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* نقاط متحرک (شهرها) */
-.marker {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  background-color: #C8102E;
-  border: 2px solid white;
-  border-radius: 50%;
-  animation: pulse 1.5s infinite;
-  z-index: 2;
-}
-
-/* موقعیت شهرها روی نقشه - درصد براساس تصویر */
-.toronto {
-  top: 55%;
-  left: 75%;
-}
-
-.vancouver {
-  top: 60%;
-  left: 13%;
-}
-
-.calgary {
-  top: 52%;
-  left: 35%;
-}
-
-.montreal {
-  top: 50%;
-  left: 80%;
-}
-
-/* انیمیشن پالس (چشمک) */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.6);
-    opacity: 0.4;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
 
 .canada-map-section {
   background: #f2f2f2;
