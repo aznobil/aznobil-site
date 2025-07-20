@@ -10,16 +10,21 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #333;
     }
-    .project .image-box {
-  background-color: white;         /* کادر سفید پشت عکس */
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);  /* سایه ملایم */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;   
-  max-width: 520px;
+   .image-box img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain; /* تصویر بدون کشیدگی */
+  border-radius: 6px;
+  border: 3px solid #ffffff;  /* قاب سفید دور عکس */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* سایه ملایم */
+  transition: transform 0.3s ease;
 }
+
+.image-box img:hover {
+  transform: scale(1.02); /* افکت زوم خیلی ملایم هنگام هاور */
+}
+
 
 
     header {
