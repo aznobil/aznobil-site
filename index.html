@@ -174,6 +174,13 @@
   gap: 3rem;
   padding: 2rem;
 }
+.project-gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
 
 .projects-section h2 {
   font-size: 2.5rem;
@@ -407,50 +414,44 @@
 
 
 
-  <div class="project-gallery" id="gallery">
-    <div class="project">
-      <div class="image-box">
- <div class="slideshow">
-  <img src="img11.jpg" alt="Project 1">
-  <img src="img12.jpg" alt="Project 1">
-  <img src="img13.jpg" alt="Project 1">
-</div>
-
-
-      <div class="project-description">
-        <h3>Project One</h3>
-        <p>Design and installation of industrial piping system with advanced flow analysis.</p>
-      </div>
-    </div>
-
-    <div class="project">
-   <div class="slideshow">
-  <img src="img21.jpg" alt="Project 1">
-  <img src="img22.jpg" alt="Project 1">
-  <img src="img23.jpg" alt="Project 1">
-</div>
-
-
-      <div class="project-description">
-        <h3>Project Two</h3>
-        <p>3D modeling of power plant piping systems using Plant 3D and SolidWorks.</p>
-      </div>
-    </div>
-
-    <div class="project">
+ <div class="project-gallery" id="gallery">
+  <div class="project">
     <div class="slideshow">
-  <img src="img31.jpg" alt="Project 1">
-  <img src="img32.jpg" alt="Project 1">
-  <img src="img33.jpg" alt="Project 1">
-</div>
-
-
-      <div class="project-description">
-        <h3>Project Three</h3>
-        <p>Heat exchanger and storage tank integration for food-grade systems.</p>
-      </div>
+      <img src="img11.jpg" alt="Project 1">
+      <img src="img12.jpg" alt="Project 1">
+      <img src="img13.jpg" alt="Project 1">
+    </div>
+    <div class="project-description">
+      <h3>Project One</h3>
+      <p>Design and installation of industrial piping system with advanced flow analysis.</p>
     </div>
   </div>
+
+  <div class="project">
+    <div class="slideshow">
+      <img src="img21.jpg" alt="Project 2">
+      <img src="img22.jpg" alt="Project 2">
+      <img src="img23.jpg" alt="Project 2">
+    </div>
+    <div class="project-description">
+      <h3>Project Two</h3>
+      <p>3D modeling of power plant piping systems using Plant 3D and SolidWorks.</p>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="slideshow">
+      <img src="img31.jpg" alt="Project 3">
+      <img src="img32.jpg" alt="Project 3">
+      <img src="img33.jpg" alt="Project 3">
+    </div>
+    <div class="project-description">
+      <h3>Project Three</h3>
+      <p>Heat exchanger and storage tank integration for food-grade systems.</p>
+    </div>
+  </div>
+</div>
+
 
   <footer id="contact">
     <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
@@ -458,23 +459,7 @@
        ✉️ <a href="mailto:info@aznobil.ca" style="color:white">info@aznobil.ca</a></p>
   </footer>
 
-  <script>
-    function toggleMore() {
-      const dots = document.querySelector('.dots');
-      const moreText = document.querySelector('.more-text');
-      const btn = document.querySelector('.show-more');
-
-      if (dots.style.display === 'none') {
-        dots.style.display = 'inline';
-        moreText.style.display = 'none';
-        btn.textContent = 'Read More';
-      } else {
-        dots.style.display = 'none';
-        moreText.style.display = 'inline';
-        btn.textContent = 'Read Less';
-      }
-    }
-  <script>
+ <script>
   document.querySelectorAll('.slideshow').forEach(slideshow => {
     const images = slideshow.querySelectorAll('img');
     let index = 0;
@@ -487,6 +472,8 @@
       images[index].classList.add('active');
     }, 2000);
   });
+</script>
+
 </script>
 
 </body>
