@@ -287,4 +287,115 @@
       });
     }, 4000); // 4 seconds
   </script>
+    <section class="canada-map-section" id="coverage">
+    <h2>Serving All Across Canada</h2>
+    <div class="map-container">
+      <img src="images/canada-map.png" alt="Canada Map" class="canada-map" />
+      <div class="pulse-dot" style="top: 85%; left: 60%;"></div> <!-- Ontario marker -->
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
+    <p>📞 +1 (647) 326 0282<br>
+       ✉️ <a href="mailto:info@aznobil.ca" style="color:white">info@aznobil.ca</a></p>
+  </footer>
+
+  <script>
+    // Typewriter effect for title
+    const titleText = "Industrial Mechanical Design | Analysis | Consulting";
+    const typingElement = document.getElementById("typing-text");
+    let i = 0;
+    function typeWriter() {
+      if (i < titleText.length) {
+        typingElement.innerHTML += titleText.charAt(i);
+        i++;
+        setTimeout(typeWriter, 80);
+      }
+    }
+    typeWriter();
+  </script>
+
+  <style>
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .project {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .slideshow {
+        height: 200px;
+      }
+
+      .project-desc {
+        text-align: center;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+
+      .hero h1 {
+        font-size: 1.4rem;
+      }
+
+      .project-desc p {
+        font-size: 13px;
+      }
+
+      .map-container {
+        padding: 0 1rem;
+      }
+
+      .logo-title {
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      .company-name {
+        font-size: 1.2rem;
+      }
+
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        font-size: 1rem;
+        margin: 0.3rem;
+      }
+
+      .hero {
+        height: 85vh;
+      }
+
+      .canada-map {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    /* Ensure header links scroll to correct position */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    #about,
+    #services,
+    #gallery,
+    #contact {
+      scroll-margin-top: 100px;
+    }
+
+    .canada-map {
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+  </style>
+</body>
+</html>
+
 
