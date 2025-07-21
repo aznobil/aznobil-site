@@ -165,12 +165,13 @@ nav a {
 .project-gallery {
   background-color: #d9d9d9;
   display: flex;
-  flex-direction: column;
-  align-items: center;   /* برای وسط‌چین کردن افقی */
+  flex-direction: row;           /* ← اینو بذار row */
+  flex-wrap: wrap;               /* ← برای اینکه رو موبایل بره زیر هم */
   justify-content: center;
-  gap: 3rem;
+  gap: 2rem;
   padding: 2rem;
 }
+
 
 
 .projects-section h2 {
