@@ -412,6 +412,19 @@
     #contact {
       scroll-margin-top: 100px; /* برای درستی اسکرول پس از کلیک */
     }
+    .slideshow img {
+  display: none;
+  max-width: 500px;
+  border-radius: 6px;
+  border: 3px solid #222;
+  object-fit: contain;
+  transition: opacity 0.5s ease;
+}
+
+.slideshow img.active {
+  display: block;
+}
+
 
   </style>
 </head>
