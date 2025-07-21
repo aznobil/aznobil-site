@@ -337,13 +337,37 @@ nav a {
     opacity: 0.7;
   }
 }
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid #F1C40F;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 1px;
+  animation:
+    typing 5s steps(50, end),
+    blink-caret 0.8s step-end infinite;
+  color: #F1C40F;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(255, 193, 7, 0.9);
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent }
+  50% { border-color: #F1C40F }
+}
 
 @media (max-width: 768px) {
-  .project {
-    flex-direction: column !important;
-    align-items: center;
-    text-align: center;
+  .typewriter {
+    font-size: 1.5rem;
+    animation: typing 4s steps(40, end), blink-caret 0.7s step-end infinite;
   }
+}
 
   .project .image-box {
     margin-bottom: 1rem;
@@ -523,12 +547,12 @@ nav a {
 
   <div class="white-strip"></div>
 
-  <section class="hero">
-    <div>
-      <h1>Industrial Mechanical Design | Analysis | Consulting</h1>
-      <p>From concept to commissioning, we deliver efficient, cost-effective mechanical design solutions.</p>
-    </div>
-  </section>
+<section class="hero">
+  <div>
+    <h1 class="typewriter">Industrial Mechanical Design | Analysis | Consulting</h1>
+    <p>From concept to commissioning, we deliver efficient, cost-effective mechanical design solutions.</p>
+  </div>
+</section>
 
   <div class="black-strip"></div>
 
