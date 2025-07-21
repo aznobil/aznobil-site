@@ -286,11 +286,16 @@ nav a {
 }
 
 @media (max-width: 768px) {
-  .typewriter {
-    font-size: 1.5rem;
-    animation: typing 4s steps(40, end), blink-caret 0.7s step-end infinite;
+  #typing-text {
+    font-size: 1.2rem;
+    white-space: normal;      /* ← بشکنه توی چند خط */
+    overflow: hidden;         /* ← جلوگیری از بیرون‌زدگی */
+    border-right: none;       /* مرز چشمک‌زن حذف بشه */
+    animation: none;          /* حذف انیمیشن تایپ در موبایل */
+    width: auto;
   }
 }
+
 
   .project .image-box {
     margin-bottom: 1rem;
