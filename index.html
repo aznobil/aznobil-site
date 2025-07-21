@@ -4,296 +4,561 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aznobil Inc.</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
+    .logo-title {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.company-name {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+}
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
     }
+   .image-box img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain; /* تصویر بدون کشیدگی */
+  border-radius: 6px;
+  border: 3px solid #ffffff;  /* قاب سفید دور عکس */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* سایه ملایم */
+  transition: transform 0.3s ease;
+}
+
+.image-box img:hover {
+  transform: scale(1.02); /* افکت زوم خیلی ملایم هنگام هاور */
+}
+
+
 
     header {
-      background-color: #c8102e;
-      padding: 10px 20px;
+      background-color: #C8102E;
+      padding: 1rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: sticky;
+      position: fixed;
+      width: 100%;
       top: 0;
-      z-index: 999;
+      z-index: 1000;
     }
 
-    header .logo {
-      display: flex;
-      align-items: center;
+    header img {
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 5px;
     }
 
-    header .logo img {
-      height: 40px;
-      margin-right: 10px;
-    }
-
-    header .logo span {
-      color: white;
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      padding: 3px 8px;
-      border: 1px solid white;
-      border-radius: 4px;
-      font-size: 15px;
-    }
-
-    nav a:hover {
-      background-color: white;
-      color: #c8102e;
-    }
-
-    .hero {
-      background: url('img1.jpg') center/cover no-repeat;
-      height: 80vh;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .hero h1 {
-      font-size: 36px;
-      color: #ffd700;
-      animation: typing 4s steps(40, end) forwards;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid #ffd700;
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    .hero p {
-      margin-top: 15px;
-      font-size: 16px;
-      color: #ffffff;
-    }
-
-    .section {
-      padding: 40px 20px;
-      background-color: #fff;
-    }
-
-    .section h2 {
-      text-align: center;
-      font-size: 28px;
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    .content-row {
+    nav {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: flex-end;
+      flex-grow: 1;
+      padding-right: 5rem;
     }
 
-    .content-block {
-      flex: 1 1 300px;
-      margin: 10px;
-      padding: 20px;
+nav a {
+  margin: 0 1.2rem;
+  text-decoration: none;
+  color: #C8102E;
+  font-weight: bold;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  font-family: 'Times New Roman', Times, serif;
+
+  text-shadow:
+    -1px -1px 0 white,
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white;
+}
+
+
+    .white-strip {
+      height: 12px;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    @media (max-width: 768px) {
+.hero {
+  background: url('img1.jpg') center/cover no-repeat;
+  height: 100vh; /* کاملاً به اندازه صفحه نمایش */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  margin-top: 86px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* تیره‌کننده بک‌گراند */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
+}
+
+#typing-text {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #F1C40F;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #F1C40F;
+  width: 0;
+  animation: typing 6s steps(45, end) forwards, blink 0.75s step-end infinite;
+  text-shadow: 0 0 8px rgba(255, 255, 0, 0.6);
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #F1C40F; }
+}
+
+        @media (max-width: 768px) {
+      .hero {
+        padding: 1rem;
+        height: auto;
+      }
+
       .hero h1 {
-        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 1.4;
+        border: none;
+        white-space: normal;
+        overflow: visible;
       }
 
-      nav a {
-        font-size: 13px;
-        padding: 2px 6px;
+      .hero p {
+        font-size: 1rem;
+        margin-top: 1rem;
       }
     }
+   .projects-section {
+  background-color: #d9d9d9; /* خاکستری پررنگ‌تر */
+  padding: 4rem 2rem 1rem;
+  text-align: center;
+}
+
+.project-gallery {
+  background-color: #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* برای وسط‌چین کردن افقی */
+  justify-content: center;
+  gap: 3rem;
+  padding: 2rem;
+}
+
+
+.projects-section h2 {
+  font-size: 2.5rem;
+  color: white; /* رنگ اصلی متن */
+  margin-bottom: 1rem;
+  text-shadow:
+    -1px -1px 0 orange,
+     1px -1px 0 orange,
+    -1px  1px 0 orange,
+     1px  1px 0 orange;
+}
+
+
+.underline-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #C8102E;
+  margin: 0 auto 2rem auto;
+}
+    .map-section {
+  background: linear-gradient(to right, #f0f0f0, #ffffff);
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.map-section h2 {
+  font-size: 2.5rem;
+  color: #C8102E;
+  margin-bottom: 2rem;
+  text-shadow:
+    -1px -1px 0 orange,
+     1px -1px 0 orange,
+    -1px  1px 0 orange,
+     1px  1px 0 orange;
+}
+
+
+.canada-map-section {
+  background: #f2f2f2;
+  text-align: center;
+  padding: 4rem 1rem;
+  position: relative;
+}
+
+.canada-map-section h2 {
+  color: #C8102E;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+
+.map-container {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.canada-map {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.pulse-dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #FF5722;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+}
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid #F1C40F;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 1px;
+  animation:
+    typing 5s steps(50, end),
+    blink-caret 0.8s step-end infinite;
+  color: #F1C40F;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(255, 193, 7, 0.9);
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent }
+  50% { border-color: #F1C40F }
+}
+
+@media (max-width: 768px) {
+  .typewriter {
+    font-size: 1.5rem;
+    animation: typing 4s steps(40, end), blink-caret 0.7s step-end infinite;
+  }
+}
+
+  .project .image-box {
+    margin-bottom: 1rem;
+  }
+
+  .project-description {
+    max-width: 100%;
+  }
+
+  .project-gallery {
+    padding: 2rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    border: none;
+    white-space: normal;
+    overflow: visible;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .hero {
+    padding: 1rem;
+    height: auto;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+  }
+
+  nav {
+    justify-content: flex-start;
+    padding-right: 0;
+  }
+
+  nav a {
+    font-size: 1rem;
+    margin: 0 0.5rem;
+  }
+}
+
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0 }
+      to { opacity: 1 }
+    }
+
+    .black-strip {
+      height: 8px;
+      background-color: #C8102E;
+    }
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 4rem 2rem;
+      background-color: #f5f5f5;
+    }
+
+    .about, .services {
+      flex: 1;
+      min-width: 300px;
+    }
+
+
+   .project {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* برای چسبیدن به هم و وسط‌چینی */
+  gap: 1rem; /* فاصله کم بین متن و عکس */
+  flex-wrap: nowrap;
+  margin-bottom: 3rem;
+}
+
+.project:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.project img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 6px;
+  border: 3px solid #222;  /* حاشیه قرمز دور عکس */
+  object-fit: contain;
+}
+
+
+.project-description {
+  flex: 1;
+  font-size: 1rem;
+  color: #333;
+  max-width: 500px;
+}
+
+
+    @keyframes fadeImg {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    .project img:hover {
+      animation: none;
+    }
+
+    .project-description {
+      flex: 1;
+      font-size: 1rem;
+      color: #333;
+      max-width: 500px;
+    }
+
+    footer {
+      background-color: #002244;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .project-title-section {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.project-title {
+  font-size: 2.5rem;
+  color: #C8102E;
+  margin-bottom: 0.5rem;
+}
+
+.underline-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #C8102E;
+  margin: 0 auto 2rem auto;
+}
+#about,
+#services,
+#gallery,
+#contact {
+  scroll-margin-top: 100px; /* به اندازه ارتفاع هدر ثابت */
+}
+
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">
-      <img src="logo.png" alt="Aznobil Logo" />
-      <span>Aznobil Inc.</span>
-    </div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About us</a>
-      <a href="#services">Services</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </nav>
+   <div class="logo-title">
+    <img src="logo.png" alt="Aznobil Inc. Logo">
+    <span class="company-name">Aznobil Inc.</span>
+  </div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About us</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
   </header>
 
-  <section class="hero" id="home">
-    <h1>Industrial Mechanical Design | Analysis | Consulting</h1>
+  <div class="white-strip"></div>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1 id="typing-text"></h1>
     <p>From concept to commissioning, we deliver efficient, cost-effective mechanical design solutions.</p>
-  </section>
+  </div>
+</section>
 
-  <section class="section" id="about">
-    <h2>About Aznobil</h2>
-    <div class="content-row">
-      <div class="content-block">
-        <p>
-          Our company specializes in the design of industrial piping systems and related equipment.
-          We handle piping design for power plants, industrial, and commercial systems using Plant 3D,
-          SolidWorks, and comply with Canadian codes. Our services include equipment design, stress
-          analysis (Caesar II, ANSYS), and 3D deliverables.
-        </p>
-      </div>
+  <div class="black-strip"></div>
+
+  <div class="flex-container">
+    <div class="about" id="about">
+      <h2>About Aznobil</h2>
+      <p>
+        Our company specializes in the design of industrial piping systems and related equipment.
+        <span class="dots">...</span>
+        <span class="more-text">
+          We handle piping design for power plants, industrial, and commercial systems using Plant 3D, SolidWorks, and comply with Canadian codes. Our services include equipment design, stress analysis (Caesar II, ANSYS), and 3D deliverables.
+        </span>
+      </p>
+      <span class="show-more" onclick="toggleMore()">Read More</span>
     </div>
-  </section>
-    <section class="section" id="services">
-    <h2>Our Services</h2>
-    <div class="content-row">
-      <div class="content-block">
-        <ul>
-          <li>Mechanical design and layout using Autodesk Plant 3D and SolidWorks</li>
-          <li>Stress analysis with Caesar II and ANSYS</li>
-          <li>Equipment sizing (pumps, tanks, exchangers)</li>
-          <li>Full project documentation and support</li>
-        </ul>
-      </div>
+
+    <div class="services" id="services">
+      <h2>Our Services</h2>
+      <p>
+        • Mechanical design and layout using Autodesk Plant 3D and SolidWorks<br>
+        • Stress analysis with Caesar II and ANSYS<br>
+        • Equipment sizing (pumps, tanks, exchangers)<br>
+        • Full project documentation and support
+      </p>
     </div>
-  </section>
+  </div>
+<section class="projects-section">
+  <h2>Our Projects</h2>
+  <div class="underline-bar"></div>
+</section>
+  
 
-  <section class="section" id="gallery">
-    <h2 style="color: orange; text-shadow: 1px 1px 1px #000;">Our Projects</h2>
-    <div class="projects">
-      <div class="project">
-        <div class="slideshow">
-          <img src="img11.jpg" class="slide active">
-          <img src="img12.jpg" class="slide">
-          <img src="img13.jpg" class="slide">
-        </div>
-        <div class="project-desc">
-          <h3>Project One</h3>
-          <p>Design and installation of industrial piping system with advanced flow analysis.</p>
-        </div>
-      </div>
 
-      <div class="project">
-        <div class="slideshow">
-          <img src="images/project2-1.jpg" class="slide active">
-          <img src="images/project2-2.jpg" class="slide">
-          <img src="images/project2-3.jpg" class="slide">
-        </div>
-        <div class="project-desc">
-          <h3>Project Two</h3>
-          <p>3D modeling of power plant piping systems using Plant 3D and SolidWorks.</p>
-        </div>
-      </div>
 
-      <div class="project">
-        <div class="slideshow">
-          <img src="images/project3-1.jpg" class="slide active">
-          <img src="images/project3-2.jpg" class="slide">
-          <img src="images/project3-3.jpg" class="slide">
-        </div>
-        <div class="project-desc">
-          <h3>Project Three</h3>
-          <p>Food-grade tank and mixer modeling in SolidWorks with hygienic standards.</p>
-        </div>
-      </div>
 
-      <div class="project">
-        <div class="slideshow">
-          <img src="images/project4-1.jpg" class="slide active">
-          <img src="images/project4-2.jpg" class="slide">
-          <img src="images/project4-3.jpg" class="slide">
-        </div>
-        <div class="project-desc">
-          <h3>Project Four</h3>
-          <p>Mechanical room layout and skid design for compact energy recovery systems.</p>
-        </div>
-      </div>
+ <div class="project-gallery" id="gallery">
+  <div class="project">
+    <div class="slideshow">
+      <img src="img11.jpg" alt="Project 1">
+      <img src="img12.jpg" alt="Project 1">
+      <img src="img13.jpg" alt="Project 1">
     </div>
-  </section>
-
-  <style>
-    .projects {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    .project {
-      background-color: #eee;
-      border-radius: 8px;
-      overflow: hidden;
-      max-width: 350px;
-      padding-bottom: 10px;
-    }
-
-    .slideshow {
-      position: relative;
-      width: 100%;
-      height: 250px;
-      overflow: hidden;
-    }
-
-    .slideshow img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-
-    .slideshow img.active {
-      opacity: 1;
-    }
-
-    .project-desc {
-      padding: 10px 15px;
-    }
-
-    .project-desc h3 {
-      margin-top: 0;
-      color: #333;
-    }
-
-    .project-desc p {
-      margin: 5px 0 0 0;
-      font-size: 14px;
-      color: #555;
-    }
-  </style>
-
-  <script>
-    // Slide show timer
-    setInterval(() => {
-      document.querySelectorAll('.slideshow').forEach(slideshow => {
-        const slides = slideshow.querySelectorAll('.slide');
-        let index = Array.from(slides).findIndex(s => s.classList.contains('active'));
-        slides[index].classList.remove('active');
-        slides[(index + 1) % slides.length].classList.add('active');
-      });
-    }, 4000); // 4 seconds
-  </script>
-    <section class="canada-map-section" id="coverage">
-    <h2>Serving All Across Canada</h2>
-    <div class="map-container">
-      <img src="canada-map.png" alt="Canada Map" class="canada-map" />
-      <div class="pulse-dot" style="top: 85%; left: 60%;"></div> <!-- Ontario marker -->
+    <div class="project-description">
+      <h3>Project One</h3>
+      <p>Design and installation of industrial piping system with advanced flow analysis.</p>
     </div>
-  </section>
+  </div>
+
+  <div class="project">
+    <div class="slideshow">
+      <img src="img21.jpg" alt="Project 2">
+      <img src="img22.jpg" alt="Project 2">
+      <img src="img23.jpg" alt="Project 2">
+    </div>
+    <div class="project-description">
+      <h3>Project Two</h3>
+      <p>3D modeling of power plant piping systems using Plant 3D and SolidWorks.</p>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="slideshow">
+      <img src="img31.jpg" alt="Project 3">
+      <img src="img32.jpg" alt="Project 3">
+      <img src="img33.jpg" alt="Project 3">
+    </div>
+    <div class="project-description">
+      <h3>Project Three</h3>
+      <p>Heat exchanger and storage tank integration for food-grade systems.</p>
+    </div>
+  </div>
+
+</div>
+<section class="canada-map-section">
+  <h2>Serving All Across Canada</h2>
+  <div class="map-container">
+    <img src="canada-map.png" alt="Canada Map" class="canada-map" />
+    <div class="pulse-dot" style="top: 85%; left: 60%;"></div> <!-- ON -->
+  </div>
+</section>
+
+
+
+
 
   <footer id="contact">
     <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
@@ -301,101 +566,26 @@
        ✉️ <a href="mailto:info@aznobil.ca" style="color:white">info@aznobil.ca</a></p>
   </footer>
 
-  <script>
-    // Typewriter effect for title
-    const titleText = "Industrial Mechanical Design | Analysis | Consulting";
-    const typingElement = document.getElementById("typing-text");
-    let i = 0;
-    function typeWriter() {
-      if (i < titleText.length) {
-        typingElement.innerHTML += titleText.charAt(i);
-        i++;
-        setTimeout(typeWriter, 80);
-      }
-    }
-    typeWriter();
-  </script>
+ <script>
+  document.querySelectorAll('.slideshow').forEach(slideshow => {
+    const images = slideshow.querySelectorAll('img');
+    let index = 0;
 
-  <style>
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .project {
-        flex-direction: column;
-        align-items: center;
-      }
+    images[index].classList.add('active');
 
-      .slideshow {
-        height: 200px;
-      }
+    setInterval(() => {
+      images[index].classList.remove('active');
+      index = (index + 1) % images.length;
+      images[index].classList.add('active');
+    }, 4000);
+  });
+</script>
+<script>
+  const text = "Industrial Mechanical Design | Analysis | Consulting";
+  document.getElementById("typing-text").textContent = text;
+</script>
 
-      .project-desc {
-        text-align: center;
-      }
+</script>
 
-      .hero-content p {
-        font-size: 1rem;
-        padding: 0 1rem;
-      }
-
-      .hero h1 {
-        font-size: 1.4rem;
-      }
-
-      .project-desc p {
-        font-size: 13px;
-      }
-
-      .map-container {
-        padding: 0 1rem;
-      }
-
-      .logo-title {
-        flex-direction: column;
-        gap: 0.3rem;
-      }
-
-      .company-name {
-        font-size: 1.2rem;
-      }
-
-      nav {
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      nav a {
-        font-size: 1rem;
-        margin: 0.3rem;
-      }
-
-      .hero {
-        height: 85vh;
-      }
-
-      .canada-map {
-        max-width: 100%;
-        height: auto;
-      }
-    }
-
-    /* Ensure header links scroll to correct position */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    #about,
-    #services,
-    #gallery,
-    #contact {
-      scroll-margin-top: 100px;
-    }
-
-    .canada-map {
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-  </style>
 </body>
 </html>
-
-
