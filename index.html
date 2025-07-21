@@ -290,8 +290,11 @@ nav a {
     font-size: 1.3rem;
     width: 90vw;
     max-width: 320px;
-    white-space: nowrap;
+    white-space: normal;        /* ← اجازه شکست خط */
+    word-break: break-word;     /* ← شکستن کلمات طولانی */
     overflow: hidden;
+    border-right: none;         /* ← حذف انیمیشن چشمک‌زن در موبایل */
+    animation: none;            /* ← غیرفعال کردن انیمیشن تایپ */
   }
 }
 
