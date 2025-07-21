@@ -510,50 +510,38 @@ nav a {
 
 
 
- <div class="project-gallery" id="gallery">
-  <div class="project">
+<div class="project-gallery" id="gallery">
+  <div class="project-card">
     <div class="slideshow">
-      <img src="img11.jpg" alt="Project 1">
-      <img src="img12.jpg" alt="Project 1">
-      <img src="img13.jpg" alt="Project 1">
+      <img src="img11.jpg" class="slide active" alt="Project One 1">
+      <img src="img12.jpg" class="slide" alt="Project One 2">
+      <img src="img13.jpg" class="slide" alt="Project One 3">
     </div>
-    <div class="project-description">
-      <h3>Project One</h3>
-      <p>Design and installation of industrial piping system with advanced flow analysis.</p>
-    </div>
+    <h3>Project One</h3>
+    <p>Design and installation of industrial piping system with advanced flow analysis.</p>
   </div>
 
-  <div class="project">
+  <div class="project-card">
     <div class="slideshow">
-      <img src="img21.jpg" alt="Project 2">
-      <img src="img22.jpg" alt="Project 2">
-      <img src="img23.jpg" alt="Project 2">
+      <img src="img21.jpg" class="slide active" alt="Project Two 1">
+      <img src="img22.jpg" class="slide" alt="Project Two 2">
+      <img src="img23.jpg" class="slide" alt="Project Two 3">
     </div>
-    <div class="project-description">
-      <h3>Project Two</h3>
-      <p>3D modeling of power plant piping systems using Plant 3D and SolidWorks.</p>
-    </div>
+    <h3>Project Two</h3>
+    <p>3D modeling of power plant piping systems using Plant 3D and SolidWorks.</p>
   </div>
 
-  <div class="project">
+  <div class="project-card">
     <div class="slideshow">
-      <img src="img31.jpg" alt="Project 3">
-      <img src="img32.jpg" alt="Project 3">
-      <img src="img33.jpg" alt="Project 3">
+      <img src="img31.jpg" class="slide active" alt="Project Three 1">
+      <img src="img32.jpg" class="slide" alt="Project Three 2">
+      <img src="img33.jpg" class="slide" alt="Project Three 3">
     </div>
-    <div class="project-description">
-      <h3>Project Three</h3>
-      <p>Heat exchanger and storage tank integration for food-grade systems.</p>
-    </div>
+    <h3>Project Three</h3>
+    <p>Food-grade tank and mixer modeling in SolidWorks with hygienic standards.</p>
   </div>
-
 </div>
-<section class="canada-map-section">
-  <h2>Serving All Across Canada</h2>
-  <div class="map-container">
-    <img src="canada-map.png" alt="Canada Map" class="canada-map" />
-    <div class="pulse-dot" style="top: 85%; left: 60%;"></div> <!-- ON -->
-  </div>
+
 </section>
 
 
@@ -583,6 +571,18 @@ nav a {
 <script>
   const text = "Industrial Mechanical Design | Analysis | Consulting";
   document.getElementById("typing-text").textContent = text;
+</script>
+<script>
+  document.querySelectorAll('.slideshow').forEach(slideshow => {
+    const slides = slideshow.querySelectorAll('.slide');
+    let index = 0;
+
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 3000);
+  });
 </script>
 
 </script>
