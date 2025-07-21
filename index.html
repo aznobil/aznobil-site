@@ -10,7 +10,7 @@
   align-items: center;
   gap: 0.7rem;
 }
-
+ل
 .company-name {
   color: white;
   font-size: 1.5rem;
@@ -510,18 +510,18 @@ nav a {
 
 
 
-<section class="projects-section">
+<section class="projects-section" id="gallery">
   <h2>Our Projects</h2>
   <div class="underline-bar"></div>
 
-  <div class="project-gallery" id="gallery" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
-    
-    <!-- Project 1 -->
-    <div class="project-card" style="width: 300px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-      <div class="slideshow-container">
-        <img src="img11.jpg" class="slide" style="width:100%">
-        <img src="img12.jpg" class="slide" style="width:100%">
-        <img src="img13.jpg" class="slide" style="width:100%">
+  <div class="project-gallery" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+
+    <!-- یک پروژه -->
+    <div class="project-card" style="width: 320px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff;">
+      <div class="slideshow-container" style="position: relative;">
+        <img src="img11.jpg" class="slide" style="width: 100%; display: block;" />
+        <img src="img12.jpg" class="slide" style="width: 100%; display: none;" />
+        <img src="img13.jpg" class="slide" style="width: 100%; display: none;" />
       </div>
       <div style="padding: 1rem;">
         <h3>Project One</h3>
@@ -529,12 +529,12 @@ nav a {
       </div>
     </div>
 
-    <!-- Project 2 -->
-    <div class="project-card" style="width: 300px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-      <div class="slideshow-container">
-        <img src="img21.jpg" class="slide" style="width:100%">
-        <img src="img22.jpg" class="slide" style="width:100%">
-        <img src="img23.jpg" class="slide" style="width:100%">
+    <!-- پروژه دوم -->
+    <div class="project-card" style="width: 320px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff;">
+      <div class="slideshow-container" style="position: relative;">
+        <img src="img21.jpg" class="slide" style="width: 100%; display: block;" />
+        <img src="img22.jpg" class="slide" style="width: 100%; display: none;" />
+        <img src="img23.jpg" class="slide" style="width: 100%; display: none;" />
       </div>
       <div style="padding: 1rem;">
         <h3>Project Two</h3>
@@ -542,12 +542,12 @@ nav a {
       </div>
     </div>
 
-    <!-- Project 3 -->
-    <div class="project-card" style="width: 300px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-      <div class="slideshow-container">
-        <img src="img31.jpg" class="slide" style="width:100%">
-        <img src="img32.jpg" class="slide" style="width:100%">
-        <img src="img33.jpg" class="slide" style="width:100%">
+    <!-- پروژه سوم -->
+    <div class="project-card" style="width: 320px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff;">
+      <div class="slideshow-container" style="position: relative;">
+        <img src="img31.jpg" class="slide" style="width: 100%; display: block;" />
+        <img src="img32.jpg" class="slide" style="width: 100%; display: none;" />
+        <img src="img33.jpg" class="slide" style="width: 100%; display: none;" />
       </div>
       <div style="padding: 1rem;">
         <h3>Project Three</h3>
@@ -557,6 +557,7 @@ nav a {
 
   </div>
 </section>
+
 
 
 <section class="canada-map-section">
@@ -594,6 +595,18 @@ nav a {
 <script>
   const text = "Industrial Mechanical Design | Analysis | Consulting";
   document.getElementById("typing-text").textContent = text;
+</script>
+<script>
+  // همه پروژه‌ها را پیدا می‌کنیم
+  document.querySelectorAll(".slideshow-container").forEach(container => {
+    const slides = container.querySelectorAll(".slide");
+    let index = 0;
+
+    setInterval(() => {
+      slides.forEach((img, i) => img.style.display = i === index ? 'block' : 'none');
+      index = (index + 1) % slides.length;
+    }, 4000);
+  });
 </script>
 
 </script>
