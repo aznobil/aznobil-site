@@ -490,6 +490,32 @@ nav a {
 #contact {
   scroll-margin-top: 100px; /* به اندازه ارتفاع هدر ثابت */
 }
+#fade-text {
+  color: #F1C40F;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0;
+  animation: fadeInText 3s ease-in-out forwards;
+  text-shadow: 0 0 8px rgba(255, 193, 7, 0.7);
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  #fade-text {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
 
   </style>
 </head>
