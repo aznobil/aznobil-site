@@ -307,15 +307,19 @@ nav a {
 
 .marquee-content {
   display: flex;
-  gap: 3rem;
+  gap: 4vw;                   /* فاصله نسبی */
   animation: scroll-left 30s linear infinite;
   align-items: center;
 }
 
 .marquee-content img {
-  height: 60px;
+  max-height: 8vh;           /* تصویر حداکثر 8 درصد ارتفاع صفحه */
+  height: auto;
+  width: auto;
+  object-fit: contain;
   transition: transform 0.3s ease;
 }
+
 
 .marquee-content img:hover {
   transform: scale(1.1);
