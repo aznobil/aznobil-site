@@ -136,6 +136,19 @@ nav a {
   0%, 100% { border-color: transparent; }
   50% { border-color: #F1C40F; }
 }
+.fade-in-text {
+  color: orange;
+  opacity: 0;
+  animation: fadeInText 2.5s ease-in forwards;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+@keyframes fadeInText {
+  to {
+    opacity: 1;
+  }
+}
 
         @media (max-width: 768px) {
       .hero {
@@ -482,7 +495,7 @@ nav a {
 <section class="hero">
   <div class="hero-content">
     <h1 id="typing-text"></h1>
-    <p>From concept to commissioning, we deliver efficient, cost-effective mechanical design solutions.</p>
+    <p class="fade-in-text">From concept to commissioning, we deliver efficient, cost-effective mechanical design solutions.</p>
   </div>
 </section>
 
