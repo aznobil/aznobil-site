@@ -491,6 +491,23 @@
   border-radius: 6px;
   object-fit: contain;
 }
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+}
+
+.slide {
+  width: 100%;
+  display: none;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+}
+
 502.   </style>
 503. </head>
 504. <body>
@@ -597,6 +614,19 @@
 597.       }, 4000);
 598.     });
 599.   </script>
+<script>
+  document.querySelectorAll(".slideshow-container").forEach(container => {
+    const slides = container.querySelectorAll(".slide");
+    let index = 0;
+    slides[index].classList.add("active");
+
+    setInterval(() => {
+      slides[index].classList.remove("active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("active");
+    }, 4000);
+  });
+</script>
 
 600. </body>
 601. </html>
