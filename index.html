@@ -482,4 +482,119 @@
 498.         white-space: normal;
 499.         overflow: visible;
 500.       }
+  501.     }
+502.   </style>
+503. </head>
+504. <body>
+505.   <header>
+506.     <div class="logo-title">
+507.       <img src="logo.png" alt="Aznobil Inc. Logo">
+508.       <span class="company-name">Aznobil Inc.</span>
+509.     </div>
+510.     <nav>
+511.       <a href="#">Home</a>
+512.       <a href="#about">About us</a>
+513.       <a href="#services">Services</a>
+514.       <a href="#gallery">Gallery</a>
+515.       <a href="#contact">Contact</a>
+516.     </nav>
+517.   </header>
+
+518.   <div class="white-strip"></div>
+
+519.   <section class="hero">
+520.     <div class="hero-content">
+521.       <h1 id="typing-text"></h1>
+522.       <p class="hero-subtext">From concept to commissioning, we deliver efficient, cost-effective mechanical design solutions.</p>
+523.     </div>
+524.   </section>
+
+525.   <div class="black-strip"></div>
+
+526.   <div class="flex-container">
+527.     <div class="about" id="about">
+528.       <h2>About Aznobil</h2>
+529.       <p>
+530.         Our company specializes in the design of industrial piping systems and related equipment.
+531.         <span class="dots">...</span>
+532.         <span class="more-text">
+533.           We handle piping design for power plants, industrial, and commercial systems using Plant 3D, SolidWorks, and comply with Canadian codes.
+534.           Our services include equipment design, stress analysis (Caesar II, ANSYS), and 3D deliverables.
+535.         </span>
+536.       </p>
+537.       <span class="show-more" onclick="toggleMore()">Read More</span>
+538.     </div>
+
+539.     <div class="services" id="services">
+540.       <h2>Our Services</h2>
+541.       <p>
+542.         • Mechanical design and layout using Autodesk Plant 3D and SolidWorks<br>
+543.         • Stress analysis with Caesar II and ANSYS<br>
+544.         • Equipment sizing (pumps, tanks, exchangers)<br>
+545.         • Full project documentation and support
+546.       </p>
+547.     </div>
+548.   </div>
+
+549.   <section class="projects-section">
+550.     <h2>Our Projects</h2>
+551.     <div class="underline-bar"></div>
+552.   </section>
+
+553.   <section class="projects-section" id="gallery">
+554.     <h2>Our Projects</h2>
+555.     <div class="underline-bar"></div>
+
+556.     <div class="project-gallery" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+557.       <!-- پروژه‌ها در اینجا قرار دارند، ادامه در خطوط بعدی -->
+558.     </div>
+559.   </section>
+
+560.   <section class="canada-map-section">
+561.     <h2>Serving All Across Canada</h2>
+562.     <div class="map-container">
+563.       <img src="canada-map.png" alt="Canada Map" class="canada-map" />
+564.       <div class="pulse-dot" style="top: 85%; left: 60%;"></div>
+565.     </div>
+566.   </section>
+
+567.   <footer id="contact">
+568.     <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
+569.     <p>
+570.       📞 +1 (647) 326 0282<br>
+571.       ✉️ <a href="mailto:info@aznobil.ca" style="color:white">info@aznobil.ca</a>
+572.     </p>
+573.   </footer>
+
+574.   <script>
+575.     document.querySelectorAll('.slideshow').forEach(slideshow => {
+576.       const images = slideshow.querySelectorAll('img');
+577.       let index = 0;
+578.       images[index].classList.add('active');
+579.       setInterval(() => {
+580.         images[index].classList.remove('active');
+581.         index = (index + 1) % images.length;
+582.         images[index].classList.add('active');
+583.       }, 4000);
+584.     });
+585.   </script>
+
+586.   <script>
+587.     const text = "Industrial Mechanical Design | Analysis | Consulting";
+588.     document.getElementById("typing-text").textContent = text;
+589.   </script>
+
+590.   <script>
+591.     document.querySelectorAll(".slideshow-container").forEach(container => {
+592.       const slides = container.querySelectorAll(".slide");
+593.       let index = 0;
+594.       setInterval(() => {
+595.         slides.forEach((img, i) => img.style.display = i === index ? 'block' : 'none');
+596.         index = (index + 1) % slides.length;
+597.       }, 4000);
+598.     });
+599.   </script>
+
+600. </body>
+
 
