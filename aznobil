@@ -572,11 +572,12 @@
 
 556.     <div class="project-gallery" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
 557.      <div class="project">
-  <div class="slideshow-container">
-    <img class="slide" src="img1.jpg" style="display: block;">
-    <img class="slide" src="img2.jpg" style="display: none;">
-    <img class="slide" src="img3.jpg" style="display: none;">
-  </div>
+ <div class="slideshow-container">
+  <img class="slide active" src="img1.jpg">
+  <img class="slide" src="img2.jpg">
+  <img class="slide" src="img3.jpg">
+</div>
+
   <div class="project-description">
     <h3>Project One</h3>
     <p>Designed and implemented piping systems for a 24 MW CHP power plant including layout and support systems.</p>
@@ -604,16 +605,7 @@
 
 
 
-590.   <script>
-591.     document.querySelectorAll(".slideshow-container").forEach(container => {
-592.       const slides = container.querySelectorAll(".slide");
-593.       let index = 0;
-594.       setInterval(() => {
-595.         slides.forEach((img, i) => img.style.display = i === index ? 'block' : 'none');
-596.         index = (index + 1) % slides.length;
-597.       }, 4000);
-598.     });
-599.   </script>
+
 <script>
   document.querySelectorAll(".slideshow-container").forEach(container => {
     const slides = container.querySelectorAll(".slide");
