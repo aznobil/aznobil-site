@@ -483,6 +483,14 @@
 499.         overflow: visible;
 500.       }
   501.     }
+.slide {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border: 3px solid #222;
+  border-radius: 6px;
+  object-fit: contain;
+}
 502.   </style>
 503. </head>
 504. <body>
@@ -546,7 +554,18 @@
 555.     <div class="underline-bar"></div>
 
 556.     <div class="project-gallery" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
-557.       <!-- پروژه‌ها در اینجا قرار دارند، ادامه در خطوط بعدی -->
+557.      <div class="project">
+  <div class="slideshow-container">
+    <img class="slide" src="img1.jpg" style="display: block;">
+    <img class="slide" src="img2.jpg" style="display: none;">
+    <img class="slide" src="img3.jpg" style="display: none;">
+  </div>
+  <div class="project-description">
+    <h3>Project One</h3>
+    <p>Designed and implemented piping systems for a 24 MW CHP power plant including layout and support systems.</p>
+  </div>
+</div>
+
 558.     </div>
 559.   </section>
 
