@@ -6,38 +6,39 @@
   <title>Aznobil Inc.</title>
   <style>
     .logo-title {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-    }
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
 
-    .company-name {
-      color: white;
-      font-size: 1.5rem;
-      font-weight: bold;
-      font-family: 'Segoe UI', sans-serif;
-    }
+.company-name {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+}
 
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #333;
     }
+   .image-box img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain; /* تصویر بدون کشیدگی */
+  border-radius: 6px;
+  border: 3px solid #ffffff;  /* قاب سفید دور عکس */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* سایه ملایم */
+  transition: transform 0.3s ease;
+}
 
-    .image-box img {
-      width: 100%;
-      max-width: 500px;
-      height: auto;
-      object-fit: contain;
-      border-radius: 6px;
-      border: 3px solid #ffffff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
+.image-box img:hover {
+  transform: scale(1.02); /* افکت زوم خیلی ملایم هنگام هاور */
+}
 
-    .image-box img:hover {
-      transform: scale(1.02);
-    }
+
 
     header {
       background-color: #C8102E;
@@ -64,560 +65,561 @@
       justify-content: flex-end;
       flex-grow: 1;
       padding-right: 5rem;
-     }
-     nav a {
-       margin: 0 1.2rem;
-       text-decoration: none;
-     color: #C8102E;
-       font-weight: bold;
-       font-size: 1.2rem;
-      white-space: nowrap;
-       font-family: 'Times New Roman', Times, serif;
-       text-shadow:
-         -1px -1px 0 white,
-          1px -1px 0 white,
-        -1px  1px 0 white,
-         1px  1px 0 white;
-     }
- 
+    }
+
+nav a {
+  margin: 0 1.2rem;
+  text-decoration: none;
+  color: #C8102E;
+  font-weight: bold;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  font-family: 'Times New Roman', Times, serif;
+
+  text-shadow:
+    -1px -1px 0 white,
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white;
+}
+
+
     .white-strip {
-       height: 12px;
-       background-color: white;
-       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      height: 12px;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
- 
-     .hero {
-      background: url('img1.jpg') center/cover no-repeat;
-     height: 100vh;
-     display: flex;
-       align-items: center;
-      justify-content: center;
-      position: relative;
-    color: white;
-      margin-top: 86px;
-   }
 
-    .hero::before {
-     content: "";
-       position: absolute;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-   }
+.hero {
+  background: url('img1.jpg') center/cover no-repeat;
+  height: 100vh; /* کاملاً به اندازه صفحه نمایش */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  margin-top: 86px;
+}
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 2rem;
-   }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* تیره‌کننده بک‌گراند */
+}
 
-    #typing-text {
-font-size: 2.8rem;
-       font-weight: bold;
-      color: #F1C40F;
-     white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid #F1C40F;
-    width: 0;
-     animation: typing 6s steps(45, end) forwards, blink 0.75s step-end infinite;
-     text-shadow: 0 0 8px rgba(255, 255, 0, 0.6);
-   }
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
+}
 
-    @keyframes typing {
-      from { width: 0; }
-       to { width: 100%; }
-   }
+#typing-text {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #F1C40F;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #F1C40F;
+  width: 0;
+  animation: typing 6s steps(45, end) forwards, blink 0.75s step-end infinite;
+  text-shadow: 0 0 8px rgba(255, 255, 0, 0.6);
+}
 
-    @keyframes blink {
-     0%, 100% { border-color: transparent; }
-   50% { border-color: #F1C40F; }
-    }
- 
-    @media (max-width: 768px) {
-     .hero {
-         padding: 1rem;
-         height: auto;
-     }
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #F1C40F; }
+}
+
+        @media (max-width: 768px) {
+      .hero {
+        padding: 1rem;
+        height: auto;
+      }
+
       .hero h1 {
-      font-size: 1.5rem;
-       line-height: 1.4;
-       border: none;
-       white-space: normal;
-         overflow: visible;
-     }
+        font-size: 1.5rem;
+        line-height: 1.4;
+        border: none;
+        white-space: normal;
+        overflow: visible;
+      }
 
       .hero p {
-         font-size: 1rem;
+        font-size: 1rem;
         margin-top: 1rem;
-     }
-   }
- 
-    .projects-section {
-       background-color: #d9d9d9;
-      padding: 4rem 2rem 1rem;
-       text-align: center;
-     }
- 
-   .project-gallery {
-      background-color: #d9d9d9;
-     display: flex;
-    flex-direction: column;
-     align-items: center;
-     justify-content: center;
-    gap: 3rem;
-      padding: 2rem;
-  }
- 
-     .projects-section h2 {
-     font-size: 2.5rem;
-     color: white;
-       margin-bottom: 1rem;
-      text-shadow:
-       -1px -1px 0 orange,
-         1px -1px 0 orange,
-        -1px  1px 0 orange,
-        1px  1px 0 orange;
-     }
-
-   .underline-bar {
-      width: 100%;
-      height: 6px;
-       background-color: #C8102E;
-       margin: 0 auto 2rem auto;
-    }
-
-     .map-section {
-      background: linear-gradient(to right, #f0f0f0, #ffffff);
-      padding: 4rem 2rem;
-      text-align: center;
-      position: relative;
-     }
-
-    .map-section h2 {
-       font-size: 2.5rem;
-       color: #C8102E;
-       margin-bottom: 2rem;
-      text-shadow:
-       -1px -1px 0 orange,
-        1px -1px 0 orange,
-       -1px  1px 0 orange,
-       1px  1px 0 orange;
-    }
-
-  .canada-map-section {
-      background: #f2f2f2;
-    text-align: center;
-      padding: 4rem 1rem;
-       position: relative;
-     }
-
-    .canada-map-section h2 {
-      color: #C8102E;
-     font-size: 2.5rem;
-       margin-bottom: 2rem;
-      text-shadow: 0 2px 2px rgba(0,0,0,0.2);
-     }
-
-    .map-container {
-      position: relative;
-       max-width: 700px;
-      margin: 0 auto;
-     }
-
-     .canada-map {
-       width: 100%;
-       border-radius: 12px;
-     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-   }
-
-   .pulse-dot {
-       position: absolute;
-     width: 16px;
-     height: 16px;
-      background: #FF5722;
-     border-radius: 50%;
-      animation: pulse 2s infinite;
-     }
-
-    @keyframes pulse {
-       0% {
-       transform: scale(0.9);
-         opacity: 0.7;
-       }
-      50% {
-         transform: scale(1.4);
-        opacity: 1;
       }
-     100% {
-        transform: scale(0.9);
-        opacity: 0.7;
-     }
     }
- 
-    .typewriter {
-       overflow: hidden;
-      border-right: 2px solid #F1C40F;
-      white-space: nowrap;
-      margin: 0 auto;
-     letter-spacing: 1px;
-     animation:
-        typing 5s steps(50, end),
-       blink-caret 0.8s step-end infinite;
-       color: #F1C40F;
-      font-size: 2.5rem;
-      font-weight: bold;
-       text-shadow: 0 0 8px rgba(255, 193, 7, 0.9);
-     }
- 
+   .projects-section {
+  background-color: #d9d9d9; /* خاکستری پررنگ‌تر */
+  padding: 4rem 2rem 1rem;
+  text-align: center;
+}
+
+.project-gallery {
+  background-color: #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* برای وسط‌چین کردن افقی */
+  justify-content: center;
+  gap: 3rem;
+  padding: 2rem;
+}
+
+
+.projects-section h2 {
+  font-size: 2.5rem;
+  color: white; /* رنگ اصلی متن */
+  margin-bottom: 1rem;
+  text-shadow:
+    -1px -1px 0 orange,
+     1px -1px 0 orange,
+    -1px  1px 0 orange,
+     1px  1px 0 orange;
+}
+
+
+.underline-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #C8102E;
+  margin: 0 auto 2rem auto;
+}
+    .map-section {
+  background: linear-gradient(to right, #f0f0f0, #ffffff);
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.map-section h2 {
+  font-size: 2.5rem;
+  color: #C8102E;
+  margin-bottom: 2rem;
+  text-shadow:
+    -1px -1px 0 orange,
+     1px -1px 0 orange,
+    -1px  1px 0 orange,
+     1px  1px 0 orange;
+}
+
+
+.canada-map-section {
+  background: #f2f2f2;
+  text-align: center;
+  padding: 4rem 1rem;
+  position: relative;
+}
+
+.canada-map-section h2 {
+  color: #C8102E;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+
+.map-container {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.canada-map {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.pulse-dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #FF5722;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+}
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid #F1C40F;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 1px;
+  animation:
+    typing 5s steps(50, end),
+    blink-caret 0.8s step-end infinite;
+  color: #F1C40F;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(255, 193, 7, 0.9);
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent }
+  50% { border-color: #F1C40F }
+}
+
+@media (max-width: 768px) {
+  .typewriter {
+    font-size: 1.5rem;
+    animation: typing 4s steps(40, end), blink-caret 0.7s step-end infinite;
+  }
+}
+
+  .project .image-box {
+    margin-bottom: 1rem;
+  }
+
+  .project-description {
+    max-width: 100%;
+  }
+
+  .project-gallery {
+    padding: 2rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    border: none;
+    white-space: normal;
+    overflow: visible;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .hero {
+    padding: 1rem;
+    height: auto;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+  }
+
+  nav {
+    justify-content: flex-start;
+    padding-right: 0;
+  }
+
+  nav a {
+    font-size: 1rem;
+    margin: 0 0.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .project-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 90% !important;
+  }
+}
+
+
     @keyframes typing {
       from { width: 0 }
-       to { width: 100% }
-    }
-
-    @keyframes blink-caret {
-      0%, 100% { border-color: transparent }
-       50% { border-color: #F1C40F }
-    }
- 
-    @media (max-width: 768px) {
-       .typewriter {
-        font-size: 1.5rem;
-         animation: typing 4s steps(40, end), blink-caret 0.7s step-end infinite;
-      }
-    }
-
-    .project .image-box {
-      margin-bottom: 1rem;
-   }
-
-    .project-description {
-     max-width: 100%;
-   }
-
-    .project-gallery {
-      padding: 2rem 1rem;
-   }
- 
-     .hero h1 {
-       font-size: 1.5rem;
-      line-height: 1.4;
-       border: none;
-      white-space: normal;
-      overflow: visible;
-     }
-
-    .hero p {
-       font-size: 1rem;
-      margin-top: 1rem;
-    }
- 
-     .hero {
-     padding: 1rem;
-       height: auto;
-     }
-
-     header {
-       flex-direction: column;
-      align-items: flex-start;
-      padding: 0.5rem 1rem;
-     }
-
-    nav {
-       justify-content: flex-start;
-      padding-right: 0;
-    }
-
-     nav a {
-      font-size: 1rem;
-       margin: 0 0.5rem;
-     }
- 
-    .project-gallery {
-       flex-direction: column;
-     align-items: center;
-    }
- 
-     .project-card {
-      width: 90% !important;
-    }
-
-    @keyframes typing {
-       from { width: 0 }
       to { width: 100% }
     }
 
-     @keyframes blink {
-       50% { border-color: transparent }
-     }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
 
     @keyframes fadeIn {
       from { opacity: 0 }
       to { opacity: 1 }
     }
- 
-     .black-strip {
-       height: 8px;
-       background-color: #C8102E;
-     }
 
-     .flex-container {
-       display: flex;
-       flex-wrap: wrap;
-       justify-content: space-between;
+    .black-strip {
+      height: 8px;
+      background-color: #C8102E;
+    }
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       gap: 2rem;
       padding: 4rem 2rem;
-     background-color: #f5f5f5;
+      background-color: #f5f5f5;
     }
 
     .about, .services {
-     flex: 1;
-       min-width: 300px;
-     }
-
-    .project {
-      display: flex;
-       align-items: center;
-      justify-content: center;
-       gap: 1rem;
-       flex-wrap: nowrap;
-      margin-bottom: 3rem;
-  }
-
-    .project:nth-child(even) {
-      flex-direction: row-reverse;
+      flex: 1;
+      min-width: 300px;
     }
 
-     .project img {
-      width: 100%;
-    max-width: 500px;
-      border-radius: 6px;
-     border: 3px solid #222;
-    object-fit: contain;
-     }
 
-     .project-description {
-      flex: 1;
-      font-size: 1rem;
-      color: #333;
-       max-width: 500px;
-   }
+   .project {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* برای چسبیدن به هم و وسط‌چینی */
+  gap: 1rem; /* فاصله کم بین متن و عکس */
+  flex-wrap: nowrap;
+  margin-bottom: 3rem;
+}
+
+.project:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.project img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 6px;
+  border: 3px solid #222;  /* حاشیه قرمز دور عکس */
+  object-fit: contain;
+}
+
+
+.project-description {
+  flex: 1;
+  font-size: 1rem;
+  color: #333;
+  max-width: 500px;
+}
+
 
     @keyframes fadeImg {
       0%, 49% { opacity: 1; }
       50%, 100% { opacity: 0; }
-   }
+    }
 
     .project img:hover {
-       animation: none;
-     }
+      animation: none;
+    }
 
     .project-description {
-       flex: 1;
+      flex: 1;
       font-size: 1rem;
-    color: #333;
+      color: #333;
       max-width: 500px;
     }
 
     footer {
       background-color: #002244;
-    color: white;
-     text-align: center;
+      color: white;
+      text-align: center;
       padding: 1.5rem;
-       font-size: 0.9rem;
-     }
-
+      font-size: 0.9rem;
+    }
     .project-title-section {
-       text-align: center;
-     margin-top: 4rem;
-    }
+  text-align: center;
+  margin-top: 4rem;
+}
 
-     .project-title {
-      font-size: 2.5rem;
-       color: #C8102E;
-    margin-bottom: 0.5rem;
-     }
+.project-title {
+  font-size: 2.5rem;
+  color: #C8102E;
+  margin-bottom: 0.5rem;
+}
 
-    .underline-bar {
-      width: 100%;
-      height: 6px;
-      background-color: #C8102E;
-       margin: 0 auto 2rem auto;
-    }
-
-    #about,
-    #services,
-    #gallery,
-   #contact {
-     scroll-margin-top: 100px;
-    }
-
-     @media (min-width: 769px) {
-     .project-gallery {
-         flex-direction: row;
-        justify-content: center;
-        align-items: stretch;
-      }
-      .project-card {
-         width: 30%;
-       }
-    }
-
-     @media (max-width: 768px) {
-       .project-card {
-        width: 90%;
-     }
-
-     .hero-content p {
-       font-size: 1rem;
-         color: #F1C40F;
-        text-shadow: 0 0 5px rgba(255, 193, 7, 0.9);
-       }
-       #typing-text {
-         font-size: 1.3rem;
-       width: 90vw;
-        max-width: 320px;
-      white-space: normal;
-       overflow: visible;
-      }
-       }
-.slide {
+.underline-bar {
   width: 100%;
-  max-width: 500px;
-  height: auto;
-  border: 3px solid #222;
-  border-radius: 6px;
-  object-fit: contain;
+  height: 6px;
+  background-color: #C8102E;
+  margin: 0 auto 2rem auto;
 }
-.slideshow-container {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  overflow: hidden;
+#about,
+#services,
+#gallery,
+#contact {
+  scroll-margin-top: 100px; /* به اندازه ارتفاع هدر ثابت */
 }
 
-.slide {
-  width: 100%;
-  display: none;
-  transition: opacity 1s ease-in-out;
-}
-
-.slide.active {
-  display: block;
-}
-
-   </style>
- </head>
- <body>
+  </style>
+</head>
+<body>
   <header>
    <div class="logo-title">
-     <img src="logo.png" alt="Aznobil Inc. Logo">
-      <span class="company-name">Aznobil Inc.</span>
-    </div>
-     <nav>
-       <a href="#">Home</a>
-       <a href="#about">About us</a>
-     <a href="#services">Services</a>
-       <a href="#gallery">Gallery</a>
-       <a href="#contact">Contact</a>
-     </nav>
-   </header>
+    <img src="logo.png" alt="Aznobil Inc. Logo">
+    <span class="company-name">Aznobil Inc.</span>
+  </div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About us</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  </header>
 
-   <div class="white-strip"></div>
+  <div class="white-strip"></div>
 
-   <section class="hero">
-     <div class="hero-content">
-       <h1 id="typing-text" class="typewriter">Industrial Mechanical Design | Analysis | Consulting</h1>
-     <p class="hero-subtext">From concept to commissioning, we deliver efficient, cost-effective mechanical design solutions.</p>
-   </div>
-  </section>
+<section class="hero">
+  <div class="hero-content">
+    <h1 id="typing-text"></h1>
+    <p>From concept to commissioning, we deliver efficient, cost-effective mechanical design solutions.</p>
+  </div>
+</section>
 
-   <div class="black-strip"></div>
+  <div class="black-strip"></div>
 
-   <div class="flex-container">
-   <div class="about" id="about">
+  <div class="flex-container">
+    <div class="about" id="about">
       <h2>About Aznobil</h2>
-    <p>
-      Our company specializes in the design of industrial piping systems and related equipment.
+      <p>
+        Our company specializes in the design of industrial piping systems and related equipment.
         <span class="dots">...</span>
-      <span class="more-text">
-         We handle piping design for power plants, industrial, and commercial systems using Plant 3D, SolidWorks, and comply with Canadian codes.
-          Our services include equipment design, stress analysis (Caesar II, ANSYS), and 3D deliverables.
-</span>
+        <span class="more-text">
+          We handle piping design for power plants, industrial, and commercial systems using Plant 3D, SolidWorks, and comply with Canadian codes. Our services include equipment design, stress analysis (Caesar II, ANSYS), and 3D deliverables.
+        </span>
       </p>
-     <span class="show-more" onclick="toggleMore()">Read More</span>
+      <span class="show-more" onclick="toggleMore()">Read More</span>
     </div>
 
-   <div class="services" id="services">
-     <h2>Our Services</h2>
-   <p>
-         • Mechanical design and layout using Autodesk Plant 3D and SolidWorks<br>
-         • Stress analysis with Caesar II and ANSYS<br>
-         • Equipment sizing (pumps, tanks, exchangers)<br>
-         • Full project documentation and support
-       </p>
-     </div>
+    <div class="services" id="services">
+      <h2>Our Services</h2>
+      <p>
+        • Mechanical design and layout using Autodesk Plant 3D and SolidWorks<br>
+        • Stress analysis with Caesar II and ANSYS<br>
+        • Equipment sizing (pumps, tanks, exchangers)<br>
+        • Full project documentation and support
+      </p>
+    </div>
   </div>
+<section class="projects-section">
+  <h2>Our Projects</h2>
+  <div class="underline-bar"></div>
+</section>
+  
 
- <section class="projects-section">
-     <h2>Our Projects</h2>
-     <div class="underline-bar"></div>
-  </section>
 
-   <section class="projects-section" id="gallery">
-     <h2>Our Projects</h2>
-    <div class="underline-bar"></div>
 
-    <div class="project-gallery" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
-    <div class="project">
- <div class="slideshow-container">
-  <img class="slide active" src="img1.jpg">
-  <img class="slide" src="img2.jpg">
-  <img class="slide" src="img3.jpg">
-</div>
 
-  <div class="project-description">
-    <h3>Project One</h3>
-    <p>Designed and implemented piping systems for a 24 MW CHP power plant including layout and support systems.</p>
+<section class="projects-section" id="gallery">
+  <h2>Our Projects</h2>
+  <div class="underline-bar"></div>
+
+<div class="project-gallery" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+
+    <!-- یک پروژه -->
+    <div class="project-card" style="width: 320px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff;">
+      <div class="slideshow-container" style="position: relative;">
+        <img src="img11.jpg" class="slide" style="width: 100%; display: block;" />
+        <img src="img12.jpg" class="slide" style="width: 100%; display: none;" />
+        <img src="img13.jpg" class="slide" style="width: 100%; display: none;" />
+      </div>
+      <div style="padding: 1rem;">
+        <h3>Project One</h3>
+        <p>Design and installation of industrial piping system with advanced flow analysis.</p>
+      </div>
+    </div>
+
+    <!-- پروژه دوم -->
+    <div class="project-card" style="width: 320px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff;">
+      <div class="slideshow-container" style="position: relative;">
+        <img src="img21.jpg" class="slide" style="width: 100%; display: block;" />
+        <img src="img22.jpg" class="slide" style="width: 100%; display: none;" />
+        <img src="img23.jpg" class="slide" style="width: 100%; display: none;" />
+      </div>
+      <div style="padding: 1rem;">
+        <h3>Project Two</h3>
+        <p>3D modeling of power plant piping systems using Plant 3D and SolidWorks.</p>
+      </div>
+    </div>
+
+    <!-- پروژه سوم -->
+    <div class="project-card" style="width: 320px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff;">
+      <div class="slideshow-container" style="position: relative;">
+        <img src="img31.jpg" class="slide" style="width: 100%; display: block;" />
+        <img src="img32.jpg" class="slide" style="width: 100%; display: none;" />
+        <img src="img33.jpg" class="slide" style="width: 100%; display: none;" />
+      </div>
+      <div style="padding: 1rem;">
+        <h3>Project Three</h3>
+        <p>Heat exchanger and storage tank integration for food-grade systems.</p>
+      </div>
+    </div>
+
   </div>
-</div>
+</section>
 
-     </div>
-   </section>
 
-   <section class="canada-map-section">
-     <h2>Serving All Across Canada</h2>
-    <div class="map-container">
-      <img src="canada-map.png" alt="Canada Map" class="canada-map" />
-       <div class="pulse-dot" style="top: 85%; left: 60%;"></div>
-     </div>
-   </section>
 
-   <footer id="contact">
-     <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
-     <p>
-       📞 +1 (647) 326 0282<br>
-      ✉️ <a href="mailto:info@aznobil.ca" style="color:white">info@aznobil.ca</a>
-    </p>
+<section class="canada-map-section">
+  <h2>Serving All Across Canada</h2>
+  <div class="map-container">
+    <img src="canada-map.png" alt="Canada Map" class="canada-map" />
+    <div class="pulse-dot" style="top: 85%; left: 60%;"></div> <!-- ON -->
+  </div>
+</section>
+
+
+
+
+
+  <footer id="contact">
+    <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
+    <p>📞 +1 (647) 326 0282<br>
+       ✉️ <a href="mailto:info@aznobil.ca" style="color:white">info@aznobil.ca</a></p>
   </footer>
 
+ <script>
+  document.querySelectorAll('.slideshow').forEach(slideshow => {
+    const images = slideshow.querySelectorAll('img');
+    let index = 0;
 
+    images[index].classList.add('active');
 
-
+    setInterval(() => {
+      images[index].classList.remove('active');
+      index = (index + 1) % images.length;
+      images[index].classList.add('active');
+    }, 4000);
+  });
+</script>
 <script>
+  const text = "Industrial Mechanical Design | Analysis | Consulting";
+  document.getElementById("typing-text").textContent = text;
+</script>
+<script>
+  // همه پروژه‌ها را پیدا می‌کنیم
   document.querySelectorAll(".slideshow-container").forEach(container => {
     const slides = container.querySelectorAll(".slide");
     let index = 0;
-    slides[index].classList.add("active");
 
     setInterval(() => {
-      slides[index].classList.remove("active");
+      slides.forEach((img, i) => img.style.display = i === index ? 'block' : 'none');
       index = (index + 1) % slides.length;
-      slides[index].classList.add("active");
     }, 4000);
   });
 </script>
 
-600. </body>
-601. </html>
+</script>
 
-
+</body>
+</html>
