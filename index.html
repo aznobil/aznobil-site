@@ -283,7 +283,6 @@
       font-weight: bold;
       text-shadow: 0 0 8px rgba(255, 193, 7, 0.9);
     }
-
     @keyframes blink-caret {
       0%, 100% { border-color: transparent }
       50% { border-color: #F1C40F }
@@ -402,7 +401,6 @@
     .slide.active {
       display: block;
     }
-
     @media (max-width: 768px) {
       .project-gallery {
         flex-direction: column;
@@ -432,6 +430,7 @@
       padding: 4rem 2rem;
       background-color: #f5f5f5;
     }
+
     .about, .services {
       flex: 1;
       min-width: 300px;
@@ -464,49 +463,48 @@
       color: #333;
       max-width: 500px;
     }
+
     .modal-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  animation: fadeIn 0.5s ease-out;
-}
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      animation: fadeIn 0.5s ease-out;
+    }
 
-.modal-content {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 400px;
-  width: 90%;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  animation: slideDown 0.4s ease-out;
-}
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      animation: slideDown 0.4s ease-out;
+    }
 
-@keyframes slideDown {
-  from { transform: translateY(-30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
+    @keyframes slideDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-.close-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #C8102E;
-}
-
-
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #C8102E;
+    }
     @keyframes fadeImg {
       0%, 49% { opacity: 1; }
       50%, 100% { opacity: 0; }
@@ -572,6 +570,7 @@
       0%, 100% { border-color: transparent; }
       50% { border-color: #F1C40F; }
     }
+
     .typewriter {
       overflow: hidden;
       border-right: 2px solid #F1C40F;
@@ -591,7 +590,6 @@
       0%, 100% { border-color: transparent }
       50% { border-color: #F1C40F }
     }
-
   </style>
 </head>
 <body>
@@ -643,6 +641,7 @@
       </p>
     </div>
   </div>
+
   <section class="projects-section" id="gallery">
     <h2>Our Projects</h2>
     <div class="underline-bar"></div>
@@ -688,118 +687,6 @@
       </div>
     </div>
   </section>
-  <!-- 🔽 نوار استانداردها شروع -->
-  <section class="standards-marquee">
-    <div class="marquee-content">
-      <a href="https://www.asme.org" target="_blank">
-        <img src="logos/asme.png" alt="ASME" />
-      </a>
-      <a href="https://www.astm.org" target="_blank">
-        <img src="logos/astm.png" alt="ASTM" />
-      </a>
-      <a href="https://www.csa.ca" target="_blank">
-        <img src="logos/csa.png" alt="CSA" />
-      </a>
-      <a href="https://www.api.org" target="_blank">
-        <img src="logos/api.png" alt="API" />
-      </a>
-      <a href="https://www.nrc-cnrc.gc.ca" target="_blank">
-        <img src="logos/nrc.png" alt="NRC Canada" />
-      </a>
-    </div>
-  </section>
-  <!-- 🔼 نوار استانداردها پایان -->
-
-  <section class="canada-map-section">
-    <h2>Serving All Across Canada</h2>
-    <div class="map-container">
-      <img src="canada-map.png" alt="Canada Map" class="canada-map" />
-      <div class="pulse-dot" style="top: 85%; left: 60%;"></div> <!-- ON -->
-    </div>
-  </section>
-
-  <footer id="contact">
-    <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
-    <p>📞 +1 (647) 326 0282<br>
-      ✉️ <a href="mailto:info@aznobil.ca" style="color:white">info@aznobil.ca</a></p>
-  </footer>
-
-  <script>
-    document.querySelectorAll('.slideshow-container').forEach(slideshow => {
-      const images = slideshow.querySelectorAll('img');
-      let index = 0;
-
-      images[index].classList.add('active');
-
-      setInterval(() => {
-        images[index].classList.remove('active');
-        index = (index + 1) % images.length;
-        images[index].classList.add('active');
-      }, 4000);
-    });
-  </script>
-  <script>
-    document.querySelectorAll(".slideshow-container").forEach(container => {
-      const slides = container.querySelectorAll(".slide");
-      let index = 0;
-
-      slides.forEach((img, i) => img.classList.remove("active"));
-      if (slides.length > 0) slides[0].classList.add("active");
-
-      setInterval(() => {
-        slides.forEach((img, i) => img.classList.toggle("active", i === index));
-        index = (index + 1) % slides.length;
-      }, 4000);
-    });
-  </script>
-
-  <script>
-    const text = "Industrial Mechanical Design | Analysis | Consulting";
-    document.getElementById("typing-text").textContent = text;
-  </script>
-  <script>
-  // وقتی روی لینک Contact کلیک میشه
-  document.querySelector('a[href="#contact"]').addEventListener('click', function (e) {
-    e.preventDefault();
-    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-    setTimeout(() => {
-      document.getElementById('contactModal').style.display = 'flex';
-    }, 800);
-  });
-
-  // بستن مودال با دکمه ضربدر
-  function closeModal() {
-    document.getElementById('contactModal').style.display = 'none';
-  }
-
-  // بستن مودال با کلیک روی فضای بیرونی
-  window.addEventListener('click', function (e) {
-    const modal = document.getElementById('contactModal');
-    if (e.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
-
-  // بستن مودال با کلید ESC
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      document.getElementById('contactModal').style.display = 'none';
-    }
-  });
-</script>
-
-
-<!-- 🔽 Contact Modal -->
-<div id="contactModal" class="modal-overlay">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal()">&times;</span>
-    <h2>Contact Aznobil</h2>
-    <p>If you have any inquiries, please email us or call directly.</p>
-    <p>📧 <a href="mailto:info@aznobil.ca">info@aznobil.ca</a><br>
-       📞 +1 (647) 326 0282</p>
-  </div>
-</div>
-<!-- 🔼 Contact Modal -->
 
 </body>
 </html>
