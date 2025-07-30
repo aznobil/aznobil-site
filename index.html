@@ -700,7 +700,8 @@ nav a {
       images[index].classList.add('active');
     }, 4000);
   });
-</script><script>
+</script>
+  <script>
   document.querySelectorAll(".slideshow-container").forEach(container => {
     const slides = container.querySelectorAll(".slide");
     let index = 0;
@@ -719,18 +720,7 @@ nav a {
   const text = "Industrial Mechanical Design | Analysis | Consulting";
   document.getElementById("typing-text").textContent = text;
 </script>
-<script>
-  // همه پروژه‌ها را پیدا می‌کنیم
-  document.querySelectorAll(".slideshow-container").forEach(container => {
-    const slides = container.querySelectorAll(".slide");
-    let index = 0;
 
-    setInterval(() => {
-      slides.forEach((img, i) => img.classList.toggle('active', i === index));
-      index = (index + 1) % slides.length;
-    }, 4000);
-  });
-</script>
 
 </script>
 
