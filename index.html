@@ -388,6 +388,13 @@ nav a {
     margin: 0 0.5rem;
   }
 }
+   .slide {
+  width: 100%;
+  height: 220px;         /* ارتفاع ثابت */
+  object-fit: cover;     /* تصویر برش می‌خوره ولی قاب پر می‌مونه */
+  display: block;
+}
+ 
 @media (max-width: 768px) {
   .project-gallery {
     flex-direction: column;
@@ -575,11 +582,11 @@ nav a {
 <div class="project-gallery" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
 
     <!-- یک پروژه -->
-    <div class="project-card" style="width: 320px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff;">
+    <div class="project-card" style="width: 320px; height: 420px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff; display: flex; flex-direction: column; justify-content: space-between;">
       <div class="slideshow-container" style="position: relative;">
-        <img src="img11.jpg" class="slide" style="width: 100%; display: block;" />
-        <img src="img12.jpg" class="slide" style="width: 100%; display: none;" />
-        <img src="img13.jpg" class="slide" style="width: 100%; display: none;" />
+        <img src="img11.jpg" class="slide"  />
+        <img src="img12.jpg" class="slide"  />
+        <img src="img13.jpg" class="slide"  />
       </div>
       <div style="padding: 1rem;">
         <h3>Project One</h3>
@@ -588,11 +595,11 @@ nav a {
     </div>
 
     <!-- پروژه دوم -->
-    <div class="project-card" style="width: 320px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff;">
+   <div class="project-card" style="width: 320px; height: 420px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff; display: flex; flex-direction: column; justify-content: space-between;">
       <div class="slideshow-container" style="position: relative;">
-        <img src="img21.jpg" class="slide" style="width: 100%; display: block;" />
-        <img src="img22.jpg" class="slide" style="width: 100%; display: none;" />
-        <img src="img23.jpg" class="slide" style="width: 100%; display: none;" />
+        <img src="img21.jpg" class="slide" />
+        <img src="img22.jpg" class="slide" />
+        <img src="img23.jpg" class="slide"  />
       </div>
       <div style="padding: 1rem;">
         <h3>Project Two</h3>
@@ -601,11 +608,11 @@ nav a {
     </div>
 
     <!-- پروژه سوم -->
-    <div class="project-card" style="width: 320px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff;">
+    <div class="project-card" style="width: 320px; height: 420px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff; display: flex; flex-direction: column; justify-content: space-between;">
       <div class="slideshow-container" style="position: relative;">
-        <img src="img31.jpg" class="slide" style="width: 100%; display: block;" />
-        <img src="img32.jpg" class="slide" style="width: 100%; display: none;" />
-        <img src="img33.jpg" class="slide" style="width: 100%; display: none;" />
+        <img src="img31.jpg" class="slide"  />
+        <img src="img32.jpg" class="slide"  />
+        <img src="img33.jpg" class="slide"  />
       </div>
       <div style="padding: 1rem;">
         <h3>Project Three</h3>
