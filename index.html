@@ -509,6 +509,41 @@ nav a {
     transform: translateY(0);
   }
 }
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background-color: #C8102E;
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  z-index: 999;
+}
+
+.mobile-nav a {
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+  border-top: 1px solid white;
+  text-align: center;
+}
+
+/* نمایش آیکون فقط در موبایل */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
 
 @media (max-width: 768px) {
   #fade-text {
@@ -521,6 +556,15 @@ nav a {
 </head>
 <body>
   <header>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#">Home</a>
+  <a href="#about">About us</a>
+  <a href="#services">Services</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</div>
+
    <div class="logo-title">
     <img src="logo.png" alt="Aznobil Inc. Logo">
     <span class="company-name">Aznobil Inc.</span>
@@ -669,6 +713,19 @@ nav a {
     }, 4000);
   });
 </script>
+<script>
+// اینجا بگذار
+  function toggleMenu() {
+    const nav = document.getElementById("mobileNav");
+    if (nav.style.display === "flex") {
+      nav.style.display = "none";
+    } else {
+      nav.style.display = "flex";
+    }
+  }
+</script>
+</body>
+</html>
 
 </script>
 
