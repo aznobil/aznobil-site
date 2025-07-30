@@ -10,7 +10,7 @@
   align-items: center;
   gap: 0.7rem;
 }
-
+ل
 .company-name {
   color: white;
   font-size: 1.5rem;
@@ -337,6 +337,16 @@ nav a {
     margin: 0 0.5rem;
   }
 }
+@media (max-width: 768px) {
+  .project-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 90% !important;
+  }
+}
 
 
     @keyframes typing {
@@ -510,44 +520,56 @@ nav a {
 
 
 
- <div class="project-gallery" id="gallery">
-  <div class="project">
-    <div class="slideshow">
-      <img src="img11.jpg" alt="Project 1">
-      <img src="img12.jpg" alt="Project 1">
-      <img src="img13.jpg" alt="Project 1">
-    </div>
-    <div class="project-description">
-      <h3>Project One</h3>
-      <p>Design and installation of industrial piping system with advanced flow analysis.</p>
-    </div>
-  </div>
+<section class="projects-section" id="gallery">
+  <h2>Our Projects</h2>
+  <div class="underline-bar"></div>
 
-  <div class="project">
-    <div class="slideshow">
-      <img src="img21.jpg" alt="Project 2">
-      <img src="img22.jpg" alt="Project 2">
-      <img src="img23.jpg" alt="Project 2">
-    </div>
-    <div class="project-description">
-      <h3>Project Two</h3>
-      <p>3D modeling of power plant piping systems using Plant 3D and SolidWorks.</p>
-    </div>
-  </div>
+<div class="project-gallery" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
 
-  <div class="project">
-    <div class="slideshow">
-      <img src="img31.jpg" alt="Project 3">
-      <img src="img32.jpg" alt="Project 3">
-      <img src="img33.jpg" alt="Project 3">
+    <!-- یک پروژه -->
+    <div class="project-card" style="width: 320px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff;">
+      <div class="slideshow-container" style="position: relative;">
+        <img src="img11.jpg" class="slide" style="width: 100%; display: block;" />
+        <img src="img12.jpg" class="slide" style="width: 100%; display: none;" />
+        <img src="img13.jpg" class="slide" style="width: 100%; display: none;" />
+      </div>
+      <div style="padding: 1rem;">
+        <h3>Project One</h3>
+        <p>Design and installation of industrial piping system with advanced flow analysis.</p>
+      </div>
     </div>
-    <div class="project-description">
-      <h3>Project Three</h3>
-      <p>Heat exchanger and storage tank integration for food-grade systems.</p>
-    </div>
-  </div>
 
-</div>
+    <!-- پروژه دوم -->
+    <div class="project-card" style="width: 320px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff;">
+      <div class="slideshow-container" style="position: relative;">
+        <img src="img21.jpg" class="slide" style="width: 100%; display: block;" />
+        <img src="img22.jpg" class="slide" style="width: 100%; display: none;" />
+        <img src="img23.jpg" class="slide" style="width: 100%; display: none;" />
+      </div>
+      <div style="padding: 1rem;">
+        <h3>Project Two</h3>
+        <p>3D modeling of power plant piping systems using Plant 3D and SolidWorks.</p>
+      </div>
+    </div>
+
+    <!-- پروژه سوم -->
+    <div class="project-card" style="width: 320px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff;">
+      <div class="slideshow-container" style="position: relative;">
+        <img src="img31.jpg" class="slide" style="width: 100%; display: block;" />
+        <img src="img32.jpg" class="slide" style="width: 100%; display: none;" />
+        <img src="img33.jpg" class="slide" style="width: 100%; display: none;" />
+      </div>
+      <div style="padding: 1rem;">
+        <h3>Project Three</h3>
+        <p>Heat exchanger and storage tank integration for food-grade systems.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
 <section class="canada-map-section">
   <h2>Serving All Across Canada</h2>
   <div class="map-container">
@@ -580,11 +602,23 @@ nav a {
     }, 4000);
   });
 </script>
-
 <script>
   const text = "Industrial Mechanical Design | Analysis | Consulting";
   document.getElementById("typing-text").textContent = text;
 </script>
+<script>
+  // همه پروژه‌ها را پیدا می‌کنیم
+  document.querySelectorAll(".slideshow-container").forEach(container => {
+    const slides = container.querySelectorAll(".slide");
+    let index = 0;
+
+    setInterval(() => {
+      slides.forEach((img, i) => img.style.display = i === index ? 'block' : 'none');
+      index = (index + 1) % slides.length;
+    }, 4000);
+  });
+</script>
+
 </script>
 
 </body>
