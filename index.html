@@ -388,13 +388,31 @@ nav a {
     margin: 0 0.5rem;
   }
 }
-.slide {
+.slideshow-container {
+  position: relative;
   width: 100%;
   height: 220px;
-  object-fit: contain;
   background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+}
+
+.slide.active {
   display: block;
 }
+
 
 
  
@@ -694,7 +712,7 @@ nav a {
     let index = 0;
 
     setInterval(() => {
-      slides.forEach((img, i) => img.style.display = i === index ? 'block' : 'none');
+      slides.forEach((img, i) => img.classList.toggle('active', i === index));
       index = (index + 1) % slides.length;
     }, 4000);
   });
