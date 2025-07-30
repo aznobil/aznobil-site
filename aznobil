@@ -504,7 +504,7 @@
 
 519.   <section class="hero">
 520.     <div class="hero-content">
-521.       <h1 id="typing-text"></h1>
+521.       <h1 id="typing-text" class="typewriter">Industrial Mechanical Design | Analysis | Consulting</h1>
 522.       <p class="hero-subtext">From concept to commissioning, we deliver efficient, cost-effective mechanical design solutions.</p>
 523.     </div>
 524.   </section>
@@ -566,23 +566,7 @@
 572.     </p>
 573.   </footer>
 
-574.   <script>
-575.     document.querySelectorAll('.slideshow').forEach(slideshow => {
-576.       const images = slideshow.querySelectorAll('img');
-577.       let index = 0;
-578.       images[index].classList.add('active');
-579.       setInterval(() => {
-580.         images[index].classList.remove('active');
-581.         index = (index + 1) % images.length;
-582.         images[index].classList.add('active');
-583.       }, 4000);
-584.     });
-585.   </script>
 
-586.   <script>
-587.     const text = "Industrial Mechanical Design | Analysis | Consulting";
-588.     document.getElementById("typing-text").textContent = text;
-589.   </script>
 
 590.   <script>
 591.     document.querySelectorAll(".slideshow-container").forEach(container => {
