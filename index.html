@@ -6,39 +6,38 @@
   <title>Aznobil Inc.</title>
   <style>
     .logo-title {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-}
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
 
-.company-name {
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  font-family: 'Segoe UI', sans-serif;
-}
+    .company-name {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #333;
     }
-   .image-box img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  object-fit: contain; /* تصویر بدون کشیدگی */
-  border-radius: 6px;
-  border: 3px solid #ffffff;  /* قاب سفید دور عکس */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* سایه ملایم */
-  transition: transform 0.3s ease;
-}
 
-.image-box img:hover {
-  transform: scale(1.02); /* افکت زوم خیلی ملایم هنگام هاور */
-}
+    .image-box img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 6px;
+      border: 3px solid #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
 
-
+    .image-box img:hover {
+      transform: scale(1.02);
+    }
 
     header {
       background-color: #C8102E;
@@ -67,22 +66,20 @@
       padding-right: 5rem;
     }
 
-nav a {
-  margin: 0 1.2rem;
-  text-decoration: none;
-  color: #C8102E;
-  font-weight: bold;
-  font-size: 1.2rem;
-  white-space: nowrap;
-  font-family: 'Times New Roman', Times, serif;
-
-  text-shadow:
-    -1px -1px 0 white,
-     1px -1px 0 white,
-    -1px  1px 0 white,
-     1px  1px 0 white;
-}
-
+    nav a {
+      margin: 0 1.2rem;
+      text-decoration: none;
+      color: #C8102E;
+      font-weight: bold;
+      font-size: 1.2rem;
+      white-space: nowrap;
+      font-family: 'Times New Roman', Times, serif;
+      text-shadow:
+        -1px -1px 0 white,
+         1px -1px 0 white,
+        -1px  1px 0 white,
+         1px  1px 0 white;
+    }
 
     .white-strip {
       height: 12px;
@@ -90,67 +87,67 @@ nav a {
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-.hero {
-  background: url('img1.jpg') center/cover no-repeat;
-  height: 100vh; /* کاملاً به اندازه صفحه نمایش */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  color: white;
-  margin-top: 86px;
-}
+    .hero {
+      background: url('img1.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: white;
+      margin-top: 86px;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* تیره‌کننده بک‌گراند */
-}
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+    }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 2rem;
-}
+    #typing-text {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: #F1C40F;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #F1C40F;
+      width: 0;
+      animation: typing 6s steps(45, end) forwards, blink 0.75s step-end infinite;
+      text-shadow: 0 0 8px rgba(255, 255, 0, 0.6);
+    }
 
-#typing-text {
-  font-size: 2.8rem;
-  font-weight: bold;
-  color: #F1C40F;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid #F1C40F;
-  width: 0;
-  animation: typing 6s steps(45, end) forwards, blink 0.75s step-end infinite;
-  text-shadow: 0 0 8px rgba(255, 255, 0, 0.6);
-}
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #F1C40F; }
+    }
 
-@keyframes blink {
-  0%, 100% { border-color: transparent; }
-  50% { border-color: #F1C40F; }
-}
-.fade-in-text {
-  color: orange;
-  opacity: 0;
-  animation: fadeInText 2.5s ease-in forwards;
-  font-size: 1.2rem;
-  margin-top: 1rem;
-}
+    .fade-in-text {
+      color: orange;
+      opacity: 0;
+      animation: fadeInText 2.5s ease-in forwards;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
 
-@keyframes fadeInText {
-  to {
-    opacity: 1;
-  }
-}
+    @keyframes fadeInText {
+      to {
+        opacity: 1;
+      }
+    }
 
-        @media (max-width: 768px) {
+    @media (max-width: 768px) {
       .hero {
         padding: 1rem;
         height: auto;
@@ -169,272 +166,251 @@ nav a {
         margin-top: 1rem;
       }
     }
-   .projects-section {
-  background-color: #d9d9d9; /* خاکستری پررنگ‌تر */
-  padding: 4rem 2rem 1rem;
-  text-align: center;
-}
 
-.project-gallery {
-  background-color: #d9d9d9;
-  display: flex;
-  flex-direction: row;        /* افقی چیدن */
-  flex-wrap: wrap;            /* برای حالت موبایل یا عرض کم */
-  justify-content: center;    /* وسط‌چینی */
-  gap: 2rem;
-  padding: 2rem;
-}
-
-
-.projects-section h2 {
-  font-size: 2.5rem;
-  color: white; /* رنگ اصلی متن */
-  margin-bottom: 1rem;
-  text-shadow:
-    -1px -1px 0 orange,
-     1px -1px 0 orange,
-    -1px  1px 0 orange,
-     1px  1px 0 orange;
-}
-
-
-.underline-bar {
-  width: 100%;
-  height: 6px;
-  background-color: #C8102E;
-  margin: 0 auto 2rem auto;
-}
-    .map-section {
-  background: linear-gradient(to right, #f0f0f0, #ffffff);
-  padding: 4rem 2rem;
-  text-align: center;
-  position: relative;
-}
-
-.map-section h2 {
-  font-size: 2.5rem;
-  color: #C8102E;
-  margin-bottom: 2rem;
-  text-shadow:
-    -1px -1px 0 orange,
-     1px -1px 0 orange,
-    -1px  1px 0 orange,
-     1px  1px 0 orange;
-}
-
-
-.canada-map-section {
-  background: #f2f2f2;
-  text-align: center;
-  padding: 4rem 1rem;
-  position: relative;
-}
-
-.canada-map-section h2 {
-  color: #C8102E;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  text-shadow: 0 2px 2px rgba(0,0,0,0.2);
-}
-
-.map-container {
-  position: relative;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.canada-map {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.pulse-dot {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  background: #FF5722;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.9);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scale(1.4);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.9);
-    opacity: 0.7;
-  }
-}
-.typewriter {
-  overflow: hidden;
-  border-right: 2px solid #F1C40F;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: 1px;
-  animation:
-    typing 5s steps(50, end),
-    blink-caret 0.8s step-end infinite;
-  color: #F1C40F;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-shadow: 0 0 8px rgba(255, 193, 7, 0.9);
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink-caret {
-  0%, 100% { border-color: transparent }
-  50% { border-color: #F1C40F }
-}
-.standards-marquee {
-  background-color: #eeeeee;
-  overflow: hidden;
-  padding: 1rem 0;
-  border-top: 4px solid #C8102E;
-  border-bottom: 4px solid #C8102E;
-  margin-top: 2rem;
-}
-
-.marquee-content {
-  display: flex;
-  gap: 4vw;                   /* فاصله نسبی */
-  animation: scroll-left 30s linear infinite;
-  align-items: center;
-}
-
-.marquee-content img {
-  max-height: 8vh;           /* تصویر حداکثر 8 درصد ارتفاع صفحه */
-  height: auto;
-  width: auto;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-
-.marquee-content img:hover {
-  transform: scale(1.1);
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@media (max-width: 768px) {
-  .typewriter {
-    font-size: 1.5rem;
-    animation: typing 4s steps(40, end), blink-caret 0.7s step-end infinite;
-  }
-}
-
-  .project .image-box {
-    margin-bottom: 1rem;
-  }
-
-  .project-description {
-    max-width: 100%;
-  }
-
-  .project-gallery {
-    padding: 2rem 1rem;
-  }
-
-  .hero h1 {
-    font-size: 1.5rem;
-    line-height: 1.4;
-    border: none;
-    white-space: normal;
-    overflow: visible;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    margin-top: 1rem;
-  }
-
-  .hero {
-    padding: 1rem;
-    height: auto;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0.5rem 1rem;
-  }
-
-  nav {
-    justify-content: flex-start;
-    padding-right: 0;
-  }
-
-  nav a {
-    font-size: 1rem;
-    margin: 0 0.5rem;
-  }
-}
-.slideshow-container {
-  position: relative;
-  width: 100%;
-  height: 220px;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: none;
-}
-
-.slide.active {
-  display: block;
-}
-
-
-
- 
-@media (max-width: 768px) {
-  .project-gallery {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .project-card {
-    width: 90% !important;
-  }
-}
-
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
+    .projects-section {
+      background-color: #d9d9d9;
+      padding: 4rem 2rem 1rem;
+      text-align: center;
     }
 
-    @keyframes blink {
-      50% { border-color: transparent }
+    .project-gallery {
+      background-color: #d9d9d9;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .projects-section h2 {
+      font-size: 2.5rem;
+      color: white;
+      margin-bottom: 1rem;
+      text-shadow:
+        -1px -1px 0 orange,
+         1px -1px 0 orange,
+        -1px  1px 0 orange,
+         1px  1px 0 orange;
+    }
+
+    .underline-bar {
+      width: 100%;
+      height: 6px;
+      background-color: #C8102E;
+      margin: 0 auto 2rem auto;
+    }
+    .map-section {
+      background: linear-gradient(to right, #f0f0f0, #ffffff);
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .map-section h2 {
+      font-size: 2.5rem;
+      color: #C8102E;
+      margin-bottom: 2rem;
+      text-shadow:
+        -1px -1px 0 orange,
+         1px -1px 0 orange,
+        -1px  1px 0 orange,
+         1px  1px 0 orange;
+    }
+
+    .canada-map-section {
+      background: #f2f2f2;
+      text-align: center;
+      padding: 4rem 1rem;
+      position: relative;
+    }
+
+    .canada-map-section h2 {
+      color: #C8102E;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    }
+
+    .map-container {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .canada-map {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .pulse-dot {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: #FF5722;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.9);
+        opacity: 0.7;
+      }
+      50% {
+        transform: scale(1.4);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(0.9);
+        opacity: 0.7;
+      }
+    }
+
+    .typewriter {
+      overflow: hidden;
+      border-right: 2px solid #F1C40F;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: 1px;
+      animation:
+        typing 5s steps(50, end),
+        blink-caret 0.8s step-end infinite;
+      color: #F1C40F;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-shadow: 0 0 8px rgba(255, 193, 7, 0.9);
+    }
+
+    @keyframes blink-caret {
+      0%, 100% { border-color: transparent }
+      50% { border-color: #F1C40F }
+    }
+
+    .standards-marquee {
+      background-color: #eeeeee;
+      overflow: hidden;
+      padding: 1rem 0;
+      border-top: 4px solid #C8102E;
+      border-bottom: 4px solid #C8102E;
+      margin-top: 2rem;
+    }
+
+    .marquee-content {
+      display: flex;
+      gap: 4vw;
+      animation: scroll-left 30s linear infinite;
+      align-items: center;
+    }
+
+    .marquee-content img {
+      max-height: 8vh;
+      height: auto;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+    .marquee-content img:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .typewriter {
+        font-size: 1.5rem;
+        animation: typing 4s steps(40, end), blink-caret 0.7s step-end infinite;
+      }
+    }
+
+    .project .image-box {
+      margin-bottom: 1rem;
+    }
+
+    .project-description {
+      max-width: 100%;
+    }
+
+    .project-gallery {
+      padding: 2rem 1rem;
+    }
+
+    .hero h1 {
+      font-size: 1.5rem;
+      line-height: 1.4;
+      border: none;
+      white-space: normal;
+      overflow: visible;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    .hero {
+      padding: 1rem;
+      height: auto;
+    }
+
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.5rem 1rem;
+    }
+
+    nav {
+      justify-content: flex-start;
+      padding-right: 0;
+    }
+
+    nav a {
+      font-size: 1rem;
+      margin: 0 0.5rem;
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: none;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .project-gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .project-card {
+        width: 90% !important;
+      }
     }
 
     @keyframes fadeIn {
@@ -455,42 +431,38 @@ nav a {
       padding: 4rem 2rem;
       background-color: #f5f5f5;
     }
-
     .about, .services {
       flex: 1;
       min-width: 300px;
     }
 
+    .project {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: nowrap;
+      margin-bottom: 3rem;
+    }
 
-   .project {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* برای چسبیدن به هم و وسط‌چینی */
-  gap: 1rem; /* فاصله کم بین متن و عکس */
-  flex-wrap: nowrap;
-  margin-bottom: 3rem;
-}
+    .project:nth-child(even) {
+      flex-direction: row-reverse;
+    }
 
-.project:nth-child(even) {
-  flex-direction: row-reverse;
-}
+    .project img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 6px;
+      border: 3px solid #222;
+      object-fit: contain;
+    }
 
-.project img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 6px;
-  border: 3px solid #222;  /* حاشیه قرمز دور عکس */
-  object-fit: contain;
-}
-
-
-.project-description {
-  flex: 1;
-  font-size: 1rem;
-  color: #333;
-  max-width: 500px;
-}
-
+    .project-description {
+      flex: 1;
+      font-size: 1rem;
+      color: #333;
+      max-width: 500px;
+    }
 
     @keyframes fadeImg {
       0%, 49% { opacity: 1; }
@@ -501,13 +473,6 @@ nav a {
       animation: none;
     }
 
-    .project-description {
-      flex: 1;
-      font-size: 1rem;
-      color: #333;
-      max-width: 500px;
-    }
-
     footer {
       background-color: #002244;
       color: white;
@@ -515,55 +480,100 @@ nav a {
       padding: 1.5rem;
       font-size: 0.9rem;
     }
+
     .project-title-section {
-  text-align: center;
-  margin-top: 4rem;
-}
+      text-align: center;
+      margin-top: 4rem;
+    }
 
-.project-title {
-  font-size: 2.5rem;
-  color: #C8102E;
-  margin-bottom: 0.5rem;
-}
+    .project-title {
+      font-size: 2.5rem;
+      color: #C8102E;
+      margin-bottom: 0.5rem;
+    }
 
-.underline-bar {
-  width: 100%;
-  height: 6px;
-  background-color: #C8102E;
-  margin: 0 auto 2rem auto;
-}
-#about,
-#services,
-#gallery,
-#contact {
-  scroll-margin-top: 100px; /* به اندازه ارتفاع هدر ثابت */
-}
+    .underline-bar {
+      width: 100%;
+      height: 6px;
+      background-color: #C8102E;
+      margin: 0 auto 2rem auto;
+    }
+
+    #about,
+    #services,
+    #gallery,
+    #contact {
+      scroll-margin-top: 100px;
+    }
+
+    .fade-in-text {
+      color: orange;
+      opacity: 0;
+      animation: fadeInText 2.5s ease-in forwards;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    @keyframes fadeInText {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #F1C40F; }
+    }
+    .typewriter {
+      overflow: hidden;
+      border-right: 2px solid #F1C40F;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: 1px;
+      animation:
+        typing 5s steps(50, end),
+        blink-caret 0.8s step-end infinite;
+      color: #F1C40F;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-shadow: 0 0 8px rgba(255, 193, 7, 0.9);
+    }
+
+    @keyframes blink-caret {
+      0%, 100% { border-color: transparent }
+      50% { border-color: #F1C40F }
+    }
 
   </style>
 </head>
 <body>
   <header>
-   <div class="logo-title">
-    <img src="logo.png" alt="Aznobil Inc. Logo">
-    <span class="company-name">Aznobil Inc.</span>
-  </div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#about">About us</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <div class="logo-title">
+      <img src="logo.png" alt="Aznobil Inc. Logo">
+      <span class="company-name">Aznobil Inc.</span>
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#about">About us</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <div class="white-strip"></div>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1 id="typing-text"></h1>
-    <p class="fade-in-text">From concept to commissioning, we deliver efficient, cost-effective mechanical design solutions.</p>
-  </div>
-</section>
+  <section class="hero">
+    <div class="hero-content">
+      <h1 id="typing-text"></h1>
+      <p class="fade-in-text">From concept to commissioning, we deliver efficient, cost-effective mechanical design solutions.</p>
+    </div>
+  </section>
 
   <div class="black-strip"></div>
 
@@ -590,139 +600,120 @@ nav a {
       </p>
     </div>
   </div>
+  <section class="projects-section" id="gallery">
+    <h2>Our Projects</h2>
+    <div class="underline-bar"></div>
 
-  
-
-
-
-
-<section class="projects-section" id="gallery">
-  <h2>Our Projects</h2>
-  <div class="underline-bar"></div>
-
-<div class="project-gallery" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
-
-    <!-- یک پروژه -->
-    <div class="project-card" style="width: 320px; height: 420px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff; display: flex; flex-direction: column; justify-content: space-between;">
-      <div class="slideshow-container" style="position: relative;">
-                <img src="img11.jpg" class="slide" style="width: 100%; display: block;" />
-                <img src="img12.jpg" class="slide" style="width: 100%; display: block;" />
-            <img src="img13.jpg" class="slide" style="width: 100%; display: block;" />
+    <div class="project-gallery" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+      <!-- یک پروژه -->
+      <div class="project-card" style="width: 320px; height: 420px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff; display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="slideshow-container" style="position: relative;">
+          <img src="img11.jpg" class="slide" style="width: 100%; display: block;" />
+          <img src="img12.jpg" class="slide" style="width: 100%; display: block;" />
+          <img src="img13.jpg" class="slide" style="width: 100%; display: block;" />
+        </div>
+        <div style="padding: 1rem;">
+          <h3>Project One</h3>
+          <p>Design and installation of industrial piping system with advanced flow analysis.</p>
+        </div>
       </div>
-      <div style="padding: 1rem;">
-        <h3>Project One</h3>
-        <p>Design and installation of industrial piping system with advanced flow analysis.</p>
-      </div>
-    </div>
 
-    <!-- پروژه دوم -->
-   <div class="project-card" style="width: 320px; height: 420px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff; display: flex; flex-direction: column; justify-content: space-between;">
-      <div class="slideshow-container" style="position: relative;">
-        <img src="img21.jpg" class="slide"/>
-        <img src="img22.jpg" class="slide"/>
-        <img src="img23.jpg" class="slide"/>
+      <!-- پروژه دوم -->
+      <div class="project-card" style="width: 320px; height: 420px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff; display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="slideshow-container" style="position: relative;">
+          <img src="img21.jpg" class="slide"/>
+          <img src="img22.jpg" class="slide"/>
+          <img src="img23.jpg" class="slide"/>
+        </div>
+        <div style="padding: 1rem;">
+          <h3>Project Two</h3>
+          <p>3D modeling of power plant piping systems using Plant 3D and SolidWorks.</p>
+        </div>
       </div>
-      <div style="padding: 1rem;">
-        <h3>Project Two</h3>
-        <p>3D modeling of power plant piping systems using Plant 3D and SolidWorks.</p>
-      </div>
-    </div>
 
-    <!-- پروژه سوم -->
-    <div class="project-card" style="width: 320px; height: 420px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff; display: flex; flex-direction: column; justify-content: space-between;">
-      <div class="slideshow-container" style="position: relative;">
-        <img src="img31.jpg" class="slide"/>
-        <img src="img32.jpg" class="slide"/>
-        <img src="img33.jpg" class="slide"/>
-      </div>
-      <div style="padding: 1rem;">
-        <h3>Project Three</h3>
-        <p>Heat exchanger and storage tank integration for food-grade systems.</p>
+      <!-- پروژه سوم -->
+      <div class="project-card" style="width: 320px; height: 420px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); background: #fff; display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="slideshow-container" style="position: relative;">
+          <img src="img31.jpg" class="slide"/>
+          <img src="img32.jpg" class="slide"/>
+          <img src="img33.jpg" class="slide"/>
+        </div>
+        <div style="padding: 1rem;">
+          <h3>Project Three</h3>
+          <p>Heat exchanger and storage tank integration for food-grade systems.</p>
+        </div>
       </div>
     </div>
+  </section>
+  <!-- 🔽 نوار استانداردها شروع -->
+  <section class="standards-marquee">
+    <div class="marquee-content">
+      <a href="https://www.asme.org" target="_blank">
+        <img src="logos/asme.png" alt="ASME" />
+      </a>
+      <a href="https://www.astm.org" target="_blank">
+        <img src="logos/astm.png" alt="ASTM" />
+      </a>
+      <a href="https://www.csa.ca" target="_blank">
+        <img src="logos/csa.png" alt="CSA" />
+      </a>
+      <a href="https://www.api.org" target="_blank">
+        <img src="logos/api.png" alt="API" />
+      </a>
+      <a href="https://www.nrc-cnrc.gc.ca" target="_blank">
+        <img src="logos/nrc.png" alt="NRC Canada" />
+      </a>
+    </div>
+  </section>
+  <!-- 🔼 نوار استانداردها پایان -->
 
-  </div>
-</section>
-
-</section>
-
-<!-- 🔽 نوار استانداردها شروع -->
-<section class="standards-marquee">
-  <div class="marquee-content">
-    <a href="https://www.asme.org" target="_blank">
-      <img src="logos/asme.png" alt="ASME" />
-    </a>
-    <a href="https://www.astm.org" target="_blank">
-      <img src="logos/astm.png" alt="ASTM" />
-    </a>
-    <a href="https://www.csa.ca" target="_blank">
-      <img src="logos/csa.png" alt="CSA" />
-    </a>
-    <a href="https://www.api.org" target="_blank">
-      <img src="logos/api.png" alt="API" />
-    </a>
-    <a href="https://www.nrc-cnrc.gc.ca" target="_blank">
-      <img src="logos/nrc.png" alt="NRC Canada" />
-    </a>
-  </div>
-</section>
-<!-- 🔼 نوار استانداردها پایان -->
-
-
-<section class="canada-map-section">
-  <h2>Serving All Across Canada</h2>
-  <div class="map-container">
-    <img src="canada-map.png" alt="Canada Map" class="canada-map" />
-    <div class="pulse-dot" style="top: 85%; left: 60%;"></div> <!-- ON -->
-  </div>
-</section>
-
-
-
-
+  <section class="canada-map-section">
+    <h2>Serving All Across Canada</h2>
+    <div class="map-container">
+      <img src="canada-map.png" alt="Canada Map" class="canada-map" />
+      <div class="pulse-dot" style="top: 85%; left: 60%;"></div> <!-- ON -->
+    </div>
+  </section>
 
   <footer id="contact">
     <p>&copy; 2025 Aznobil Inc. Thornhill, Ontario. All rights reserved.</p>
     <p>📞 +1 (647) 326 0282<br>
-       ✉️ <a href="mailto:info@aznobil.ca" style="color:white">info@aznobil.ca</a></p>
+      ✉️ <a href="mailto:info@aznobil.ca" style="color:white">info@aznobil.ca</a></p>
   </footer>
 
- <script>
- document.querySelectorAll('.slideshow-container').forEach(slideshow => {
-    const images = slideshow.querySelectorAll('img');
-    let index = 0;
-
-    images[index].classList.add('active');
-
-    setInterval(() => {
-      images[index].classList.remove('active');
-      index = (index + 1) % images.length;
-      images[index].classList.add('active');
-    }, 4000);
-  });
-</script>
   <script>
-  document.querySelectorAll(".slideshow-container").forEach(container => {
-    const slides = container.querySelectorAll(".slide");
-    let index = 0;
+    document.querySelectorAll('.slideshow-container').forEach(slideshow => {
+      const images = slideshow.querySelectorAll('img');
+      let index = 0;
 
-    slides.forEach((img, i) => img.classList.remove("active"));
-    if (slides.length > 0) slides[0].classList.add("active");
+      images[index].classList.add('active');
 
-    setInterval(() => {
-      slides.forEach((img, i) => img.classList.toggle("active", i === index));
-      index = (index + 1) % slides.length;
-    }, 4000);
-  });
-</script>
+      setInterval(() => {
+        images[index].classList.remove('active');
+        index = (index + 1) % images.length;
+        images[index].classList.add('active');
+      }, 4000);
+    });
+  </script>
+  <script>
+    document.querySelectorAll(".slideshow-container").forEach(container => {
+      const slides = container.querySelectorAll(".slide");
+      let index = 0;
 
-<script>
-  const text = "Industrial Mechanical Design | Analysis | Consulting";
-  document.getElementById("typing-text").textContent = text;
-</script>
+      slides.forEach((img, i) => img.classList.remove("active"));
+      if (slides.length > 0) slides[0].classList.add("active");
 
+      setInterval(() => {
+        slides.forEach((img, i) => img.classList.toggle("active", i === index));
+        index = (index + 1) % slides.length;
+      }, 4000);
+    });
+  </script>
 
-</script>
+  <script>
+    const text = "Industrial Mechanical Design | Analysis | Consulting";
+    document.getElementById("typing-text").textContent = text;
+  </script>
 
 </body>
 </html>
