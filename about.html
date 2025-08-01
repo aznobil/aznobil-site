@@ -60,56 +60,6 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-/* ✳️ استایل پایه */
-.highlight-box {
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: #fff5f5;
-  border-left: 5px solid #C8102E;
-  font-size: 1.1rem;
-  font-style: italic;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-}
-
-/* 💻 انیمیشن دسکتاپ (slide-up + fade) */
-.animated-text {
-  animation: desktopSlideFade 2s ease-out both;
-}
-
-/* 📱 افکت گوشی (فقط fade) */
-@media (max-width: 600px) {
-  .animated-text {
-    animation: mobileFade 2s ease-out both;
-  }
-
-  .highlight-box {
-    font-size: 1rem;
-  }
-}
-
-/* 🔻 keyframes برای دسکتاپ */
-@keyframes desktopSlideFade {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 🔻 keyframes برای موبایل */
-@keyframes mobileFade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
     @media (max-width: 600px) {
       .container {
         margin: 1rem;
