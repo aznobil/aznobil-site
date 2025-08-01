@@ -2,43 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Aznobil Inc.</title>
-  <meta name="description" content="Learn more about Aznobil Inc. – specialists in mechanical design, piping systems, and engineering consulting in Ontario.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Aznobil Inc.</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
+      background: #f9f9f9;
       color: #333;
+      animation: fadeIn 1.2s ease-in-out;
     }
+
+    header {
+      background-color: #C8102E;
+      color: white;
+      padding: 1.2rem;
+      text-align: center;
+      font-size: 1.8rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
     .container {
       max-width: 800px;
-      margin: auto;
+      margin: 3rem auto;
+      background: white;
       padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     }
-    h1 {
-      color: #d62828;
+
+    h2 {
+      color: #C8102E;
+      margin-bottom: 1rem;
     }
+
     p {
-      line-height: 1.6;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    .btn-back {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #C8102E;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .btn-back:hover {
+      background-color: #a00d20;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+
+      header {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
+
+  <header>About Aznobil Inc.</header>
+
   <div class="container">
-    <h1>About Aznobil Inc.</h1>
-    <p>Aznobil Inc. is a mechanical engineering and design company based in Ontario, Canada. We specialize in:</p>
-    <ul>
-      <li>Industrial piping systems and layout</li>
-      <li>3D equipment and ductwork modeling</li>
-      <li>ASME/CSA code compliance</li>
-      <li>Reverse engineering and technical consulting</li>
-    </ul>
-    <p>With over 14 years of experience across power plants, industrial facilities, and mechanical infrastructure, we deliver efficient, cost-effective design solutions from concept to commissioning.</p>
-    <p>We use industry-standard tools such as SolidWorks, AutoCAD Plant 3D, CAESAR II, and ANSYS to ensure precision and performance in every project.</p>
-    <p><strong>Contact us</strong> for mechanical design solutions tailored to your needs.</p>
+    <h2>Who We Are</h2>
+    <p>
+      Aznobil Inc. is a Canadian-based mechanical design and engineering consultancy
+      with expertise in industrial piping systems, equipment modeling, and stress analysis.
+      Our team brings over 14 years of experience designing power plants, food-grade systems,
+      and commercial mechanical layouts.
+    </p>
+
+    <h2>What We Do</h2>
+    <p>
+      We specialize in the use of advanced tools like AutoCAD Plant 3D, SolidWorks, Caesar II, and ANSYS
+      to deliver complete design solutions including 3D modeling, compliance to CSA and ASME codes,
+      and full project documentation. We serve clients across Canada with practical and efficient solutions.
+    </p>
+
+    <a href="index.html" class="btn-back">← Back to Home</a>
   </div>
+
 </body>
 </html>
