@@ -886,17 +886,7 @@ box-sizing: border-box;
     });
   </script>
 
-  <script>
-  
-  const text = "Industrial Mechanical Design | Analysis | Consulting";
-  const typingTextEl = document.getElementById("typing-text");
 
-  if (window.innerWidth <= 600) {
-    typingTextEl.textContent = text;
-  } else {
-    typingTextEl.textContent = text; // keep as is to allow typing animation
-  }
-</script>
 
   </script>
   <script>
@@ -945,8 +935,18 @@ box-sizing: border-box;
 <div style="text-align:center; margin-top: 2rem;">
   <a href="about.html" style="color:#d62828; font-weight:bold;">About Us</a>
 </div>
-</body>
-</html>
+  <script>
+  const text = "Industrial Mechanical Design | Analysis | Consulting";
+  const typingTextEl = document.getElementById("typing-text");
+
+  if (window.innerWidth <= 600) {
+    typingTextEl.textContent = text;
+  } else {
+    typingTextEl.textContent = text;
+  }
+</script>
 
 </body>
 </html>
+
+
