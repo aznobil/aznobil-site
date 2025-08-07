@@ -963,23 +963,20 @@ box-sizing: border-box;
       }
     }
   </script>
-<div id="no" style="text-align:center; font-weight:bold; color:#C8102E; margin-top:1rem;">
-  بازدید: در حال بارگذاری...
-</div>
+<div id="visitor-count" style="font-size: 1.2rem; font-weight: bold; color: #333;">👁️ Visitors: Loading...</div>
 
 <script>
-  const apiURL = "https://script.google.com/macros/s/AKfycbwovxOM-ZyfbWj8r3-ehUJb4K2oslnD9M8_1bZOfdk-Frte5wouhXTJxJK1xefIkAaRcg/exec";
-
-  fetch(apiURL)
+  fetch("https://script.google.com/macros/s/AKfycbwovxOM-ZyfbWj8r3-ehUJb4K2oslnD9M8_1bZOfdk-Frte5wouhXTJxJK1xefIkAaRcg/exec")
     .then(response => response.json())
     .then(data => {
-      document.getElementById("no").textContent = "بازدید: " + data.count;
+      document.getElementById("visitor-count").innerText = `👁️ Visitors: ${data.count}`;
     })
     .catch(error => {
-      document.getElementById("no").textContent = "خطا در شمارنده!";
+      document.getElementById("visitor-count").innerText = "👁️ Visitors: error";
       console.error("Visitor counter error:", error);
     });
 </script>
+
 
 
 
