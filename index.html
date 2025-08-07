@@ -964,7 +964,7 @@ box-sizing: border-box;
     }
   </script>
 <div id="no" style="text-align:center; font-weight:bold; color:#C8102E; margin-top:1rem;">
-N
+  بازدید: در حال بارگذاری...
 </div>
 
 <script>
@@ -973,13 +973,14 @@ N
   fetch(apiURL)
     .then(response => response.json())
     .then(data => {
-      document.getElementById("no").textContent = "N: " + data.count;
+      document.getElementById("no").textContent = "بازدید: " + data.count;
     })
     .catch(error => {
-      document.getElementById("no").textContent = "E  !";
+      document.getElementById("no").textContent = "خطا در شمارنده!";
       console.error("Visitor counter error:", error);
     });
 </script>
+
 
 
 
