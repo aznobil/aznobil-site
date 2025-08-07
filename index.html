@@ -946,21 +946,22 @@ box-sizing: border-box;
   }
 </script>
 <div id="no" style="text-align: center; font-weight: bold; color: #C8102E; margin-top: 1rem;">
-  Visitor count: <span id="visitor-count">Loading...</span>
+  No: ...
 </div>
 
 <script>
-  // این API کل بازدیدها رو می‌شماره (global)
   fetch('https://api.countapi.xyz/hit/aznobil.ca/visits')
     .then(res => res.json())
     .then(data => {
-      document.getElementById('visitor-count').textContent = data.value;
+      document.getElementById('no').textContent = 'No: ' + data.value;
     })
     .catch(err => {
-      document.getElementById('visitor-count').textContent = 'Error';
-      console.error('Visitor counter error:', err);
+      document.getElementById('no').textContent = 'No: error';
+      console.error('Visitor count error:', err);
     });
 </script>
+
+
 
 </body>
 </html>
