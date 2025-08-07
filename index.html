@@ -122,6 +122,9 @@
       width: 0;
       animation: typing 6s steps(45, end) forwards, blink 0.75s step-end infinite;
       text-shadow: 0 0 8px rgba(255, 255, 0, 0.6);
+      max-width: 100%;
+box-sizing: border-box;
+
     }
 
     @keyframes typing {
@@ -133,6 +136,27 @@
       0%, 100% { border-color: transparent; }
       50% { border-color: #F1C40F; }
     }
+@media (max-width: 600px) {
+  #typing-text {
+    font-size: 1.4rem;
+    white-space: normal;
+    overflow: visible;
+    width: auto;
+    border-right: none;
+    animation: mobileFade 2s ease-out both;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  @keyframes mobileFade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
 
     .fade-in-text {
       color: orange;
@@ -863,8 +887,17 @@
   </script>
 
   <script>
-    const text = "Industrial Mechanical Design | Analysis | Consulting";
-    document.getElementById("typing-text").textContent = text;
+   <script>
+  const text = "Industrial Mechanical Design | Analysis | Consulting";
+  const typingTextEl = document.getElementById("typing-text");
+
+  if (window.innerWidth <= 600) {
+    typingTextEl.textContent = text;
+  } else {
+    typingTextEl.textContent = text; // keep as is to allow typing animation
+  }
+</script>
+
   </script>
   <script>
   // وقتی روی لینک Contact کلیک میشه
