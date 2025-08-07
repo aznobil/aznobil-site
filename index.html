@@ -966,6 +966,21 @@ box-sizing: border-box;
       }
     }
   </script>
+  <div id="no" style="text-align: center; font-weight: bold; color: #C8102E; margin-top: 1rem;">
+  بازدید: Loading...
+</div>
+<script>
+  fetch('https://api.countapi.xyz/hit/aznobil.ca/visits')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('no').textContent = 'بازدید: ' + data.value;
+    })
+    .catch(error => {
+      document.getElementById('no').textContent = 'خطا در شمارنده';
+      console.error('Count API error:', error);
+    });
+</script>
+
 </body>
 </html>
 
