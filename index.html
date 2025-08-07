@@ -963,21 +963,24 @@ box-sizing: border-box;
       }
     }
   </script>
-<div id="no" style="text-align: center; font-weight: bold; color: #C8102E; margin-top: 1rem;">
-  B: Loading...
+<div id="no" style="text-align:center; font-weight:bold; color:#C8102E; margin-top:1rem;">
+N
 </div>
 
 <script>
-  fetch('https://api.countapi.xyz/update/aznobil-test/visits/?amount=1')
+  const apiURL = "https://script.google.com/macros/s/AKfycbwvoxOM-ZyfbWj8r3-ehUJb4K2osInD9M8_1bZOfdk-Frte5wouhXTJxJK1xeflkAaRcg/exec";
+
+  fetch(apiURL)
     .then(response => response.json())
     .then(data => {
-      document.getElementById('no').textContent = 'B: ' + data.value;
+      document.getElementById("no").textContent = "N: " + data.count;
     })
     .catch(error => {
-      document.getElementById('no').textContent = 'E';
-      console.error('E:', error);
+      document.getElementById("no").textContent = "E  !";
+      console.error("Visitor counter error:", error);
     });
 </script>
+
 
 
 </body>
