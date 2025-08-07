@@ -963,20 +963,22 @@ box-sizing: border-box;
       }
     }
   </script>
-  <div id="no" style="text-align: center; font-weight: bold; color: #C8102E; margin-top: 1rem;">
-B: Loading...
+<div id="no" style="text-align: center; font-weight: bold; color: #C8102E; margin-top: 1rem;">
+  B: Loading...
 </div>
+
 <script>
-  fetch('https://api.countapi.xyz/hit/aznobil.ca/visits')
+  fetch('https://api.countapi.xyz/update/aznobil-test/visits/?amount=1')
     .then(response => response.json())
     .then(data => {
       document.getElementById('no').textContent = 'B: ' + data.value;
     })
     .catch(error => {
       document.getElementById('no').textContent = 'E';
-      console.error('Count API error:', error);
+      console.error('E:', error);
     });
 </script>
+
 
 </body>
 </html>
