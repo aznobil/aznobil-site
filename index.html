@@ -963,17 +963,17 @@ box-sizing: border-box;
       }
     }
   </script>
-<div id="visitor-count" style="font-size: 1.2rem; font-weight: bold; color: #333;">👁️ N: Loading...</div>
+<div id="N-count" style="font-size: 1.2rem; font-weight: bold; color: #333;">👁️ N: Loading...</div>
 
 <script>
   fetch("https://script.google.com/macros/s/AKfycby_X0dEi2g5VO5HQlZJEOW2aSfhgaTrc2prC1gCXnNVlud69ZeRtqKJYsYXc5czQHonag/exec")
     .then(response => response.json())
     .then(data => {
-      document.getElementById("visitor-count").innerText = `👁️ Visitors: ${data.count}`;
+      document.getElementById("N-count").innerText = `👁️ Ns: ${data.count}`;
     })
     .catch(error => {
-      document.getElementById("visitor-count").innerText = "👁️ Visitors: error";
-      console.error("Visitor counter error:", error);
+      document.getElementById("N-count").innerText = "👁️ Ns: error";
+      console.error("N counter error:", error);
     });
 </script>
 
