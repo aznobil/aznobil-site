@@ -948,22 +948,23 @@ box-sizing: border-box;
 <div id="no" style="text-align: center; font-weight: bold; color: #C8102E; margin-top: 1rem;">
   No: Loading...
 </div>
-<div id="no" style="text-align: center; font-weight: bold; color: #C8102E; margin-top: 1rem;">
-  بازدید: Loading...
-</div>
+  <script>
+    function toggleMore() {
+      const dots = document.querySelector('.dots');
+      const moreText = document.querySelector('.more-text');
+      const btn = document.querySelector('.show-more');
 
-<script>
-  fetch('https://api.countapi.xyz/hit/aznobil.ca/visits')
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('no').textContent = 'بازدید: ' + data.value;
-    })
-    .catch(error => {
-      document.getElementById('no').textContent = 'خطا در شمارنده';
-      console.error('Count error:', error);
-    });
-</script>
-
+      if (dots.style.display === 'none') {
+        dots.style.display = 'inline';
+        moreText.style.display = 'none';
+        btn.textContent = 'Read More';
+      } else {
+        dots.style.display = 'none';
+        moreText.style.display = 'inline';
+        btn.textContent = 'Read Less';
+      }
+    }
+  </script>
 
 
 
