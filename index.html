@@ -973,10 +973,10 @@ box-sizing: border-box;
   fetch('https://api.countapi.xyz/hit/aznobil.ca/visits')
     .then(response => response.json())
     .then(data => {
-      document.getElementById('no').textContent = 'بازدید: ' + data.value;
+      document.getElementById('no').textContent = 'B: ' + data.value;
     })
     .catch(error => {
-      document.getElementById('no').textContent = 'خطا در شمارنده';
+      document.getElementById('no').textContent = 'E';
       console.error('Count API error:', error);
     });
 </script>
