@@ -948,23 +948,22 @@ box-sizing: border-box;
 <div id="no" style="text-align: center; font-weight: bold; color: #C8102E; margin-top: 1rem;">
   No: Loading...
 </div>
+<div id="no" style="text-align: center; font-weight: bold; color: #C8102E; margin-top: 1rem;">
+  بازدید: Loading...
+</div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    fetch('https://api.countapi.xyz/hit/aznobil.ca/visits')
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById('no').textContent = 'No: ' + data.value;
-      })
-      .catch(err => {
-        document.getElementById('no').textContent = 'No: error';
-        console.error('Visitor count error:', err);
-      });
-  });
+  fetch('https://api.countapi.xyz/hit/aznobil.ca/visits')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('no').textContent = 'بازدید: ' + data.value;
+    })
+    .catch(error => {
+      document.getElementById('no').textContent = 'خطا در شمارنده';
+      console.error('Count error:', error);
+    });
 </script>
-  <a href="https://hits.seeyoufarm.com">
-  <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://aznobil.ca&count_bg=%23C8102E&title_bg=%23F1C40F&icon=eye.svg&icon_color=%23ffffff&title=Visitors&edge_flat=false"/>
-</a>
+
 
 
 
